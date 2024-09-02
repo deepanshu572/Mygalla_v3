@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title id="my_shop_name"></title>
+  <link rel="stylesheet" href="../assets/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
+  <link rel="stylesheet" href="../assets/css/ashstyle.css" />
+</head>
+
+<body>
+  <!-- ash top and body start -->
+  <div>
+    <div class="top-bar">
+      <a href="pos.html">
+        <i class="bi bi-chevron-left"></i>
+      </a>
+    </div>
+    <div class="containerBody">
+      <div id="msg"></div>
+
+      <h3>POS-CHECKOUT</h3>
+
+      <div>
+        <div class="manageStock">
+          <h6 class="stock-msg">Enter customer details</h6>
+          <div class="form-floating form-group">
+            <input type="number" class="form-control inputAsh" id="cs_mobile" name="cs_mobile" />
+              <label for="cs_mobile">Enter mobile</label>
+            <p id="cs_mobile_error" class="form-text error-ash"></p>
+          </div>
+          <div class="form-floating form-group">
+            <input type="text" class="form-control inputAsh" id="cs_name" name="cs_name" />
+            <label for="cs_name">Enter name</label>
+            <p id="error_1" class="form-text error-ash"></p>
+          </div>
+          <div class="form-floating form-group">
+            <input type="text" class="form-control inputAsh" id="cs_address" name="cs_address" />
+              <label for="cs_address">Enter address</label>
+            <p id="error_1" class="form-text error-ash"></p>
+          </div>
+          <div class="form-group mb-1">
+            <label for="">Pickup at store</label>
+            <input type="radio" value="Pickup at store" id="delivery_type_1" name="delivery_type" />
+            <label for="">Home delivery</label>
+            <input type="radio" value="Home delivery" id="delivery_type_2" name="delivery_type" />
+          </div>
+          <div class="form-floating form-group">
+            <select name="payment_mode" id="payment_mode" class="form-control inputAsh">
+              <option value="cash">CASH</option>
+              <option value="online">ONLINE</option>
+            </select>
+            <label for="payment_mode">Select payment mode</label>
+          </div>
+          <div class="form-group">
+            <div class="row">
+              <div class="form-floating col form-group">
+                <input type="number" class="form-control inputAsh" id="discountval" name="discountval" value="0" />
+                <label for="discountval">Enter discount</label>
+              </div>
+              <div class="form-floating col form-group">
+                <select name="discount_mode" id="discount_mode" class="form-control inputAsh">
+                  <option value="flat">FLAT</option>
+                  <option value="percent">PERCENT</option>
+                </select>
+                <label for="discount_mode">Discount type</label>
+              </div>
+            </div>
+            <p id="error_1" class="form-text error-ash"></p>
+          </div>
+        </div>
+
+        <div class="manageStock">
+          <div class="mt-1">
+            <form id="poscheckout">
+              <div class="total-pos">
+                <label class="poslabel">TOTAL ( in &#8377; )</label>
+                <input type="text" id="total" name="total" class="posinput" readonly />
+              </div>
+              <div class="total-pos" id="gst-div">
+                <label class="poslabel">GST ( in &#8377; )</label>
+                <input type="text" id="gst" name="gst" class="posinput" readonly />
+              </div>
+              <div class="total-pos">
+                <div></div>
+                <div id="gstSplit" class="posdiv"></div>
+              </div>
+              <div class="total-pos">
+                <label class="poslabel">DISCOUNT ( in &#8377; )</label>
+                <input type="text" id="discount" class="posinput" name="discount" readonly />
+              </div>
+              <div class="total-pos">
+                <label class="poslabel">GRAND TOTAL ( in &#8377; )</label>
+                <input type="text" id="grandTotal" class="posinput" name="grandTotal" readonly />
+              </div>
+              <button class="btn btn-primary btnw100" id="posDone">
+                DONE
+              </button>
+            </form>
+          </div>
+        </div>
+
+        <div id="res"></div>
+      </div>
+    </div>
+  </div>
+  <!-- ash top and body end -->
+
+  <!-- ash bottom navigation start -->
+  <div class="bottomNav">
+    <ul>
+      <li>
+        <a href="home.html">
+          <i class="bi bi-house"></i>
+        </a>
+      </li>
+      <li>
+        <a href="orders.html">
+          <i class="bi bi-bag-heart"></i>
+        </a>
+      </li>
+      <li>
+        <a href="myshop.html">
+          <i class="bi bi-shop"></i>
+        </a>
+      </li>
+      <li>
+        <a href="mysettings.html">
+          <i class="bi bi-sliders"></i>
+        </a>
+      </li>
+    </ul>
+  </div>
+  <!-- ash bottom navigation end -->
+
+  <script src="../assets/js/jquery-3.6.1.js"></script>
+  <script src="../assets/js/bootstrap.bundle.min.js"></script>
+  <script src="../assets/js/popper.min.js"></script>
+  <script src="../constant.js"></script>
+  <script src="../assets/js/ashjs.js"></script>
+  <script>
+    checkLogout();
+    loadPOSItem();
+    loadPOSTotal();
+    loadGSTStatusCheckout();
+    printShopName();
+  </script>
+</body>
+
+</html>

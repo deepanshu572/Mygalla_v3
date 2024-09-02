@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title id="my_shop_name"></title>
+  <link rel="stylesheet" href="../assets/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
+  <link rel="stylesheet" href="../assets/css/ashstyle.css" />
+  <style>
+    .addpageBtn {
+      display: flex;
+      gap: 90px;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- ash top and body start -->
+  <div>
+    <div class="top-bar">
+      <!-- <a href="addons.html"> -->
+      <a href="newpage.html">
+        <i class="bi bi-chevron-left"></i>
+      </a>
+      <div id="iBtn"></div>
+    </div>
+    <div class="containerBody">
+      <div class="addpageBtn">
+        <h3>Add New Page</h3>
+      </div>
+
+      <hr />
+
+      <div id="msg"></div>
+
+      <form id="inputaddpages">
+        <div class="mb-3">
+          <label for="pagename" class="form-label">Enter page name</label>
+          <input id="pagename" name="pagename" type="text" class="form-control" placeholder="abc page">
+        </div>
+        <button type="submit" class="btn btn-primary">add page</button>
+      </form>
+
+      <!-- ash bottom navigation start -->
+      <div class="bottomNav">
+        <ul>
+          <li>
+            <a href="home.html">
+              <i class="bi bi-house"></i>
+            </a>
+          </li>
+          <li>
+            <a href="orders.html">
+              <i class="bi bi-bag-heart"></i>
+            </a>
+          </li>
+          <li>
+            <a href="myshop.html">
+              <i class="bi bi-shop"></i>
+            </a>
+          </li>
+          <li>
+            <a href="mysettings.html">
+              <i class="bi bi-sliders"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <!-- ash bottom navigation end -->
+
+      <script src="../assets/js/jquery-3.6.1.js"></script>
+      <script src="../assets/js/bootstrap.bundle.min.js"></script>
+      <script src="../assets/js/popper.min.js"></script>
+      <script src="../constant.js"></script>
+      <script src="../assets/js/ashjs.js"></script>
+      <script>
+        checkLogout();
+        // otherPage();
+        printShopName();
+
+        $("#inputaddpages").submit(async function (e) {
+          e.preventDefault();
+
+          const formData = new FormData(this);
+
+          formData.append("type", "100");
+          req = await fetch(appAPI, { method: "POST", body: formData });
+
+          res = await req.json();
+          data = res.data;
+          alert(data.msg);
+
+        });
+
+      </script>
+</body>
+
+</html>

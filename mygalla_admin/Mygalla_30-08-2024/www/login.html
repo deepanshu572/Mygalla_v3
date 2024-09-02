@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title ></title>
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="assets/css/ashstyle.css">
+</head>
+<body>
+
+    <div class="container ashLogin">
+        <h2>Welcome to</h2>
+        <!-- <h2>Kalam Grocery</h2> -->
+        <h2 id="my_shop_name"></h2>
+        <div id="msg"></div>
+        <form class="loginForm" id="loginFrm">
+            <div class="form-group form-floating">
+              <input type="text" class="form-control inputAsh" id="username" name="username" placeholder="">
+              <label for="username">Enter your mobile no</label>
+              <small id="username_error" class="form-text text-muted"></small>
+            </div>
+            <div class="form-group password-input form-floating">
+              <input type="password" class="form-control inputAsh" id="password" name="password" placeholder="">
+              <label for="password">Enter your password</label>
+              <i class="bi bi-eye-slash-fill pass-eye" id="passeyeshow"></i>
+              <i class="bi bi-eye-fill pass-eye" id="passeyehide"></i>
+              <small id="password_error" class="form-text text-muted"></small>
+            </div>
+            <div class="form-group">
+                <small class="forgot-password">
+                  <a href="forgotpassword.html">
+                    forgot password
+                  </a>
+                </small>
+            </div>
+            <div class="form-check">
+            </div>
+            <button type="submit" class="btn btn-primary ashBtn">LOGIN</button>
+          </form>
+          <h5>I am <span><a href="user/home.html">Guest</a></span></h5>
+          <h5>Don't an have Account ? <span><a href="signup.html">click here</a></span></h5>
+          
+    </div>
+
+    <script src="cordova.js"></script>
+    <script src="assets/js/jquery-3.6.1.js"></script>
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/popper.min.js"></script>
+    <script src="constant.js"></script>
+    <script src="assets/js/fcm.js"></script>
+    <script src="assets/js/ashjs.js"></script>
+    <script>
+      printShopName();
+      checkLogin();
+    </script>
+</body>
+</html>

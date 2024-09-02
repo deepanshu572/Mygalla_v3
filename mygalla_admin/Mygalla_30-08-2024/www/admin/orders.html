@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title id="my_shop_name"></title>
+  <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="../assets/css/ashstyle.css">
+</head>
+
+<body>
+
+  <div>
+    <div class="top-bar bar-update">
+      <a href="home.html">
+        <i class="bi bi-chevron-left"></i>
+      </a>
+      <div id="iBtn"></div>
+    </div>
+    <div class="containerBody">
+      <h2>All Orders</h2>
+      <!-- order filteration -->
+
+      <div class="report-section">
+        <div class="report-head">
+          <div>
+            <label for="fr-date">From</label>
+            <input type="date" id="fr-date" onchange="getDate()" class="form-control" />
+          </div>
+          <div>
+            <label for="to-date">To</label>
+            <input type="date" id="to-date" onchange="getDate()"  class="form-control" />
+          </div>
+        </div>
+        <div>
+          <div class="report-btn-list">
+            <div class="wrap-box">
+              <div class="box1">
+                <button class="button-report" onclick=" displayOrder2('toady')">
+                  <i class="bi bi-calendar-date"></i>
+                  <p>Today</p>
+                </button>
+              </div>
+              <div class="box1">
+                <button class="button-report" onclick="displayOrder2('yesterday')">
+                  <i class="bi bi-calendar-date"></i>
+                  <p>Yesterday</p>
+                </button>
+              </div>
+              <div class="box1">
+                <button class="button-report" onclick="displayOrder2('last7day')">
+                  <i class="bi bi-calendar-date"></i>
+                  <p>Last&nbsp;7&nbsp;day</p>
+                </button>
+              </div>
+              <div class="box1">
+                <button class="button-report" onclick="displayOrder2('thismonth')">
+                  <i class="bi bi-calendar-date"></i>
+                  <p>This&nbsp;month</p>
+                </button>
+              </div>
+              <div class="box1">
+                <button class="button-report" onclick="displayOrder2('lastmonth')">
+                  <i class="bi bi-calendar-date"></i>
+                  <p>Last&nbsp;month</p>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="report-body">
+
+          <div>
+            <h5>User</h5>
+            <hr />
+            <div id="user-table" class="table-class">
+              <table class="table mt-1">
+                <thead>
+                  <tr>
+                    <th>Date</th>
+                    <th>User</th>
+                  </tr>
+                </thead>
+                <tbody id="user-table-body"></tbody>
+              </table>
+            </div>
+            <div id="user-graph" class="graph-class"></div>
+          </div>
+
+          <div>
+            <h5>Orders</h5>
+            <hr />
+            <div id="order-table" class="table-class">
+              <table class="table mt-1">
+                <thead>
+                  <tr>
+                    <th>Date</th>
+                    <th>Volume</th>
+                  </tr>
+                </thead>
+                <tbody id="order-table-body"></tbody>
+              </table>
+            </div>
+            <div id="order-graph" class="graph-class"></div>
+          </div>
+
+          <div>
+            <h5>Product</h5>
+            <hr />
+            <div id="product-table" class="table-class">
+              <table class="table mt-1">
+                <thead>
+                  <tr>
+                    <th>Date</th>
+                    <th>Products</th>
+                    <th>Quantity</th>
+                  </tr>
+                </thead>
+                <tbody id="product-table-body"></tbody>
+              </table>
+            </div>
+            <div id="product-graph" class="graph-class"></div>
+          </div>
+
+          <div>
+            <h5>Order Type</h5>
+            <hr />
+            <div class="table-class">
+              <table class="table mt-1">
+                <thead>
+                  <tr>
+                    <th>Type</th>
+                    <th>Volume</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>POS</td>
+                    <td id="pos_count"></td>
+                  </tr>
+                  <tr>
+                    <td>APP</td>
+                    <td id="app_count"></td>
+                  </tr>
+                  <tr>
+                    <td>WEB</td>
+                    <td id="web_count"></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div id="order-type-graph" class="graph-class"></div>
+          </div>
+
+          <div>
+            <h5>Profit</h5>
+            <hr />
+            <div id="profit-table" class="table-class">
+              <table class="table mt-1">
+                <thead>
+                  <tr>
+                    <th>Date</th>
+                    <th>No of Sale</th>
+                    <th>Total Txn</th>
+                    <th>Profit</th>
+                  </tr>
+                </thead>
+                <tbody id="profit-table-body"></tbody>
+              </table>
+              <p class="c_t_transaction">Total transaction : &#8377; <span id="t_transaction"></span></p>
+              <p class="c_t_profit">Total Profit : &#8377; <span id="t_profit"></span></p>
+              <p></p>
+            </div>
+            <div id="profit-graph" class="graph-class"></div>
+          </div>
+
+
+
+        </div>
+      </div>
+
+      <!-- order filteration -->
+      <div>
+        <div class="report-btn-list">
+          <div class="wrap-box">
+            <div class="box1">
+              <button class="button-report" onclick="displayOrder('all')">
+                <i class="bi bi-check-all"></i>
+                <p>All</p>
+              </button>
+            </div>
+            <div class="box1">
+              <button class="button-report" onclick="displayOrder('pos')">
+                <i class="bi bi-globe"></i>
+                <p>POS</p>
+              </button>
+            </div>
+            <div class="box1">
+              <button class="button-report" onclick="displayOrder('app')">
+                <i class="bi bi-phone"></i>
+                <p>APP</p>
+              </button>
+            </div>
+            <div class="box1">
+              <button class="button-report" onclick="displayOrder('web')">
+                <i class="bi bi-window"></i>
+                <p>WEB</p>
+              </button>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <div id="orderList"></div>
+
+    </div>
+  </div>
+
+  <!-- ash bottom navigation start -->
+  <nav class="bottomNav home-nav home-new">
+   
+      <ul>
+      <li>
+          <a href="home.html" class="icon-ancor">
+              <div class="icon-text-update">
+                <h2 id="KA_NAME">Kalam Academy</h2>
+              </div>
+             
+          </a>
+      </li>
+      <li>
+          <a href="home.html">
+              <div>
+                  <i class="bi bi-house"></i>
+                  <span>Home</span>
+              </div>
+          </a>
+      </li>
+      <li id="orders_role_section">
+          <a href="orders.html">
+              <div>
+                  <i class="bi bi-bag-heart"></i>
+                  <span>Order</span>
+              </div>
+              <div class="bottom-dot"></div>
+
+
+          </a>
+      </li>
+      <li id="myshop_role_section">
+          <a href="myshop.html">
+              <div>
+                  <i class="bi bi-shop"></i>
+                  <span>Shop</span>
+              </div>
+          </a>
+      </li>
+      <li id="mysettings_role_section">
+          <a href="mysettings.html">
+              <div>
+                  <i class="bi bi-sliders"></i>
+                  <span>Setting</span>
+              </div>
+          </a>
+      </li>
+  </ul>
+  </nav>
+  <!-- ash bottom navigation end -->
+
+  <script src="../assets/js/jquery-3.6.1.js"></script>
+  <script src="../assets/js/bootstrap.bundle.min.js"></script>
+  <script src="../assets/js/popper.min.js"></script>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <script src="../constant.js"></script>
+  <script src="../assets/js/ashjs.js"></script>
+  <script>
+    checkLogout();
+    printShopName();
+    displayOrder('all');
+
+
+    // phase2 code
+
+    // function orderRange(){
+    //   frDate = new Date($("#frDate").val()) ;
+    //   toDate =new Date($("#toDate").val()) ;
+
+    //   console.log(frDate,toDate)
+    // }
+
+    function getDate() {
+  let frDate = $("#fr-date").val();
+  const dateObject1 = new Date(frDate);
+
+  if (isNaN(dateObject1.getTime())) {
+  } else {
+    frDate = dateObject1.toISOString().split("T")[0];
+  }
+
+  if (frDate != "") {
+    let toDate = $("#to-date").val();
+    const dateObject2 = new Date(toDate);
+
+    if (isNaN(dateObject2.getTime())) {
+    } else {
+      toDate = dateObject2.toISOString().split("T")[0];
+      displayOrdersorting(frDate, toDate);
+    }
+  } else {
+    alert("select both date");
+  }
+}
+
+    const displayOrder2 = (dateRange)=>{
+      let frDate = "";
+  let toDate = "";
+  const date = new Date();
+
+  if (dateRange == "toady") {
+    frDate =
+      date.getFullYear() +
+      "-" +
+      parseInt(date.getMonth() + 1) +
+      "-" +
+      ("0" + date.getDate()).slice(-2);
+    toDate = frDate;
+  } else if (dateRange == "yesterday") {
+    frDate =
+      date.getFullYear() +
+      "-" +
+      parseInt(date.getMonth() + 1) +
+      "-" +
+      ("0" + parseInt(date.getDate() - 1)).slice(-2);
+    toDate = frDate;
+  } else if (dateRange == "last7day") {
+    dateObject1 = new Date(Date.now() - 7 * 24 * 60 * 60 * 1000);
+    frDate = dateObject1.toISOString().split("T")[0];
+
+    toDate =
+      date.getFullYear() +
+      "-" +
+      parseInt(date.getMonth() + 1) +
+      "-" +
+      ("0" + date.getDate()).slice(-2);
+  } else if (dateRange == "thismonth") {
+    let x = [];
+    dateObject1 = new Date(date.getFullYear(), date.getMonth() + 1, 1);
+
+    x = dateObject1.toISOString().split("T")[0].split("-");
+    x[2] = "01";
+    frDate = x.join("-");
+
+    toDate = dateObject1.toISOString().split("T")[0];
+  } else if (dateRange == "lastmonth") {
+    let x = [];
+    dateObject1 = new Date(date.getFullYear(), date.getMonth(), 1);
+
+    x = dateObject1.toISOString().split("T")[0].split("-");
+    x[2] = "01";
+    frDate = x.join("-");
+
+    toDate = dateObject1.toISOString().split("T")[0];
+  } else {
+  }
+  // alert(frDate + " , " + toDate);
+  // loadAllChart(frDate, toDate);
+     console.log(frDate , toDate);
+
+     displayOrdersorting(frDate,toDate);
+    }
+
+
+  async function displayOrdersorting(frDate, toDate) {
+  $("#orderList").html("");
+  order_type = localStorage.getItem("order_type");
+  const formData = new FormData();
+  formData.append("type", "110");
+  formData.append("frDate", frDate);
+  formData.append("toDate", toDate);
+  formData.append("order_type", order_type);
+  
+  let req = await fetch(appAPI, { method: "POST", body: formData });
+  let res = await req.json();
+  
+  console.log(res);
+
+  if (res.data.length === 0) { 
+    $("#orderList").html(`  
+          <div class="list-end">
+            NO MORE DATA
+          </div>
+      `);
+  } else {
+    res.data.map((item) => {
+      $("#orderList").append(orderCardTemplate(item, item.user_id));
+    });
+   
+  }
+}
+
+
+
+
+    // phase2 code 
+  </script>
+</body>
+
+</html>

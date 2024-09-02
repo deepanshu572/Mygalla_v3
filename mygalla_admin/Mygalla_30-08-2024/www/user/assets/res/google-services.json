@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "517953296835",
+    "firebase_url": "https://kalam-grocery-app.firebaseio.com",
+    "project_id": "kalam-grocery-app",
+    "storage_bucket": "kalam-grocery-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:517953296835:android:c90f0202f4ae45d2ec4576",
+        "android_client_info": {
+          "package_name": "com.softwarezsolution.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "517953296835-j4e3qspo67n2tj1g7e6c91ae4i016thl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD7OzgYTNbdiYpP8fsFhTJIMzN0xbpdOIw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "517953296835-j4e3qspo67n2tj1g7e6c91ae4i016thl.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

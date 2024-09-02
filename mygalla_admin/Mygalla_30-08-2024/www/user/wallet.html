@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title id="my_shop_name"></title>
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
+    <link rel="stylesheet" href="../assets/css/owl.carousel.min.css" />
+    <link rel="stylesheet" href="../assets/css/owl.theme.default.min.css" />
+    <link rel="stylesheet" href="assets/css/app.css" />
+    <style>
+      *{
+          margin: 0%;
+          padding: 0%;
+          box-sizing: border-box;
+      }
+      body{
+          width: 100%;
+          height: 100%;
+      }
+      .main-wallet{
+          width: 100%;
+          height: 100%;
+      }
+      .wallet{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  /* padding: 4rem 2rem; */
+  gap: 24px;
+      }
+      .wallet-box{
+          width: 304px;
+  height: 181px;
+  display: flex;
+  align-items: center;
+  background: #05ff057d;
+  justify-content: center;
+  flex-direction: column;
+  border-radius: 20px;
+  color: #fff;
+  gap: 17px;
+      }
+      .head-wallet{
+          position: fixed;
+          width: 100%;
+          box-shadow: 2px 2px 3px gray;
+      }
+      .referal-code{
+          display: flex;
+  border: 1px solid #c2c1c1;
+  padding: 8px 17px;
+  align-items: center;
+  gap: 3px;
+  border-radius: 9px;
+      }
+      .referal-code p{
+          white-space: nowrap;
+      }
+      .referal-code button{
+          background: orange;
+  border: none;
+  padding: 5px 15px;       
+      }
+      .referal-code input{
+          all: unset;
+  background: #fff;
+  /* box-shadow: inset 2px 2px 2px #c4c4c4; */
+  padding: 10px 3px;
+  width: 100px;
+  text-align: center;
+      }
+      .head-wallet{
+          padding: 10px 15px;
+      }
+      .share svg{
+          color: #fff;
+          position: absolute;
+          left: 113px;
+          top: -4px;
+      }
+      .wallet-box p{
+          font-size: 31px;
+      }
+      .wallet-box h2{
+          font-size: 35px;
+      }
+      .share{
+          position: relative;
+      }
+      .bg{
+          width: 297px;
+      }
+  </style>
+</head>
+
+
+<body>
+  <!-- ash top and body start -->
+  <div>
+
+      <div class="productCnt">
+
+          <!-- top section start  -->
+
+          <div class="top-section-prdt top-section-prdt-update">
+            <!-- <div class="black"></div> -->
+              <div id="user-name-welcome" class="user-name-welcome2">
+                  <a class="top-back-btn" id="goBack">
+                      <i class="bi bi-chevron-left"></i>
+                      <span>back</span>
+                  </a>
+              </div>
+          </div>
+
+          <!-- top section end  -->
+
+          <!-- <div class="cart-container other">
+              <h2 id="page-title">Wallet/ Refer & Earn</h2>
+              <hr>
+              <div id="page-data">
+
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" placeholder="Enter name" id="walletCode" readonly>
+                    <label for="name">Refer Code </label>
+                  </div>
+              </div>
+
+              
+
+              <div class="form-floating mb-3">
+                <input type="text" class="form-control" placeholder="Enter name" id="walletbal" readonly>
+                <label for="name">Wallet Balance </label>
+              </div>
+
+              <button type="button" onclick="sharecode()" class="btn btn-primary">Share Link</button>
+
+
+              <form class="form-control d-none" id ="setrefercode">
+              <div class="input-group mb-3">
+                <input id = "refercodegen" name="refercodegen" type="text" class="form-control" placeholder="Generate Refer Code" aria-label="Recipient's username" aria-describedby="button-addon2" readonly>
+                <button class="btn btn-outline-secondary" type="button" id="button-addon2" onclick="generateCode()">Button</button>
+              </div>
+
+              <input class="btn btn-primary" type="submit">
+            </form>
+          </div> -->
+
+
+        <!-- new html for wallet -->
+        <div class="wallet">
+          <div class="wallet-box">
+              <p>Wallet balance</p>
+              <h2 id="walletbal">₹ 0/-</h2>
+              <div class="share">
+              <!-- <a href=""> -->
+                  <svg onclick="sharecode()" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-share-fill" viewBox="0 0 16 16">
+                      <path d="M11 2.5a2.5 2.5 0 1 1 .603 1.628l-6.718 3.12a2.5 2.5 0 0 1 0 1.504l6.718 3.12a2.5 2.5 0 1 1-.488.876l-6.718-3.12a2.5 2.5 0 1 1 0-3.256l6.718-3.12A2.5 2.5 0 0 1 11 2.5"></path>
+                    </svg>
+              <!-- </a> -->
+          </div>
+          </div>
+          <div class="referal-code">
+             <p>referal-code</p>
+              <input type="text" id="walletCode" value="" readonly>
+              <!-- <button>copy</button> -->
+          </div>
+
+         <form class="form-control d-none" id="setrefercode">
+          <div class="referal-code">
+            <p>Generate Refer Code</p>
+             <input type="text" id = "refercodegen" name="refercodegen" value="" readonly>
+             <button type="button" id="button-addon2" onclick="generateCode()">Generate Code</button>
+         </div>
+         <input class="btn btn-primary" type="submit">
+        </form>
+          <img class="bg" src="https://tuitionpad.com/wp-content/uploads/2020/08/refer11.png" alt="">
+        </div>
+          <!-- <div class="main-wallet">
+            <div class="head-wallet">
+                Wallet
+            </div>
+          
+        </div> -->
+
+
+      </div>
+          </div>
+
+      </div>
+  </div>
+
+ <!-- ash top and body end -->
+
+  <!-- ash bottom navigation start -->
+  <!-- <nav class="bottomNav">
+    <ul>
+      <li>
+        <a href="notification.html" class="nav-link">
+          <div>
+            <i class="bi bi-bell-fill icon-disable-color"></i>
+          </div>
+          <div class="bottom-dot" hidden></div>
+        </a>
+      </li>
+      <li>
+        <a href="home.html" class="nav-link">
+          <div>
+            <i class="bi bi-house-fill icon-disable-color"></i>
+          </div>
+          <div class="bottom-dot" hidden></div>
+        </a>
+      </li>
+      <li>
+        <a href="setting.html" class="nav-link">
+          <div>
+            <i class="bi bi-person-fill icon-disable-color"></i>
+          </div>
+          <div class="bottom-dot" hidden></div>
+        </a>
+      </li>
+    </ul>
+  </nav> -->
+  <!-- ash bottom navigation end -->
+  <script src="../cordova.js"></script>
+  <script src="../assets/js/jquery-3.6.1.js"></script>
+  <script src="../assets/js/bootstrap.bundle.min.js"></script>
+  <script src="../assets/js/popper.min.js"></script>
+  <script src="../assets/js/owl.carousel.min.js"></script>
+  <script src="https://unpkg.com/dexie/dist/dexie.js"></script>
+  <script src="../constant.js"></script>
+  <script src="assets/js/app.js"></script>
+  <script>
+    //   otherPage();
+    loadwalletdata();
+
+async function loadwalletdata(){
+
+        const k_id = localStorage.getItem("K_id");
+        const formdata = new FormData();
+        formdata.append("type", "123");
+        formdata.append("id", k_id);
+        const req = await fetch(appAPI, { method: "POST", body: formdata });
+        const res = await req.json();
+        data =JSON.parse(res.wallet) ;
+        console.log(data);
+        if(data.wallet_code == ''|| res.wallet == 0){
+           $("#setrefercode").removeClass("d-none"); 
+        }
+        
+        localStorage.setItem("walletCODE",data.wallet_code);
+        localStorage.setItem("walletAMT",walletBalance);
+      $("#walletCode").val(data.wallet_code);
+      // $("#walletbal").val(data.walletBalance);
+      $("#walletbal").html(data.walletBalance);
+  
+}
+
+const generateRandomCode = (length) => {
+                const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+                let code = '';
+
+                for (let i = 0; i < length; i++) {
+                    const randomIndex = Math.floor(Math.random() * characters.length);
+                    code += characters[randomIndex];
+                }
+
+                return code;
+            }
+            const generateCode = () => {
+                randomcode = generateRandomCode(6);
+                $("#refercodegen").val(randomcode);
+            }
+
+
+
+            $("#setrefercode").on("submit",async function(e){
+                  e.preventDefault();
+                  const k_id = localStorage.getItem("K_id");
+                  const formdata = new FormData(this);
+                  formdata.append("type", "131");
+                  formdata.append("id", k_id);
+                  const req = await fetch(appAPI, { method: "POST", body: formdata });
+                  const res = await req.json();
+                  console.log(res);
+                  alert(res.data.msg);
+                  location.reload();
+            })
+
+            function sharecode(){
+             
+              getCode = $("#walletCode").val();
+              window.plugins.socialsharing.share('Download App from playstore. Use code at signup for exicting offers. CODE -'+getCode, null, null, 'https://play.google.com/store/apps/details?id='+appID);
+            }
+  </script>
+</body>
+
+</html>

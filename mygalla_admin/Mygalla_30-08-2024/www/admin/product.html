@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="my_shop_name"></title>
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../assets/css/ashstyle.css">
+
+
+    <!-- style for phase 2 -->
+    <style>
+        .product-select>button {
+            /* width: 21vw; */
+            margin: 4px;
+            padding: 1px 5px;
+            border-radius: 15px;
+            background-color: white;
+        }
+
+        .range-visible {
+
+            display: flex;
+            /* margin-top: 11rem; */
+            align-items: center;
+            padding: 6px 25px;
+            gap: 22px;
+            background: #fff;
+        }
+
+        .product-panel-top-bar {
+            height: 162px;
+        }
+
+        .containerBodyProduct {
+            /* margin-top: 189px; */
+            margin-top: 170px;
+        }
+
+        .range-visible label {
+            white-space: nowrap;
+        }
+
+
+
+        
+    </style>
+</head>
+
+<body>
+
+    <div>
+
+        <div class="product-panel-top-bar">
+
+            <div class="top-bar-product">
+
+                <div class="top-bar-product-one">
+                    <a href="home.html">
+                        <i class="bi bi-chevron-left"></i>
+                    </a>
+                </div>
+                <div class="top-bar-product-three">
+                    <input type="text" id="textInputProduct" class="srchTopInputProductPage"
+                        placeholder="Search Product..." />
+                </div>
+                <div class="top-bar-product-one">
+                    <button id="scanBtnProduct" class="scannerBtnPOSProductPage">
+                        <i class="bi bi-upc-scan"></i>
+                    </button>
+                </div>
+                <div class="top-bar-product-one">
+                    <div id="iBtn"></div>
+                </div>
+
+            </div>
+
+            <div class="top-secnd-bar">
+
+
+            <div class="product-select-wrap">
+                <div class="product-select">
+
+                    <select id="select1Product">
+                        <option value="">Sort</option>
+                        <option value="aTz">Sort By (A-Z)</option>
+                        <option value="zTa">Sort By (Z-A)</option>
+                        <option value="lTh">Sort By Price (Low To High)</option>
+                        <option value="hTl">Sort By Price (High To Low)</option>
+                    </select>
+
+                    <select id="select2Product">
+                        <option value="">Expiry</option>
+                        <option value="7Day">7 Days</option>
+                        <option value="1Month">1 Month</option>
+                        <option value="Expired">Expired</option>
+                    </select>
+
+                    <select id="select3Product">
+                        <option value="">Low Stock</option>
+                        <option value="0">0</option>
+                        <option value="10">Maximum 10</option>
+                        <option value="50">Maximum 50</option>
+                    </select>
+
+                    <select id="select4Product">
+                        <option value="">Category</option>
+                        <option value="uncatgorised">Uncatgorised</option>
+                        <option value="disabled">Disabled</option>
+                    </select>
+
+                    <!-- <button id="toggleButton">Stock Range</button> -->
+
+                </div>
+            </div>
+
+                <!-- range added for stock -->
+                <div id="rangeContainer" class="range-visible">
+                    <label for="inputRange" class="form-label">Stock Range:</label>
+                    <input type="range" id="inputRange" class="form-range" min="0" max="1000" step="1" value="0">
+                    <span id="rangeValue">50</span>
+                </div>
+                <!-- range added for stock -->
+            </div>
+
+
+        </div>
+
+        <div class="containerBody containerBodyProduct">
+            <h2>Product</h2>
+
+            <p class="pr-msg">Uncategorized and Disabled Product not displayed in user app</p>
+
+            <div id="msg"></div>
+
+            <div class="srch"></div>
+
+            <div id="res"></div>
+            <div id="loading_end"></div>
+
+        </div>
+    </div>
+
+    <!-- <div class="adminActions">
+        <input type="checkbox" name="adminToggle" class="adminToggle" />
+        <a class="adminButton" href="#!"><i class="bi bi-plus-lg"></i></a>
+        <div class="adminButtons">
+            <a href="addProduct.html" title="Add product manually"><i class="bi bi-file-earmark-plus-fill"></i></a>
+            <a href="productAddBySKU.html" title="Scan bar code"><i class="bi bi-upc-scan"></i></a>
+            <a href="productAddByName.html" title="Search in Library"><i class="bi bi-collection"></i></a>
+        </div>
+    </div> -->
+
+    <div class="floater">
+        <ul class="floater__list">
+            <li class="floater__list-item">
+
+                <a href="addProduct.html" title="Add product manually"><i
+                        class="bi bi-file-earmark-plus-fill ash-floater"></i></a>
+
+            </li>
+            <!-- <li class="floater__list-item">
+
+                <a href="productAddBySKU.html" title="Scan bar code"><i class="bi bi-upc-scan ash-floater"></i></a>
+
+            </li> -->
+            <li class="floater__list-item">
+
+                <a href="productAddByName.html" title="Search in Library">
+                    <!-- <i class="bi bi-collection ash-floater"></i> -->
+                    <i class="bi bi-upc-scan ash-floater"></i>
+                </a>
+
+            </li>
+        </ul>
+        <div class="floater__btn prevent-select">
+
+            <i class="bi bi-plus floater__btn-icon-plus floater__btn-icon"></i>
+
+        </div>
+    </div>
+
+    <!-- ash bottom navigation start -->
+    <nav class="bottomNav">
+        <ul>
+            <li>
+                <a href="home.html">
+                    <div>
+                        <i class="bi bi-house"></i>
+                    </div>
+                    <div class="bottom-dot"></div>
+                </a>
+            </li>
+            <li id="orders_role_section">
+                <a href="orders.html">
+                    <div>
+                        <i class="bi bi-bag-heart"></i>
+                    </div>
+                </a>
+            </li>
+            <li id="myshop_role_section">
+                <a href="myshop.html">
+                    <div>
+                        <i class="bi bi-shop"></i>
+                    </div>
+                </a>
+            </li>
+            <li id="mysettings_role_section">
+                <a href="mysettings.html">
+                    <div>
+                        <i class="bi bi-sliders"></i>
+                    </div>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <!-- ash bottom navigation end -->
+
+    <script src="../cordova.js"></script>
+    <script src="../assets/js/jquery-3.6.1.js"></script>
+    <script src="../assets/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/js/popper.min.js"></script>
+    <script src="../constant.js"></script>
+    <script src="../assets/js/ashjs.js"></script>
+    <script>
+        checkLogout();
+        printShopName();
+        loadProduct();
+        loadCategoryForProduct();
+        roleCheck();
+    </script>
+    <!-- new script for Phase 2 -->
+    <script>
+
+        // const toggleRange = () => {
+        //     const rangeContainer = document.getElementById('rangeContainer');
+        //     rangeContainer.classList.toggle('d-none');
+        // };
+        // const toggleButton = document.getElementById('toggleButton');
+        // toggleButton.addEventListener('click', toggleRange);
+
+
+        // Function to update the range value
+        const updateRangeValue = (event) => {
+
+            const inputRange = document.getElementById('inputRange');
+
+            const rangeValue = document.getElementById('rangeValue');
+
+            rangeValue.textContent = inputRange.value;
+
+            const rangeVariable = inputRange.value;
+
+            handleEventProduct(event)
+        }
+
+        const inputRange = document.getElementById("inputRange");
+        if (inputRange)
+            inputRange.addEventListener("change", updateRangeValue);
+
+        // document.getElementById('').addEventListener('', );
+
+
+        updateRangeValue();
+
+
+
+
+    </script>
+</body>
+
+</html>

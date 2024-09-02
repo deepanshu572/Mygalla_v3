@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title id="my_shop_name"></title>
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+    />
+    <link rel="stylesheet" href="../assets/css/ashstyle.css" />
+  </head>
+  <body>
+    <div>
+      <div class="admin-home-top">
+        <!-- <img src="../assets/images/userbg.webp" alt="" /> -->
+        <img src="../user/assets/img/userbg.webp" alt="" />
+      </div>
+      <div class="admin-home-top-shop-name">
+        <div class="shop-name-ht">
+          <h2 id="KA_NAME">Geocery Shop</h2>
+          <p>
+            <i class="bi bi-geo-alt-fill"></i> Address :
+            <span id="KA_ADDRESS"></span>
+          </p>
+          <p>
+            <i class="bi bi-telephone-fill"></i> <span id="KA_MOBILE"></span>
+          </p>
+        </div>
+      </div>
+
+      <div class="admin-home-card-holder">
+        <a href="product.html" id="product_role_section">
+          <div>
+            <i class="bi bi-box2-heart"></i>
+            <p>Products</p>
+          </div>
+        </a>
+        <a href="category.html" id="category_role_section">
+          <div>
+            <i class="bi bi-inboxes-fill"></i>
+            <p>Category</p>
+          </div>
+        </a>
+        <a href="users.html" id="user_role_section">
+          <div>
+            <i class="bi bi-emoji-sunglasses"></i>
+            <p>User</p>
+          </div>
+        </a>
+        <a href="theme.html" id="theme_role_section">
+          <div>
+            <i class="bi bi-phone-flip"></i>
+            <p>Design</p>
+          </div>
+        </a>
+        <a href="addons.html" id="addons_role_section">
+          <div>
+            <i class="bi bi-plugin"></i>
+            <p>Addons</p>
+          </div>
+        </a>
+        <a href="report.html" id="report_role_section">
+          <div>
+            <i class="bi bi-bar-chart-line-fill"></i>
+            <p>Report</p>
+          </div>
+        </a>
+        <a href="staff.html" id="staff_role_section">
+          <div>
+            <i class="bi bi-person-add"></i>
+            <p>Staff</p>
+          </div>
+        </a>
+        <a href="pos.html" id="pos_role_section">
+          <div>
+            <i class="bi bi-receipt"></i>
+            <p>POS</p>
+          </div>
+        </a>
+        <a href="deliveryboy.html" id="deliveryboy_role_section">
+          <div>
+            <i class="bi bi-truck"></i>
+            <p>Delivery</p>
+          </div>
+        </a>
+        <a href="orders.html" id="ordersH_role_section">
+          <div>
+            <i class="bi bi-bag-heart"></i>
+            <p>Orders</p>
+          </div>
+        </a>
+        <a href="https://www.kalamacademy.org/support/" target="_blank">
+          <div>
+            <i class="bi bi-telephone-outbound-fill"></i>
+            <p>Support</p>
+          </div>
+        </a>
+        <a href="#" id="logout">
+          <div>
+            <i class="bi bi-box-arrow-right"></i>
+            <p>logout</p>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <!-- ash bottom navigation start -->
+    <nav class="bottomNav home-nav home-nav-update">
+     
+       <ul>
+          <li>
+              <a href="home.html" class="icon-ancor">
+                  <div class="icon-text-update">
+                    <h2 id="KA_NAME">Geocery Shop</h2>
+                  </div>
+                 
+              </a>
+          </li>
+          <li>
+              <a href="home.html">
+                  <div>
+                      <i class="bi bi-house"></i>
+                      <span>Home</span>
+                  </div>
+               <div class="bottom-dot"></div>
+              </a>
+          </li>
+          <li id="orders_role_section">
+              <a href="orders.html">
+                  <div>
+                      <i class="bi bi-bag-heart"></i>
+                      <span>Order</span>
+                  </div>
+  
+  
+              </a>
+          </li>
+          <li id="myshop_role_section">
+              <a href="myshop.html">
+                  <div>
+                      <i class="bi bi-shop"></i>
+                      <span>Shop</span>
+                  </div>
+              </a>
+          </li>
+          <li id="mysettings_role_section">
+              <a href="mysettings.html">
+                  <div>
+                      <i class="bi bi-sliders"></i>
+                      <span>Setting</span>
+                  </div>
+              </a>
+          </li>
+      </ul>
+  </nav>
+    <!-- ash bottom navigation end -->
+
+    <script src="../cordova.js"></script>
+    <script src="../assets/js/jquery-3.6.1.js"></script>
+    <script src="../assets/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/js/popper.min.js"></script>
+    <script src="../constant.js"></script>
+    <script src="../assets/js/ashjs.js"></script>
+    <script>
+      checkLogout();
+      clearLocalstorage();
+      roleCheck();
+      printShopName();
+    </script>
+  </body>
+</html>

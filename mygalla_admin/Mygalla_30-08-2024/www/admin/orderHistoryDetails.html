@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title id="my_shop_name"></title>
+  <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="../assets/css/ashstyle.css">
+  <script>
+   const urlSearchParamcancel = new URLSearchParams(window.location.search);
+    const order_idcancel = urlSearchParamcancel.get('id');
+    const user_id2cancel = urlSearchParamcancel.get('user_id');
+  </script>
+</head>
+
+<body>
+
+  <div>
+    <div class="top-bar">
+      <button onclick="window.history.back()">
+        <i class="bi bi-chevron-left"></i>
+      </button>
+    </div>
+
+    <div>
+
+      <div class="admin-order-details">
+
+        <h3 class="checkout-header">Details</h3>
+
+        <div class="checkout-header">
+          <h6>ID : <span id="order-id"></span></h6>
+        </div>
+
+        <div class="checkout-container" id="order-status-change">
+          <form id="order-status-update" class="c-address-section">
+            <p style="display: flex;
+            justify-content: space-between;"> <span>
+                Last Status : <span id="last_status"> ORDER PLACED </span>
+              </span>
+              <span id="cancel-btn">
+                <button  id = "canBtn" type="button" onclick="cancelOrder(order_idcancel,user_id2cancel)" class="btn btn-danger">Cancel</button>
+              </span>
+            </p>
+            <input type="text" name="order_id" id="order_id_inp" hidden>
+            <input type="text" name="user_id" id="user_id_inp" hidden>
+            <select name="status_options" id="status_options" class="form-control">
+              <option value="">Select status</option>
+            </select>
+            <button type="submit" class="btn btn-success">SUBMIT</button>
+          </form>
+        </div>
+
+        <div class="checkout-container">
+
+          <div class="c-address-section">
+            <div class="c-address-section-top">
+              <div id="cs-name">....</div>
+            </div>
+            <div class="c-address-section-mid">
+              <div id="cs-full-addr">...</div>
+            </div>
+            <div class="c-address-section-bot">
+              <div id="cs-mob-no">....</div>
+            </div>
+          </div>
+
+
+          <div class="c-product-section" id="load_product_list_invoice"></div>
+
+
+
+          <div class="c-invoice-section">
+            <div class="c-invoice-section-top">
+              <h4>Invoice</h4>
+            </div>
+            <div class="c-invoice-section-mid">
+              <div class="c-invoice-section-data">
+                <span id="price-label">Price</span>
+                <span id="total-price" class="rs-symbol">000</span>
+              </div>
+              <div class="c-invoice-section-data">
+                <span>Discount</span>
+                <span id="discount" class="rs-symbol">00</span>
+              </div>
+              <hr>
+              <div class="c-invoice-section-data">
+                <span>Total</span>
+                <span id="grand-total" class="rs-symbol">000</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="invoice-download-div">
+        <div class="invoice-download-btn">
+          <a href="posInvoice.html" id="page_link"><i class="bi bi-download"></i>&nbsp;&nbsp;&nbsp;Invoice</a>
+        </div>
+      </div>
+
+      <div class="mb70"></div>
+    </div>
+
+  </div>
+  </div>
+
+  </div>
+
+  <!-- ash bottom navigation start -->
+  <div class="bottomNav">
+    <ul>
+      <li>
+        <a href="home.html">
+          <i class="bi bi-house"></i>
+        </a>
+      </li>
+      <li>
+        <a href="orders.html">
+          <i class="bi bi-bag-heart"></i>
+        </a>
+      </li>
+      <li>
+        <a href="myshop.html">
+          <i class="bi bi-shop"></i>
+        </a>
+      </li>
+      <li>
+        <a href="mysettings.html">
+          <i class="bi bi-sliders"></i>
+        </a>
+      </li>
+    </ul>
+  </div>
+  <!-- ash bottom navigation end -->
+
+  <script src="../assets/js/jquery-3.6.1.js"></script>
+  <script src="../assets/js/bootstrap.bundle.min.js"></script>
+  <script src="../assets/js/popper.min.js"></script>
+  <script src="../constant.js"></script>
+  <script src="../assets/js/ashjs.js"></script>
+  <script>
+    checkLogout();
+    printShopName();
+    const urlSearchParams = new URLSearchParams(window.location.search);
+    const order_id = urlSearchParams.get('id');
+    const user_id = urlSearchParams.get('user_id');
+    loadOrderDetails(order_id, user_id);
+    document.getElementById("page_link").href += `?id=${order_id}`;
+
+
+   
+  </script>
+</body>
+
+</html>

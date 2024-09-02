@@ -1,0 +1,11 @@
+// const kalamAPI = "https://pos.kalamitcompany.com/api/devmode/";
+const kalamAPI = "https://pos.kalamitcompany.com/api/";
+const projectID = "dev_abcd";
+// const projectID = "1442";
+// const appAPI = kalamAPI + projectID + "/" + "index.php?project_id=" + projectID ;
+// const appAPI = kalamAPI + "mygalla_clients3/index.php?projectID="+projectID ;
+const appAPI = kalamAPI + "clients_dev/index.php?projectID="+projectID ;
+const imgLink = kalamAPI + "images/";
+const versionAPI = kalamAPI + "versioncontrol.php";
+const version = "1.0.0";
+const appID = "com.firebasetest.hello";

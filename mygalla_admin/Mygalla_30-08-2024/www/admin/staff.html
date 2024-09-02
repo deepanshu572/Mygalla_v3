@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title id="my_shop_name"></title>
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+    />
+    <link rel="stylesheet" href="../assets/css/ashstyle.css" />
+  </head>
+
+  <body>
+    <div>
+      <div class="top-bar">
+        <a href="home.html">
+          <i class="bi bi-chevron-left"></i>
+        </a>
+        <div id="iBtn"></div>
+      </div>
+      <div class="containerBody">
+        <h2>Add Staff</h2>
+
+        <div id="msg"></div>
+
+        <form class="add-product-form" id="addStaff">
+          <div class="form-group">
+            <input
+              type="text"
+              class="form-control inputAsh"
+              placeholder="Username"
+              id="username"
+              name="username"
+              hidden
+            />
+          </div>
+
+          <div class="form-group form-floating">
+            <input
+              type="text"
+              class="form-control inputAsh"
+              placeholder="Mobile"
+              id="mobile"
+              name="mobile"
+            />
+            <label for="mobile">Staff Mobile No / Username</label>
+            <p id="mobile-error" class="form-text error-ash"></p>
+          </div>
+
+          <div class="form-group form-floating">
+            <input
+              type="text"
+              class="form-control inputAsh"
+              placeholder="Password"
+              id="password"
+              name="password"
+            />
+            <label for="password">Password</label>
+            <p id="password_error" class="form-text error-ash"></p>
+          </div>
+
+          <div class="form-group form-floating">
+            <input
+              type="text"
+              class="form-control inputAsh"
+              placeholder="Name"
+              id="name"
+              name="name"
+            />
+            <label for="name">Staff Name</label>
+            <p id="password_error" class="form-text error-ash"></p>
+          </div>
+
+          <div class="form-group form-floating">
+            <input
+              type="text"
+              class="form-control inputAsh"
+              placeholder="Address"
+              id="address"
+              name="address"
+            />
+            <label for="address">Staff Address</label>
+            <p id="address_error" class="form-text error-ash"></p>
+          </div>
+
+          <div class="form-group form-floating">
+            <input
+              type="text"
+              class="form-control inputAsh"
+              placeholder="Email"
+              id="email"
+              name="email"
+            />
+            <label for="email">Staff Email</label>
+            <p id="email-error" class="form-text error-ash"></p>
+          </div>
+          <div class="form-group form-floating">
+            <select
+              class="form-control inputAsh"
+              id="type_option"
+              name="type_option"
+            >
+              <option value="">select ....</option>
+              <option value="3">Staff</option>
+              <option value="4">Delivery Boy</option>
+            </select>
+            <label for="type_option">Select Staff Type</label>
+            <p id="" class="form-text error-ash"></p>
+          </div>
+
+          <div class="form-group staff-role-select" id="staff-role-list">
+            <h5>Do not show</h5>
+
+            <div class="custom-control custom-checkbox form-group">
+              <input
+                type="checkbox"
+                class="custom-control-input"
+                id="product_role_section"
+                name="role[]"
+                value="product_role_section"
+              />
+              <label class="custom-control-label" for="role1">Product</label>
+            </div>
+
+            <div class="custom-control custom-checkbox form-group">
+              <input
+                type="checkbox"
+                class="custom-control-input"
+                id="category_role_section"
+                name="role[]"
+                value="category_role_section"
+              />
+              <label class="custom-control-label" for="role2">Category</label>
+            </div>
+
+            <div class="custom-control custom-checkbox form-group">
+              <input
+                type="checkbox"
+                class="custom-control-input"
+                id="user_role_section"
+                name="role[]"
+                value="user_role_section"
+              />
+              <label class="custom-control-label" for="role2">User</label>
+            </div>
+
+            <div class="custom-control custom-checkbox form-group">
+              <input
+                type="checkbox"
+                class="custom-control-input"
+                id="theme_role_section"
+                name="role[]"
+                value="theme_role_section"
+              />
+              <label class="custom-control-label" for="role2">Theme</label>
+            </div>
+
+            <div class="custom-control custom-checkbox form-group">
+              <input
+                type="checkbox"
+                class="custom-control-input"
+                id="addons_role_section"
+                name="role[]"
+                value="addons_role_section"
+              />
+              <label class="custom-control-label" for="role2">Addons</label>
+            </div>
+
+            <div class="custom-control custom-checkbox form-group">
+              <input
+                type="checkbox"
+                class="custom-control-input"
+                id="report_role_section"
+                name="role[]"
+                value="report_role_section"
+              />
+              <label class="custom-control-label" for="role2">Report</label>
+            </div>
+
+            <div class="custom-control custom-checkbox form-group">
+              <input
+                type="checkbox"
+                class="custom-control-input"
+                id="pos_role_section"
+                name="role[]"
+                value="pos_role_section"
+              />
+              <label class="custom-control-label" for="pos_role_section"
+                >POS</label
+              >
+            </div>
+
+            <div class="custom-control custom-checkbox form-group">
+              <input
+                type="checkbox"
+                class="custom-control-input"
+                id="ordersH_role_section"
+                name="role[]"
+                value="ordersH_role_section"
+              />
+              <label class="custom-control-label" for="ordersH_role_section"
+                >Orders</label
+              >
+            </div>
+          </div>
+
+          <button type="submit" id="submit" class="btn btn-primary ashBtn">
+            Add
+          </button>
+        </form>
+
+        <hr />
+        <h2>Your Staff</h2>
+
+        <div id="msg"></div>
+
+        <div id="res"></div>
+      </div>
+    </div>
+
+    <!-- ash bottom navigation start -->
+    <nav class="bottomNav">
+      <ul>
+        <li>
+          <a href="home.html">
+            <div>
+              <i class="bi bi-house"></i>
+            </div>
+            <div class="bottom-dot"></div>
+          </a>
+        </li>
+        <li id="orders_role_section">
+          <a href="orders.html">
+            <div>
+              <i class="bi bi-bag-heart"></i>
+            </div>
+          </a>
+        </li>
+        <li id="myshop_role_section">
+          <a href="myshop.html">
+            <div>
+              <i class="bi bi-shop"></i>
+            </div>
+          </a>
+        </li>
+        <li id="mysettings_role_section">
+          <a href="mysettings.html">
+            <div>
+              <i class="bi bi-sliders"></i>
+            </div>
+          </a>
+        </li>
+      </ul>
+    </nav>
+    <!-- ash bottom navigation end -->
+
+    <!-- ash modal start -->
+
+    <!-- ash modal end -->
+
+    <script src="../assets/js/jquery-3.6.1.js"></script>
+    <script src="../assets/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/js/popper.min.js"></script>
+    <script src="../constant.js"></script>
+    <script src="../assets/js/ashjs.js"></script>
+    <script>
+      checkLogout();
+      loadStaff();
+      roleCheck();
+      mobileIsUsername();
+      printShopName();
+    </script>
+  </body>
+</html>

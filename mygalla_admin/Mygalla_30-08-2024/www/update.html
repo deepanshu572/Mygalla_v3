@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+         * {
+        margin: 0%;
+        padding: 0%;
+        box-sizing: border-box;
+        font-family: "Montserrat", sans-serif !important;
+      }
+      body {
+        width: 100%;
+        height: 100%;
+      }
+      .main {
+        width: 100%;
+        height: 100%;
+      }
+      .main{
+        display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 2rem;
+    overflow: hidden;
+
+      }
+      .left{
+        width: 388px;
+      }
+      .right{
+        display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
+      }
+      .right h2{
+        padding-bottom: 1rem;
+        font-size: 21px;
+      }
+      .right p{
+        text-align: center;
+    font-size: 14px;
+    color: #413f3f;
+    padding-bottom: 15px;
+      }
+      .right button{
+        padding: 10px 54px;
+    font-size: 18px;
+    background: orange;
+    border: none;
+    color: #fff;
+    font-weight: 600;
+    border-radius: 6px;
+      }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="left">
+        <!-- <img src="assets/images/update.svg" alt=""> -->
+        <img src="user/assets/img/update.svg" alt="">
+        </div>
+        <div class="right">
+            <h2>Time to Update!</h2>
+            <p>We added lots of new feactures and fix some bugs to make your exprience as smooth as posible</p>
+            <button id="updatelink">Update</button>
+        </div>
+    </div>
+    <script src="cordova.js"></script>
+    <script src="assets/js/jquery-3.6.1.js"></script>
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/popper.min.js"></script>
+    <script src="https://unpkg.com/dexie/dist/dexie.js"></script>
+    <script src="assets/js/dexie.js"></script>
+    <script src="constant.js"></script>
+    <script src="assets/js/ashjs.js"></script>
+    <script src="user/assets/js/app.js"></script>
+    
+    <script>
+      link="https://play.google.com/store/apps/details?id="+appID;
+      var anchorTag = $("<a style='text-decoration: none' >").attr("href", link).text("Go to App");
+      $("#updatelink").html(anchorTag);
+    
+    </script>
+</body>
+</html>

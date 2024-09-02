@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title id="my_shop_name_t">mygalla</title>
+  <link rel="shortcut icon" href="assets/res/icon.png" type="image/x-icon">
+  <link rel="stylesheet" href="../assets/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
+  <link rel="stylesheet" href="../assets/css/owl.carousel.min.css" />
+  <link rel="stylesheet" href="../assets/css/owl.theme.default.min.css" />
+  <link rel="stylesheet" href="assets/css/app.css" />
+</head>
+
+<body>
+  <div class="main product-detail-update">
+    <div class="main-header mobile">
+      <div class="header">
+        <div class="head1">
+          <a href="home.html">
+            <i class="bi bi-chevron-left"></i>
+          </a>
+        </div>
+        <div class="head2">
+          <a href="cart.html">
+            <i class="bi bi-cart-fill"></i> <span ><b id="cart-count-link"></b></span>
+          </a>
+        </div>
+      </div>
+
+    </div>
+    <div class="main-header home-header">
+      <div class="header home-head">
+        <div class="head1">
+          <i class="bi bi-justify i1 menu"></i>
+          <a href="home.html">
+            <h2 id="my_shop_name">MyGalla</h2>
+          </a>
+        </div>
+        <div class="head2">
+          <button type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
+            aria-controls="offcanvasRight">
+            <i class="bi bi-cart4"></i>
+            <span>
+              <b>
+                <span id="cart-count"></span>
+                items
+              </b>
+            </span>
+          </button>
+        </div>
+        <a href="cart.html">
+          <div class="head3">
+            <i class="bi bi-cart-fill"></i>
+            <span>
+              <b>
+                <span id=""></span>
+              </b>
+            </span>
+          </div>
+        </a>
+
+        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasRightLabel">My Cart</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+          </div>
+
+          <div class="offcanvas-body">
+            <div class="header-changes">
+              <div class="cart-item-wrapper">
+                <div id="right-side-cart-top-msg"></div>
+                <div id="right-side-cart"></div>
+              </div>
+              <div class="checkout-detail">
+                <div id="right-side-cart-total"></div>
+                <div id="right-side-cart-address-box"></div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <div class="last-header product-select">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input type="text" placeholder="Search “Grocery” " onclick="gotoProductSrch()" />
+        <i class="bi bi-upc-scan" id="scanBtnQR1"></i>
+      </div>
+      <div class="header-search">
+        <div class="last-header">
+          <i class="bi bi-search"></i>
+          <input type="text" placeholder="Search “Grocery” " onclick="gotoProductSrch()" />
+          <i class="bi bi-upc-scan" id="scanBtnQR2"></i>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="resp-nav sidebar" style="display: none;">
+      <div class="sidebar-box" id="navone">
+      </div>
+    </div>
+    <div class="product-detail-wrapper">
+
+      <div class="product-detail-img">
+
+        <div class="card-wrapper product-wrapper">
+          <div class="card-wrap-2">
+            <div class="product-imgs">
+              <span clas="detail-wishlist" id="wishlistIcon">
+                
+              </span>
+              <div class="img-display">
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                  <div class="modal-dialog ">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                          <i class="bi bi-x-lg"></i>
+                        </button>
+                      </div>
+                      <div class="modal-body">
+                            <img  id="zoomImg" src="" alt="">
+                      </div>
+                     
+                    </div>
+                  </div>
+                </div>
+            
+
+                <div class="img-showcase owl-carousel carousel-main" id="imgDisplay"> 
+                 
+                </div>
+              </div>
+              <div class="img-select" id="smallimg"> </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+      <div class="product-detail-content-wrapper">
+        <div class="product-detail-content">
+          <p class="content-first" id="category_name"></p>
+          <p class="content-first" id="prod-brand"></p>
+          <p class="content-p" id="prod-name"></p>
+          <small class="content-small" id="type_1_val"></small> <br>
+          <small class="content-small" id="type_2_val"></small>
+          <div class="detail-buttons">
+            <div class="content1">
+              <p>
+                <small id="discout_percent"></small>
+                <del id="fprice"></del>
+                <b class="bold" id="price"></b>
+              </p>
+            </div>
+            <div>
+              <div class="content1" id="addToCartSP"> 
+              </div>
+            </div>
+          </div>
+          <span class="content-first" id="Variant-text"> Variants </span>
+          <div class="qty-selector" id="variant_item_data"></div>
+
+        </div>
+        <div class="desc">
+          <h2>Description</h2>
+          <p id="product-desc"></p>
+        </div>
+
+
+      </div>
+
+    </div>
+
+    <div class="product-section update-trending-section web-item">
+      <div class="product-heading">
+        <h2>Similar Items</h2>
+      </div>
+      <div class="product-item-box" id="recent_product_list"></div>
+    </div>
+
+
+    <div class="footer" id="navtwo"></div>
+
+  </div>
+
+ 
+  <!-- variant modal start  -->
+
+  <div class="modal modal-bottom fade" id="variantModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">More variants</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="variantList">
+            <div id="prodContainer" class="product_var_container"></div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+            Close
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="../cordova.js"></script>
+  <script src="../assets/js/jquery-3.6.1.js"></script>
+  <script src="../assets/js/bootstrap.bundle.min.js"></script>
+  <script src="../assets/js/popper.min.js"></script>
+  <script src="../assets/js/owl.carousel.min.js"></script>
+  <script src="../assets/js/dexie.js"></script>
+  <script src="../constant.js"></script>
+  <script src="assets/js/app.js"></script>
+  <script src="assets/js/script.js"></script>
+
+  <script>
+    var thumbs = $('.img-selection').find('img');
+
+thumbs.click(function(){
+var src = $(this).attr('src');
+var dp = $('.display-img');
+var img = $('.zoom');
+dp.attr('src', src);
+img.attr('src', src);
+});
+
+$(".img-thumbnail").click(function(){
+$('.img-thumbnail').removeClass('selected');
+$(this).addClass('selected');
+});
+
+var zoom = $('.big-img').find('img').attr('src');
+$('.big-img').append('<img class="zoom" src="'+zoom+'">');
+$('.big-img').mouseenter(function(){
+$(this).mousemove(function(event){
+var offset = $(this).offset();
+var left = event.pageX - offset.left;
+var top = event.pageY - offset.top;
+
+$(this).find('.zoom').css({
+  width: '200%',
+  opacity: 1,
+  left: -left,
+  top: -top,
+});
+});
+});
+
+$('.big-img').mouseleave(function(){
+$(this).find('.zoom').css({
+width: '100%',
+opacity: 0,
+left: 0,
+top: 0,
+});
+});
+  </script>
+  <script>
+
+    printShopName();
+    rightSideCartLoad();
+    loadNav("home");
+    loadSingleProduct();
+    loadCartCount();
+
+
+    function taketophoto(id){
+    
+     translateVal = id != 1 ? 436*(id-1) : 0;
+     console.log(translateVal);
+     document.querySelector(".owl-stage").style.transform = `translate3d(-${1308 + translateVal}px, 0px, 0px)`;
+   
+    }
+  </script>
+
+</body>
+
+</html>

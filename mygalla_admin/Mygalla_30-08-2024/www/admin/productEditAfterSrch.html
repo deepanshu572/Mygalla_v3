@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="my_shop_name"></title>
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../assets/css/ashstyle.css">
+</head>
+<body>
+
+    <div>
+        <div class="top-bar">
+            <a onclick="window.history.back()">
+                <i class="bi bi-chevron-left"></i>
+            </a>
+        </div>
+        <div class="containerBody">
+            <h2>Edit Product Details</h2>
+
+            <div id="msg"></div>
+
+            <div>
+                <form class="add-product-form" id="editProductAfterSrch">
+                  <input type="text" id="cat_id" name="cat_id" hidden>
+                  <input type="text" id="imgs" name="imgs" hidden>
+                    <div class="form-group">
+                      <label for="sku">SKU (immutable)</label>
+                      <input type="text" class="form-control inputAsh blurred-input"  placeholder="SKU" id="sku" name="sku" readonly>
+                      <p id="error_msg" class="form-text error-ash"></p>
+                    </div>
+                    <div class="form-group">
+                      <label for="product_nm">Name</label>
+                      <input type="text" class="form-control inputAsh"  placeholder="product name" id="product_nm" name="product_nm">
+                      <p id="error_msg" class="form-text error-ash"></p>
+                    </div>
+                      <div class="form-group">
+                        <label for="product_cm">Brand / Company Name</label>
+                        <input type="text" class="form-control inputAsh" placeholder="product company" id="product_cm" name="product_cm">
+                        <p id="error_msg" class="form-text error-ash"></p>
+                      </div>
+                      <div class="form-group">
+                        <label for="fprice">Fake Price</label>
+                        <input type="number" class="form-control inputAsh"  placeholder="fake price" id="fprice" name="fprice">
+                        <p id="fprice_error" class="form-text error-ash"></p>
+                      </div>
+                      <div class="form-group">
+                        <label for="price">Real Price</label>
+                        <input type="number" class="form-control inputAsh"  placeholder="real price" id="price" name="price">
+                        <p id="price_error" class="form-text error-ash"></p>
+                      </div>
+                      <div class="form-group">
+                        <label for="type_name_1">Type ( color )</label>
+                        <input type="text" class="form-control inputAsh"  placeholder="Color , Size" id="type_name_1" name="type_name_1">
+                        <p id="type_name_1_error" class="form-text error-ash"></p>
+                      </div>
+                      <div class="form-group">
+                        <label for="type_qty_1">Value for above type ( red )</label>
+                        <input type="text" class="form-control inputAsh"  placeholder="red , 1Kg" id="type_qty_1" name="type_qty_1">
+                        <p id="type_qty_1_error" class="form-text error-ash"></p>
+                      </div>
+                      <div class="form-group">
+                        <label for="type_name_2">Type ( size )</label>
+                        <input type="text" class="form-control inputAsh"  placeholder="Size " id="type_name_2" name="type_name_2">
+                        <p id="type_name_1_error" class="form-text error-ash"></p>
+                      </div>
+                      <div class="form-group">
+                        <label for="type_qty_2">Value for above type ( 50 gm )</label>
+                        <input type="text" class="form-control inputAsh"  placeholder="1 Kg" id="type_qty_2" name="type_qty_2">
+                        <p id="type_qty_1_error" class="form-text error-ash"></p>
+                      </div>
+                      <div class="form-group">
+                        <label for="description">Description</label>
+                        <input type="text" class="form-control inputAsh"  placeholder="Description" id="description" name="description">
+                        <p id="description_error" class="form-text error-ash"></p>
+                      </div>
+                      <button type="submit" id="submit" class="ash-prod-btn">Add</button>
+                  </form>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- ash bottom navigation start -->
+    <div class="bottomNav">
+        <ul>
+            <li>
+                <a href="home.html">
+                    <i class="bi bi-house"></i>
+                </a>
+            </li>
+            <li>
+                <a href="orders.html">
+                    <i class="bi bi-bag-heart"></i>
+                </a>
+            </li>
+            <li>
+                <a href="myshop.html">
+                    <i class="bi bi-shop"></i>
+                </a>
+            </li>
+            <li>
+                <a href="mysettings.html">
+                    <i class="bi bi-sliders"></i>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <!-- ash bottom navigation end -->
+
+    <script src="../assets/js/jquery-3.6.1.js"></script>
+    <script src="../assets/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/js/popper.min.js"></script>
+    <script src="../constant.js"></script>
+    <script src="../assets/js/ashjs.js"></script>
+    <script>
+        checkLogout();
+        editProductLoad();
+        realFakePriceValidation();
+        cannotChangeSKU();
+        printShopName();
+    </script>
+</body>
+</html>

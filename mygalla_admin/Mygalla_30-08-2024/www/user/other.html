@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title id="my_shop_name_t">mygalla</title>
+    <link rel="shortcut icon" href="assets/res/icon.png" type="image/x-icon" />
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+    />
+    <link rel="stylesheet" href="../assets/css/owl.carousel.min.css" />
+    <link rel="stylesheet" href="../assets/css/owl.theme.default.min.css" />
+    <link rel="stylesheet" href="assets/css/app.css" />
+  </head>
+
+  <body>
+    <div class="main" id="main">
+      <div class="main-header home-header">
+        <div class="header home-head">
+          <div class="head1">
+            <i class="bi bi-justify i1 menu"></i>
+            <a href="home.html">
+              <h2 id="my_shop_name">MyGalla</h2>
+            </a>
+          </div>
+          <div class="head2">
+            <button
+              type="button"
+              data-bs-toggle="offcanvas"
+              data-bs-target="#offcanvasRight"
+              aria-controls="offcanvasRight"
+            >
+              <i class="bi bi-cart4"></i>
+              <span>
+                <b>
+                  <!-- <span id="cart_item1">0</span> -->
+                  <span id="cart-count">0</span>
+                  items
+                </b>
+              </span>
+            </button>
+          </div>
+          <a href="cart.html">
+            <div class="head3">
+              <i class="bi bi-cart-fill"></i>
+              <span>
+                <b>
+                  <!-- <span id="cart_item1">0</span> -->
+                  <span id="cart-count-link">0</span>
+                </b>
+              </span>
+            </div>
+          </a>
+
+          <div
+            class="offcanvas offcanvas-end"
+            tabindex="-1"
+            id="offcanvasRight"
+            aria-labelledby="offcanvasRightLabel"
+          >
+            <div class="offcanvas-header">
+              <h5 class="offcanvas-title" id="offcanvasRightLabel">My Cart</h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="offcanvas"
+                aria-label="Close"
+              ></button>
+            </div>
+
+            <div class="offcanvas-body">
+              <div class="header-changes">
+                <div class="cart-item-wrapper">
+                  <div id="right-side-cart-top-msg"></div>
+                  <div id="right-side-cart"></div>
+                </div>
+                <div class="checkout-detail">
+                  <div id="right-side-cart-total"></div>
+                  <div id="right-side-cart-address-box"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="resp-nav sidebar" style="display: none">
+        <div class="sidebar-box" id="navone"></div>
+      </div>
+
+      <div>
+        <div class="productCnt">
+
+          <div class="cart-container other">
+            <h2 id="page-title"></h2>
+            <hr />
+            <div id="page-data"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer" id="navtwo"></div>
+    </div>
+
+    <script src="../cordova.js"></script>
+    <script src="../assets/js/jquery-3.6.1.js"></script>
+    <script src="../assets/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/js/popper.min.js"></script>
+    <script src="../assets/js/owl.carousel.min.js"></script>
+    <script src="../assets/js/dexie.js"></script>
+    <script src="../constant.js"></script>
+    <script src="assets/js/app.js"></script>
+    <script src="assets/js/script.js"></script>
+    <script>
+      printShopName();
+      rightSideCartLoad();
+      loadNav("");
+      loadCartCount();
+    </script>
+    <script>
+      otherPage();
+    </script>
+  </body>
+</html>

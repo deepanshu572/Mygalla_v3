@@ -1,0 +1,9 @@
+{
+  "androidAlias": "ECommerceSampleApp",
+  "androidAliasPassword": "hitmAgra1",
+  "androidKeystore": "www/assets/res/ECommerceSampleApp.keystore",
+  "androidKeystorePassword": "hitmAgra1",
+  "platform": "android",
+  "release": "release",
+  "androidPackageType": "apk"
+}

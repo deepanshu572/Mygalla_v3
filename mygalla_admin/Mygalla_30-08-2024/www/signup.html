@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title id="my_shop_name"></title>
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+    />
+    <link rel="stylesheet" href="assets/css/ashstyle.css" />
+  </head>
+
+  <body>
+    <div class="container ashSignup">
+      <h2>Create Profile</h2>
+      <h4>Enter your details</h4>
+      <div id="msg"></div>
+      <form class="signupForm" id="signupFrm">
+        <div class="form-group form-floating">
+          <input
+            type="text"
+            class="form-control inputAsh"
+            id="name"
+            name="name"
+            placeholder=""
+          />
+          <label for="name">Enter your name</label>
+          <p id="name_error" class="form-text error-ash w-100"></p>
+        </div>
+        <div class="form-group form-floating">
+          <input
+            type="number"
+            class="form-control inputAsh"
+            id="mobile"
+            name="mobile"
+            placeholder=""
+          />
+          <label for="mobile">Enter your mobile no</label>
+          <p id="mobile_error" class="form-text error-ash"></p>
+        </div>
+        <div class="form-group form-floating">
+          <input
+            type="text"
+            class="form-control inputAsh"
+            id="email"
+            name="email"
+            placeholder=""
+          />
+          <label for="email">Enter your email</label>
+          <p id="email_error" class="form-text error-ash"></p>
+        </div>
+        <div class="form-group" hidden>
+          <input
+            type="text"
+            class="form-control inputAsh"
+            id="username"
+            name="username"
+          />
+        </div>
+        <div class="form-group form-floating">
+          <input
+            type="password"
+            class="form-control inputAsh"
+            id="password"
+            name="password"
+            placeholder=""
+            autocomplete="on"
+          />
+          <label for="password">Enter your password</label>
+          <p id="error_1" class="form-text error-ash"></p>
+        </div>
+        <div class="form-group form-floating">
+          <input
+            type="password"
+            class="form-control inputAsh"
+            id="repassword"
+            placeholder=""
+            autocomplete="on"
+          />
+          <label for="repassword">Re-enter your password</label>
+          <p id="error_2" class="form-text error-ash"></p>
+        </div>
+        <div class="form-group">
+          <p id="error_msg" class="form-text error-ash"></p>
+        </div>
+        <a  id = "referbtn" class="d-none" type="button" data-bs-toggle="modal" data-bs-target="#refer_modal" style="
+        text-decoration: none;
+    ">
+          Enter referal code
+        </a>
+
+        <button type="submit" id="signup-button" class="btn btn-primary ashBtn">
+          SIGNUP
+        </button>
+      </form>
+      <h5 class="signup-bottom-text">
+        Already have an Account ?
+        <span><a href="login.html">login now</a></span>
+      </h5>
+    </div>
+
+    <!-- Modal for refer earn -->
+    <div
+      class="modal fade"
+      id="refer_modal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">
+              Enter Referal Code
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <div class="input-group mb-3">
+              <input
+                id="referal_code"
+                type="text"
+                placeholder="Enter Refer Code"
+                class="form-control"
+                aria-label="Default"
+                aria-describedby="inputGroup-sizing-default"
+              />
+            </div>
+          </div>
+
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+            <button
+              type="button"
+              onclick="saveRefercode()"
+              class="btn btn-primary"
+            >
+              Verify
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="cordova.js"></script>
+    <script src="assets/js/jquery-3.6.1.js"></script>
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/popper.min.js"></script>
+    <script src="constant.js"></script>
+    <script src="assets/js/ashjs.js"></script>
+    <script>
+      signupLoad();
+      loadreferstatus();
+
+      async function loadreferstatus(){
+         
+        const formdata = new FormData;
+        formdata.append('type','122');
+        req = await fetch(appAPI, {method:'POST' , body:formdata});
+        res = await req.json();
+        console.log(res);
+        if(res.activation_status == '1'){
+           $("#referbtn").removeClass("d-none");
+        }
+      }
+
+
+      const loadreferdata = async () => {
+        const formdata = new FormData();
+        formdata.append("type", "114");
+
+        const req = await fetch(appAPI, {
+          method: "POST",
+          body: formdata,
+        });
+
+        const res = await req.json();
+        data = JSON.parse(res.tbl_key);
+        console.log(data);
+        localStorage.setItem("referVal", data.referVal);
+        localStorage.setItem("referVal2", data.referVal2);
+        localStorage.setItem("refer_means", data.refer_means);
+        localStorage.setItem("refer_mode", data.refer_mode);
+        localStorage.setItem("refer_type", data.refer_type);
+        localStorage.setItem("walletbal", data.walletbal);
+        localStorage.setItem("walletcode", data.walletcode);
+      };
+
+      loadreferdata();
+
+      const saveRefercode = async () => {
+
+        referCode = $("#referal_code").val();
+    
+        getRefmode = localStorage.getItem("refer_mode");
+        getWalcode = localStorage.getItem("walletcode");
+        getreferVal = localStorage.getItem("referVal");
+        getreferVal2 = localStorage.getItem("referVal2");
+        if (getRefmode == "admin") {
+          if (referCode.length == 9 && referCode == getWalcode) {
+            sessionStorage.setItem("wallatval", getreferVal);
+
+            alert("code applied");
+            $("#refer_modal").modal("hide");
+          } else {
+            alert("Enter Valid Code");
+            $("#refer_modal").modal("hide");
+          }
+
+          // code for wallet update on server
+        } else {
+          if (referCode.length == 6) {
+            const formdata = new FormData();
+            formdata.append("type", "115");
+            formdata.append("referCode", referCode);
+            const req = await fetch(appAPI, { method: "POST", body: formdata });
+            const res = await req.json();
+            console.log(res.data);
+            wallatdetails = JSON.parse(res.data.senderid.wallet);
+            console.log(wallatdetails);
+            if (res.data.status == 1) {
+              sessionStorage.setItem("wallatval", getreferVal2);
+              sessionStorage.setItem("senderid",res.data.senderid.id);
+              sessionStorage.setItem("preBal",wallatdetails.walletBalance);
+              sessionStorage.setItem("preCode",wallatdetails.wallet_code);
+              alert("code applied");
+              $("#refer_modal").modal("hide");
+              
+            } else {
+
+              alert("Enter Valid Code");
+              $("#refer_modal").modal("hide");
+
+            }
+          } else {
+
+            alert("Enter Valid Code");
+            $("#refer_modal").modal("hide");
+
+          }
+        }
+      };
+    </script>
+  </body>
+</html>

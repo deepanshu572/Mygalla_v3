@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="com.softwarezsolution.app" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>mygalla</name> 
+    <description>mygalla</description> 
+    <author email="dev@cordova.apache.org" href="https://cordova.apache.org"> 
+        mygalla
+    </author>
+    <content src="index.html" />
+    <preference name="ErrorUrl" value="index.html"/>
+    <preference name="DisallowOverscroll" value="true" />
+	<preference name="android-targetSdkVersion" value="34"/>
+    <preference name="AndroidXEnabled" value="true" />
+    <!-- new by ash -->
+    <plugin name = "cordova-plugin-network-information" source="npm" spec="3.0.0" />
+    <plugin name = "cordova-plugin-x-socialsharing-android12" source="npm"/>
+    <plugin name = "phonegap-plugin-barcodescanner-android12" source="npm"/>
+    <plugin name = "cordova-plugin-inappbrowser"/>
+    <plugin name = "cordova-plugin-dialogs"/>
+    <plugin name = "cordova-plugin-firebasex" source="npm" spec="16.1.0"/>
+    <plugin name = "cordova-plugin-androidx-adapter" />
+    <plugin name = "cordova-plugin-android-permissions" />
+    <!-- new by ash -->
+    <config-file target="AndroidManifest.xml" parent="/*">
+        <uses-permission android:name="android.permission.POST_NOTIFICATIONS"/>
+    </config-file>
+    <access origin="*" />
+    <allow-intent href="http://*/*" />
+    <allow-intent href="https://*/*" />
+    <allow-intent href="tel:*" />
+    <allow-intent href="sms:*" />
+    <allow-intent href="mailto:*" />
+    <allow-intent href="geo:*" />
+    <preference name="AndroidWindowSplashScreenAnimatedIcon" value="www/user/assets/res/icon1.png" />
+    <platform name="android">
+        <icon src="www/user/assets/res/icon.png"/>
+        <resource-file src="www/user/assets/res/google-services.json" target="/app/google-services.json" />
+    </platform>
+    <engine name="android" spec="12.0.0" />
+</widget>

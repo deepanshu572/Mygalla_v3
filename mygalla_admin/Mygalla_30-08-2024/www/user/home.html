@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title id="my_shop_name_t">mygalla</title>
+  <link rel="shortcut icon" href="assets/res/icon.png" type="image/x-icon" />
+  <link rel="stylesheet" href="../assets/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
+  <link rel="stylesheet" href="../assets/css/owl.carousel.min.css" />
+  <link rel="stylesheet" href="../assets/css/owl.theme.default.min.css" />
+  <link rel="stylesheet" href="assets/css/app.css" />
+
+  
+  <style>
+    .buyBtn {
+      padding: 2px 9px !important;
+      font-size: 14px !important;
+    }
+
+    .float {
+      position: fixed;
+      width: 60px;
+      display: none;
+      height: 60px;
+      align-items: center;
+      justify-content: center;
+      bottom: 75px;
+      right: 22px;
+      background-color: #ff9400;
+      color: #fff;
+      border-radius: 50px;
+      text-align: center;
+      box-shadow: 2px 2px 3px #999;
+      z-index: 99;
+    }
+
+    /* .floater {
+      margin-right: 1rem;
+      position: fixed;
+      bottom: 20px;
+      right: 10px;
+      z-index: 9999;
+     
+    } */
+
+    .floater {
+/* margin-right: 1rem; */
+position: fixed;
+    bottom: 20px;
+    right: 10px;
+    z-index: 9999;
+    display: none;
+}
+
+    .floater__list {
+      margin: 0 0 0;
+      padding: 0 0 0 6px;
+      list-style: none;
+      position: fixed;
+      bottom: 15px;
+      right: 1.3rem;
+      display: none;
+    }
+
+    .displaybock {
+      display: block;
+    }
+
+    .floater__list-item {
+      opacity: 0;
+      /* display: none; */
+      position: relative;
+      width: 3rem;
+      height: 3rem;
+      margin: 0.5rem 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      background-color: rgba(0, 0, 0, 0.7);
+      background-color: #ff9e20;
+      border-radius: 50%;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
+      font-size: 25px;
+    }
+
+    .floater.is-active .floater__list-item:nth-child(1) {
+      animation: fadeIn 0.25s ease-out 0.1s forwards,
+        moveUp 0.25s ease-out 0.1s forwards;
+    }
+
+    .floater.is-active .floater__list-item:nth-child(2) {
+      animation: fadeIn 0.25s ease-out 0.05s forwards,
+        moveUp 0.25s ease-out 0.05s forwards;
+    }
+
+    .floater.is-active .floater__list-item:nth-child(3) {
+      animation: fadeIn 0.25s ease-out forwards,
+        moveUp 0.25s ease-out forwards;
+    }
+
+    .floater.is-active .floater__list-item:nth-child(4) {
+      animation: fadeIn 0.25s ease-out forwards,
+        moveUp 0.25s ease-out forwards;
+    }
+
+    .floater.is-active .floater__list-item:nth-child(5) {
+      animation: fadeIn 0.25s ease-out forwards,
+        moveUp 0.25s ease-out forwards;
+    }
+
+    @-webkit-keyframes fadeIn {
+      0% {
+        opacity: 0;
+      }
+
+      100% {
+        opacity: 1;
+      }
+    }
+
+    @-webkit-keyframes moveUp {
+      0% {
+      }
+
+      100% {
+        transform: translate3d(0, -5rem, 0);
+      }
+    }
+
+    .floater__list-item-label {
+      position: absolute;
+      right: 110%;
+      padding: 0.5rem;
+      font-size: 0.75rem;
+      color: #fd1111;
+      background-color: rgba(0, 0, 0, 0.3);
+      border-radius: 0.5rem;
+      opacity: 1;
+      white-space: nowrap;
+      pointer-events: none;
+      align-self: center;
+    }
+
+    .floater__list-item-label::selection {
+      background-color: transparent;
+    }
+
+    .floater.is-active .floater__list-item:hover {
+      background: #2189ce;
+    }
+
+    @media (min-width: 32rem) {
+      .floater__list-item-label {
+        opacity: 0;
+      }
+    }
+
+    /* .floater__btn {
+      position: fixed;
+      z-index: 10;
+      bottom: 2.5rem;
+      right: 1rem;
+      width: 3.5rem;
+      height: 3.5rem;
+      float: right;
+      margin-right: 0;
+      cursor: pointer;
+      background-color: var(--theme);
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
+      transition: all 0.2s ease-in-out;
+      font-size: 50px;
+      color: #fff;
+    } */
+
+    .floater__btn {
+  position: fixed;
+  z-index: 10;
+  bottom: 2.5rem;
+  right: 1rem;
+  width: 3.5rem;
+  height: 3.5rem;
+  float: right;
+  margin-right: 0;
+  cursor: pointer;
+  background-color: #fc4f0f;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
+  transition: all 0.2s ease-in-out;
+  font-size: 50px;
+  color: #fff;
+}
+
+    .floater__btn:hover {
+      transform: scale(1.1);
+    }
+
+    .floater.is-active .floater__btn {
+      background: #d4421e;
+    }
+
+    .floater.is-active .floater__btn:hover {
+      transform: scale(1);
+    }
+
+    .floater__list-item:hover .floater__list-item-label {
+      opacity: 1;
+    }
+
+    .floater__btn-icon {
+      transition: all 0.5s;
+    }
+
+    .floater__btn-icon-plus {
+      -webkit-transform: rotate(0);
+      transform: rotate(0);
+    }
+
+    .floater.is-active .floater__btn-icon-plus {
+      opacity: 1;
+      -webkit-transform: rotate(225deg);
+      transform: rotate(225deg);
+    }
+
+    .ash-floater {
+      color: #fff;
+    }
+
+
+   .whatsappicon{
+    font-size: 49px;
+    color: white;
+   }
+  </style>
+</head>
+
+<body>
+  <div class="main" id="main">
+
+    <div class="main-header home-header">
+      <div class="header home-head">
+        <div class="head1">
+          <i class="bi bi-justify i1 menu"></i>
+          <a href="home.html">
+            <h2 id="my_shop_name">MyGalla</h2>
+          </a>
+        </div>
+        <div class="head2">
+          <button type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
+            aria-controls="offcanvasRight">
+            <i class="bi bi-cart4"></i>
+            <span>
+              <b>
+                <!-- <span id="cart_item_d">0</span> -->
+                <span id="cart-count"></span>
+                items
+              </b>
+            </span>
+          </button>
+        </div>
+        <a href="cart.html">
+          <div class="head3">
+            <i class="bi bi-cart-fill"></i>
+            <span>
+              <b>
+                <span id="cart-count-link"></span>
+              </b>
+            </span>
+          </div>
+        </a>
+
+        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasRightLabel">My Cart</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+          </div>
+
+          <div class="offcanvas-body">
+            <div class="header-changes">
+              <div class="cart-item-wrapper">
+                <div id="right-side-cart-top-msg"></div>
+                <div id="right-side-cart"></div>
+              </div>
+              <div class="checkout-detail">
+                <div id="right-side-cart-total"></div>
+                <div id="right-side-cart-address-box"></div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="header-search update-search">
+          <div class="last-header">
+            <i class="bi bi-search"></i>
+            <input type="text" placeholder="Search " onclick="gotoProductSrch()"/>
+            <i class="bi bi-upc-scan" id="scanBtnQR1"></i>
+          </div>
+        </div>
+      </div>
+      <div class="last-header product-select">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input type="text" placeholder="Search " onclick="gotoProductSrch()"/>
+        <i class="bi bi-upc-scan" id="scanBtnQR2"></i>
+      </div>
+    </div>
+
+    <div class="resp-nav sidebar" style="display: none">
+      <div class="sidebar-box" id="navone"></div>
+    </div>
+
+    <div class="second-banner-section" id="banner_list_one">
+      <a href="all_product.html"> </a>
+    </div> 
+  <!-- _________________________owl carousel code by savage________________________________ -->
+  
+         
+  <div class="container">
+  
+    <div class="owl-carousel carousel-main" id="autoslide">
+     
+
+    </div>
+</div>
+
+
+   <!-- ___________________________________________________________ -->
+
+    <div class="product-section update-trending-section">
+      <div class="product-heading">
+        <h2>Trending Now</h2>
+        <a href="all_product.html?cid=0">
+          <p>View all</p>
+        </a>
+      </div>
+      <div class="scroller scroller-update">
+        <div class="product-item-box scroller-div" id="trending_section"></div>
+      </div>
+      <div class="btn-container">
+        <button id="prevBtn"><i class="bi bi-chevron-left"></i></button>
+        <button id="nextBtn"><i class="bi bi-chevron-right"></i></button>
+      </div>
+    </div>
+    <div class="second-category-section">
+      <div class="product-heading">
+        <h2>Category</h2>
+        <a href="category.html">
+          <p>View all</p>
+        </a>
+      </div>
+
+      <div class="category-box-wrap" id="category_list_one"></div>
+    </div>
+    <div class="product-section update-trending-section">
+      <div class="product-heading">
+        <h2>More Products</h2>
+        <a href="all_product.html">
+          <p>View all</p>
+        </a>
+      </div>
+      <div class="product-item-box update-item-box" id="more_product_list">
+        <a href="all_product.html">
+          <div class="product-items product-items-all">
+            <div class="product-item-img new-section-update see-all">
+              <div class="item-content">
+                <p>See all</p>
+                <i class="bi bi-arrow-right-short"></i>
+                <div class="content-buttons"></div>
+              </div>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <div class="second-banner-section banner-section-update" >
+      <div class="container">
+  
+        <div class="owl-carousel carousel-main" id="banner_list_two">
+         
+
+        </div>
+  </div>
+    </div>
+
+    <div class="product-section update-trending-section">
+      <div class="product-heading">
+        <h2>New Product</h2>
+        <a href="all_product.html">
+          <p>View all</p>
+        </a>
+      </div>
+      <div class="scroller">
+        <div class="product-item-box design-box" id="new_product_list"></div>
+      </div>
+    </div>
+
+    <div class="second-category-section copy">
+      <div class="product-heading">
+        <h2>Category</h2>
+        <a href="category.html">
+          <p>View all</p>
+        </a>
+      </div>
+
+      <div class="category-box-wrap" id="category_list_two"></div>
+    </div>
+
+    <div class="footer" id="navtwo"></div>
+  </div>
+
+  <!-- variant modal start  -->
+
+  <div class="modal modal-bottom fade" id="variantModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">More variants</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="variantList">
+            <div id="prodContainer" class="product_var_container"></div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+            Close
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- varient model end -->
+
+
+  <div class="floater">
+    <ul class="floater__list" id="additionlink">
+       
+    </ul>
+    <div class="floater__btn prevent-select">
+
+        <i id="plusicon" class="bi bi-plus floater__btn-icon-plus floater__btn-icon d-none"></i>
+
+        <a href="" id="whatsappbtn" class="d-none">   <i  class="bi bi-whatsapp floater__btn-icon-plus floater__btn-icon floater__btn-icon-plus floater__btn-icon whatsappicon"></i>
+        </a>
+
+    </div>
+</div>
+
+  <script src="../cordova.js"></script>
+  <script src="../assets/js/jquery-3.6.1.js"></script>
+  <script src="../assets/js/bootstrap.bundle.min.js"></script>
+  <script src="../assets/js/popper.min.js"></script>
+  <script src="../assets/js/owl.carousel.min.js"></script>
+  <script src="../assets/js/dexie.js"></script>
+  <script src="../constant.js"></script>
+  <script src="assets/js/app.js"></script>
+  <script src="assets/js/script.js"></script>
+
+  <script>
+    loadwalletdata();
+    bringtopmsg();
+    printShopName();
+    rightSideCartLoad();
+    loadNav("home");
+
+    loadTrendingSection();
+    loadMoreProductSection();
+    loadNewProductSection();
+    loadBanner();
+    loadCartCount();
+
+    loadCategoryHomeOne();
+    loadCategoryHomeTwo();
+
+   
+
+    // old function call
+
+    loadUserDataHome();
+
+  </script>
+
+  <!-- phase 2 custom category -->
+  <script>
+
+    // const customCat = async () => {
+    //   const formData = new FormData();
+    //   formData.append("type", "97");
+
+    //   req = await fetch(appAPI, { method: "POST", body: formData });
+    //   res = await req.json();
+    //   data = res[0].tbl_value;
+    //   localStorage.setItem("customCat", data);
+    // };
+
+    // const buynowState = async () => {
+    //   const formData = new FormData();
+    //   formData.append("type", "104");
+
+    //   req = await fetch(appAPI, { method: "POST", body: formData });
+    //   res = await req.json();
+    //   data = res[0].tbl_value;
+    //   localStorage.setItem("buynowState", data);
+    // };
+
+    // const loadWhatsappbtn = async () => {
+    //   const formData = new FormData();
+    //   formData.append("type", "106");
+
+    //   const req = await fetch(appAPI, { method: "POST", body: formData });
+    //   const res = await req.json();
+    //   const data = res[0].tbl_value;
+    //   const whatsappNO = res[0].tbl_key;
+    //   localStorage.setItem("whatsappbtn", data);
+    //   localStorage.setItem("whatsappNO", whatsappNO);
+
+    //   if (data == "1") {
+    //     const contact_list = JSON.parse(localStorage.getItem("whatsappNO"));
+    //     const contactList_arry = Object.values(contact_list);
+    //     // console.log(contactList_arry);
+
+    //     if (contactList_arry.length > 1) {
+    //       $(".floater").css("display", "flex");
+    //       $("#plusicon").removeClass("d-none")
+    //       contactList_arry.forEach((item) => {
+    //         if (item != "") {
+    //           $("#additionlink").append(contactTemplate(item));
+
+    //         }
+    //       });
+    //     } else {
+    //       $(".floater").css("display", "flex");
+    //       $("#additionlink").css("display", "none");
+    //       $("#whatsappbtn").removeClass("d-none");
+    //       // $("#whatsappbtn").attr("href", contactList_arry[0]);
+    //       $("#whatsappbtn").attr(
+    //         "href",
+    //         "https://api.whatsapp.com/send?phone=" +
+    //         contactList_arry[0] +
+    //         "&text=I want Order some Grocery"
+    //       );
+
+
+    //     }
+    //   }
+    // };
+
+
+    const loadWhatsappbtn = async () => {
+          const formData = new FormData();
+          formData.append("type", "106");
+  
+          const req = await fetch(appAPI, { method: "POST", body: formData });
+          const res = await req.json();
+          const data = res.tbl_value;
+          const whatsappNO = res.tbl_key;
+  
+          if (data == "1") {
+            
+            const contactList_arry = Object.values(whatsappNO);
+            
+  
+            if (contactList_arry.length > 1) {
+              $(".floater").css("display", "flex");
+              $("#plusicon").removeClass("d-none")
+              contactList_arry.forEach((item) => {
+                if (item != "") {
+                  $("#additionlink").append(contactTemplate(item));
+                 
+                } 
+              });
+            } else {
+              $(".floater").css("display", "flex");
+              $("#additionlink").css("display", "none");
+              $("#whatsappbtn").removeClass("d-none");
+              // $("#whatsappbtn").attr("href", contactList_arry[0]);
+              $("#whatsappbtn").attr(
+                "href",
+                "https://api.whatsapp.com/send?phone=" +
+                  contactList_arry[0] +
+                  "&text=I want Order some Grocery"
+              );
+  
+  
+            }
+          }
+        };
+
+    function contactTemplate(item) { 
+      let icontype = "bi bi-forward";
+       if(item.match("https://api.whatsapp.com")){
+        icontype="bi bi-whatsapp";
+       }else if( item.match("mailto:")){
+        icontype="bi bi-envelope"; 
+       }else if(item.match("tel:")){
+        icontype="bi bi-telephone";
+       }
+      return `<li class='floater__list-item'><a href='${item}' title='Add product manually'><i class='bi ${icontype} ash-floater'></i></a></li>`;
+    }
+
+    // customWishlist();
+
+    //       $(document).ready(function() {
+    //   customWishlist();
+    // });
+
+    // async function loadCategoryHome() {
+    //   let data = await db.categories.toArray();
+    //   customcatVal = localStorage.getItem("customCat");
+    //   if (customcatVal == "main") {
+    //     data = data.filter((category) => category.parent_id == "0");
+    //     data.map((item) => {
+    //       $("#categoriesList").append(categoryTemplate(item));
+    //     });
+    //   } else {
+    //     data.map((item) => {
+    //       $("#categoriesList").append(categoryTemplate(item));
+    //     });
+    //   }
+    // }
+
+    // customWishlist = () => {
+    //   wishlist = localStorage.getItem('customwishlistcheck');
+    //   console.log(wishlist);
+    //   if (wishlist == 'Show') {
+
+    //   } else {
+    //     $(".add-to-whishlist-wn").style.display='none';
+    //     const elementsToHide = document.querySelectorAll('.add-to-whishlist-wn');
+    //     // elementsToHide.forEach(element => {   console.log(element);
+    //     //   element.style.display = 'none';
+    //     // });
+    //   }
+    // }
+
+    //     customWishlist = () => {
+    //   wishlist = localStorage.getItem('customwishlistcheck');
+    //   console.log(wishlist);
+    //   if (wishlist !== 'Show') {
+    //     $(".add-to-whishlist-wn").css('display', 'none');
+
+    //   }
+    // }
+
+    // floating button
+
+    var $floater = $(".floater");
+    var $floater__list = $(".floater__list");
+    var displaybock = "displaybock";
+    $floater.on("click", function (e) {
+      $floater.toggleClass("is-active");
+      $floater__list.toggleClass("displaybock");
+      e.stopPropagation();
+    });
+
+    customCat();
+    customwishlistcheck();
+    buynowState();
+    // loadCategoryHome();
+    loadWhatsappbtn();
+   prevcartload();
+
+  async function prevcartload(){
+
+  if (localStorage.getItem("K_status") == "1" && localStorage.getItem("K_type") == "1") {
+
+    await loadCartFromserver();
+    await loadCartCount();
+
+  }
+   }
+
+
+
+//     $( document ).ready(function() {
+    
+//       $('.carousel-main').owlCarousel({ 
+//     items: 3,
+//     loop: true,
+//     autoplay: true,
+//     autoplayTimeout: 1500,
+//     margin: 10,
+//     nav: true,
+//     dots: false,
+//     navText: ['<span class="fas fa-chevron-left fa-2x"></span>','<span class="fas fa-chevron-right fa-2x"></span>'],
+//   })
+
+// });
+
+  
+
+  </script>
+  <!-- phase 2 custom category -->
+   <!-- <script>
+  function createAutoScroll(sliderId, scrollStep = 390, scrollInterval = 2000) {
+    const slider = document.getElementById(sliderId);
+    let scrollAmount = 0;
+
+    function autoScroll() {
+        scrollAmount += scrollStep;
+        if (scrollAmount >= slider.scrollWidth - slider.clientWidth) {
+            scrollAmount = 0; // Reset to the start
+        }
+        slider.scrollTo({
+            left: scrollAmount,
+            behavior: 'smooth'
+        });
+    }
+
+    setInterval(autoScroll, scrollInterval);
+}
+
+// Example usage:
+createAutoScroll('autoslide', 390, 2000);
+createAutoScroll('banner_list_two', 390, 2000);
+
+   </script> -->
+</body>
+
+</html>

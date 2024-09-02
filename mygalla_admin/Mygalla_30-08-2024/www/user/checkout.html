@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title id="my_shop_name"></title>
+  <link rel="stylesheet" href="../assets/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
+  <link rel="stylesheet" href="../assets/css/owl.carousel.min.css" />
+  <link rel="stylesheet" href="../assets/css/owl.theme.default.min.css" />
+  <link rel="stylesheet" href="assets/css/app.css" />
+</head>
+
+<body>
+  <!-- ash top and body start -->
+  <div>
+    <div class="checkoutDiv">
+      <!-- top section start  -->
+
+      <div class="top-section-prdt top-section-prdt1">
+        <!-- <div class="black"></div> -->
+        <div id="user-name-welcome">
+          <a class="top-back-btn" id="goBack">
+            <i class="bi bi-chevron-left"></i>
+            <span>Checkout</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- top section end  -->
+
+      <div class="checkout-container">
+
+        <div class="cs-address-chooser">
+          <button onclick="changeTakeaway('Delivery')" id="d-btn">Delivery</button>
+          <button onclick="changeTakeaway('Takeaway')" class="cs-address-chooser-btn" id="t-btn">Takeaway</button>
+        </div>
+
+        <div class="c-address-section c-address-section1" id="address-print-div">
+          <div class="c-address-section-top">
+            <div id="cs-addr-type" class="text1">Home</div>
+           <div>
+            <button class="btn1" id="getAddressBtn" data-bs-toggle="modal" data-bs-target="#address-change"
+              onclick="getAddress()">Change</button>
+              <button class="btn1" id="getAddaddressBtn" data-bs-toggle="modal" data-bs-target="#addressModal"
+              >Add</button>
+            </div>  
+          </div>
+          <hr class="hr">
+
+          <div id="cs-name">Full Name</div>
+
+          <div class="c-address-section-mid">
+            <div id="cs-full-addr">..............</div>
+          </div>
+          <div class="c-address-section-bot">
+            <!-- <div id="cs-mob-no">..............</div> -->
+            <div class="input-all">
+              <label>contact no : </label>
+              <input type="text" id="cs-mob-no" size="10" readonly> ,
+              <label>pincode : </label>
+              <input type="text" id="cs-pincode" size="7" readonly>
+            </div>
+          </div>
+        </div>
+
+        <div class="c-invoice-section c-invoice-section1 ">
+          <div class="c-invoice-section-top c-invoice-section-top1">
+            <h6>Select Payment Option:</h6>
+          </div>
+          <div class="c-invoice-section-data c-invoice-section-data1">
+            <label>
+              <input type="radio" name="paymentOption" id="codCheckbox" value="COD" checked> Cash
+            </label>
+            <div id="onlinePaymentCheckbox">
+              <label>
+                <input type="radio" name="paymentOption" id="onlineCheckbox" value="ONLINE"> Online Payment
+              </label>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="res-delivery-slot" id="deliverySlotBtn">
+          <button class="delivery-slot-btn" data-bs-toggle="modal" id="dSBtn" data-bs-target="#delviery-slot-modal"
+            onclick="getDeliverySlot()">Delivery Slot</button>
+            <span id="selectedSlotName"></span>
+        </div>
+        <div class="c-invoice-section c-invoice-section-update">
+          <div class="c-invoice-section-top c-invoice-section-top1">
+            <h4>Price details</h4>
+            <button class="btn1" data-bs-toggle="modal" data-bs-target="#checkout-coupans" onclick="loadOffers()"
+              id="coupansBtn">coupans</button>
+          </div>
+          <!-- wallet pay -->
+
+          <div id="walletpanel" class="res-delivery-slot walletpay">
+            <div class="walletbar">
+              <span>Pay Using Wallet</span>
+              <small id="wallmsg"></small>
+            </div>
+            <div class="form-check form-switch">
+              <input class="form-check-input" type="checkbox" id="walletSwitch" disabled="">
+
+            </div>
+          </div>
+
+
+          <!-- wallet pay -->
+
+          <div class="c-invoice-section-mid c-invoice-section-mid1">
+
+            <div class="c-invoice-section-data">
+              <!-- <span>Discount</span> -->
+              <span id="GrossPrice">Gross Price</span>
+              <span class="rs-symbol">
+                <input type="text"  id="Gross-Total" value="0" class="checkout-input" size="1" readonly>
+              </span>
+            </div>
+
+            <div class="c-invoice-section-data">
+              <!-- <span>Discount</span> -->
+              <span>Your Savings</span>
+              <span>-
+              <span class="rs-symbol">
+                <input type="text" id="savings" value="0" class="checkout-input" size="1" readonly>
+              </span>
+            </span>
+            </div>
+
+            <div class="c-invoice-section-data">
+              <span id="price-label">Price</span>
+              <span class="rs-symbol">
+                <input type="text" id="total-price" value="0" class="checkout-input" size="1" readonly>
+              </span>
+            </div>
+           
+            <div class="c-invoice-section-data">
+              <span>CoupanDiscount</span>
+              <span>-
+              <span class="rs-symbol">
+                <input type="text" id="discount" value="0" class="checkout-input" size="1" readonly>
+              </span>
+              </span>
+            </div>
+            <div class="c-invoice-section-data" id="GSTdiv">
+              <span>Gst : </span>
+              <span class="rs-symbol">
+                <input type="text" id="total-gst" value="0" class="checkout-input" size="1" readonly>
+              </span>
+            </div>
+            <div class="c-invoice-section-data" id="DSCdiv">
+              <span>Delivery Slot Charges : </span>
+              <span>+
+              <span class="rs-symbol">
+                <input type="text" id="delivery-slot" value="0" class="checkout-input" size="1" readonly>
+              </span>
+              </span>
+            </div>
+            <div class="c-invoice-section-data" id="Divwallet">
+              <span>Wallet Discount : </span>
+              <span>-
+              <span class="rs-symbol">
+                <input type="text" id="walletDiscount" value="0" class="checkout-input" size="1" readonly>
+              </span>
+              </span>
+            </div>
+            <hr>
+            <div class="c-invoice-section-data">
+              <span id="TotalItems">Total</span>
+              <span class="rs-symbol">
+                <input type="text" id="grand-total" value="0" class="checkout-input" size="1" readonly>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="c-invoice-section c-invoice-section2">
+        <div class="c-invoice-section-last">
+          <div>
+            <i class="bi bi-shield-fill-check"></i>
+          </div>
+          <div>
+            <p>Safe and secure payments.</p>
+            <p>100% Authentic products.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="c-invoice-section"></div>
+
+    </div>
+  </div>
+  </div>
+
+
+  <!-- ash top and body end -->
+
+  <!-- ash bottom navigation start -->
+  <div class="bottomCart">
+    <button class="checkuot-btn checkuot-btn1" id="plcOrder" onclick="finalCheckout()">
+      Place Order
+      <i class="bi bi-arrow-right"></i>
+    </button>
+  </div>
+  <!-- ash bottom navigation end -->
+
+
+
+  <!-- modal start  -->
+
+  <!-- address modal  -->
+
+  <div class="modal modal-bottom fade" id="address-change" tabindex="-1" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">More address</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class=""></div>
+          <div class="addressList">
+            <div id="addressContainer"></div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- coupans modal  -->
+
+  <div class="modal modal-bottom fade" id="checkout-coupans" tabindex="-1" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Coupans</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="offerList">
+            <div id="offerContainer"></div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- delviery slot modal  -->
+
+  <div class="modal modal-bottom fade" id="delviery-slot-modal" tabindex="-1" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Select delivery slot</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="dlSlotList">
+            <div id="dlSlotContainer"></div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- modal end  -->
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="addressModal" tabindex="-1" aria-labelledby="addressModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-body">
+            <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">×</span>
+            </button>
+            <div class="form-main">
+              <div class="form">
+                <!-- <i class="bi bi-x"></i> -->
+                <form class="inp" id="address_submit_modal">
+  
+                  <div class="form-s">
+                    <span>
+                      <input type="radio" name="add_type" value="Home" id="add_type_home" />
+                      <label for="add_type_home">Home</label>
+                    </span>
+                    <span>
+                      <input type="radio" name="add_type" value="Office" id="add_type_office" />
+                      <label for="add_type_office">Office</label>
+                    </span>
+                  </div>
+                  
+                  <input type="text" name="addpanelType" value="checkoutPanel" hidden />
+                  <input type="text" name="address_id" hidden />
+                  <input type="text" placeholder="Full Name" name="name" />
+                  <input type="text" placeholder="Address" name="full_address" />
+                  <input type="text" placeholder="Landmark" name="landmark" />
+                  <span class="form-s1">
+                    <input type="number" class="inp1" placeholder="Pin code" name="pincode" required />
+                    <span class="inp-span">
+                      <p>+91</p>
+                      <input type="number" class="inp2" placeholder="Mobile" name="mobile"  required/>
+                    </span>
+                  </span>
+  
+  
+                  <button type="submit" class="checkuot-btn2">Save</button>
+  
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  <script src="../assets/js/jquery-3.6.1.js"></script>
+  <script src="../assets/js/bootstrap.bundle.min.js"></script>
+  <script src="../assets/js/popper.min.js"></script>
+  <script src="../assets/js/owl.carousel.min.js"></script>
+  <script src="https://unpkg.com/dexie/dist/dexie.js"></script>
+  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+  <script src="../constant.js"></script>
+  <script src="assets/js/app.js"></script>
+  <script>
+    check_login();
+    resetwallettoggle();
+    getAddressonLoad();
+    getInvoiceDetails();
+    placeButtonStatus();
+    chkwallet();
+    // showSavings();
+
+    function resetwallettoggle() {
+      localStorage.setItem('wallToggle', 0);
+    }
+
+    async function chkwallet() {
+      id = localStorage.getItem("K_id");
+      formdata = new FormData;
+      formdata.append('type', '123');
+      formdata.append('id', id);
+      req = await fetch(appAPI, { method: 'POST', body: formdata });
+      res = await req.json();
+      console.log(JSON.parse(res.wallet));
+      localStorage.setItem('dynamicWallet',res.wallet);
+      walletdetails = JSON.parse(res.wallet);
+      if (walletdetails.walletstatus != "credit") {
+        $("#walletpanel").css("display","none");
+        $("#walletSwitch").prop("disabled", true);
+        $("#wallmsg").text("Wallet will be activated after first purchase").css("color", "red");
+
+      } else if (walletdetails.walletBalance == 0) {
+        $("#walletpanel").css("display","none");
+        $("#walletSwitch").prop("disabled", true);
+        $("#wallmsg").text("Insuffient Balance").css("color", "red");
+      } else {
+
+        $("#walletSwitch").prop("disabled", false);
+        btnstatechk = localStorage.getItem("wallToggle");
+        if (btnstatechk == '1') {
+          $("#walletSwitch").prop("checked", true);
+        }
+        $("#wallmsg").text("Your wallet balance is Rs-" + walletdetails.walletBalance).css("color", "green");
+        localStorage.setItem("currentBal", walletdetails.walletBalance);
+      }
+
+    }
+
+    $("#walletSwitch").change(function () {
+
+      if ($("#walletSwitch").prop("checked")) {
+        setbtnState = localStorage.setItem('wallToggle', '1')
+        tempWBal = localStorage.getItem("currentBal");
+        localStorage.setItem("walletCalbal", tempWBal)
+        getInvoiceDetails();
+      } else {
+        setbtnState = localStorage.setItem('wallToggle', '0')
+        localStorage.removeItem("walletCalbal");
+        getInvoiceDetails();
+      }
+
+    })
+
+
+    // async function showSavings(){
+    //    const productArry = await db.cart.toArray();
+    //     fakeTotal=0; 
+    //    productArry.map((item) => {
+    //       fakeprice = item.fprice;
+    //       proQty = item.purchase_qty;
+
+    //       fakeTotal +=  parseInt(fakeprice) * parseInt(proQty)
+    //     })
+    //     console.log(fakeTotal);
+    //     $("#savings").val(fakeTotal);
+
+    // }
+
+  </script>
+
+</body>
+
+</html>
