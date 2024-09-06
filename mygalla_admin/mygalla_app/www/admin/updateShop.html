@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title id="my_shop_name"></title>
+  <link rel="stylesheet" href="../assets/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
+  <link rel="stylesheet" href="../assets/css/style.css" />
+</head>
+
+<body>
+  <div>
+    <div class="top-bar">
+      <a href="home.html">
+        <i class="bi bi-chevron-left"></i>
+      </a>
+      <div id="iBtn">
+        <span>
+          <a href="" class="info-help-button" target="_blank">
+            <i class="bi bi-info-circle info-pg-btn"></i>
+          </a>
+        </span>
+      </div>
+
+    </div>
+
+    <div class="containerBody updated_shop_container">
+      <div class="store_shop_container">
+        <h2>Update Shop</h2>
+        <div class="store_shop_reuse_inputs">
+          <div class="store_reuse_inp1">
+            <input type="text" required>
+            <label for="Shop Name">Shop Name</label>
+          </div>
+          <div class="store_reuse_inp1">
+            <input type="text" required>
+            <label for="Contact">Contact</label>
+          </div>
+          <div class="store_reuse_inp1">
+            <input type="text" required>
+            <label for="Email">Email</label>
+          </div>
+          <div class="store_reuse_inp1">
+            <input type="text" required>
+            <label for="Address">Address</label>
+          </div>
+          <div class="store_reuse_inp1">
+            <input type="text" required>
+            <label for="Pin-code">Pin-code</label>
+          </div>
+
+          <div class="hero_right_input upadte_right_btn hero_right_admin_inp">
+            <button type="button" class="btns" data-bs-toggle="modal" data-bs-target="#exampleModal1">
+              <p>Select Logo</p>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                class="bi bi-file-earmark-text" viewBox="0 0 16 16">
+                <path
+                  d="M5.5 7a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1zM5 9.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5m0 2a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5" />
+                <path
+                  d="M9.5 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V4.5zm0 1v2A1.5 1.5 0 0 0 11 4.5h2V14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1z" />
+              </svg>
+            </button>
+
+          </div>
+          <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel1"
+            aria-hidden="true">
+            <div class="modal-dialog upadte_right_dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h1 class="modal-title fs-5" id="exampleModalLabel1">Select Logo</h1>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <div class="logo_content" id="logos">
+                    <div class="logo_inp">
+                      <input type="file">
+                      <div class="content_wrap">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                          class="bi bi-plus" viewBox="0 0 16 16">
+                          <path
+                            d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4" />
+                        </svg>
+                        <p>Upload Logo</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="banner_button">
+                    <button>Continue</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="store_reuse_inp1">
+            <div class="store_reuse_eye">
+              <input type="password" id="password1" required>
+              <label for="Password">Password</label>
+              <i id="eye1" onclick="toggleEye('eye1' , 'password1')" class="bi bi-eye toggle-password"></i>
+            </div>
+          </div>
+          <div class="store_reuse_inp1">
+            <div class="store_reuse_eye">
+              <input type="password" id="password2" required>
+              <label for="Re- Enter New Password">Re- Enter New Password</label>
+              <i id="eye2" onclick="toggleEye('eye2', 'password2')" class="bi bi-eye toggle-password"></i>
+            </div>
+          </div>
+        </div>
+        <div class="store_shop_reuse_btn">
+          <button>update</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="floater">
+      <ul class="floater__list">
+        <li class="floater__list-item">
+          <a href="addCategory.html" title="Add product manually"><i
+              class="bi bi-file-earmark-plus-fill ash-floater"></i></a>
+        </li>
+
+        <li class="floater__list-item">
+          <a href="categoryAddByName.html" title="Search in Library"><i class="bi bi-collection ash-floater"></i></a>
+        </li>
+      </ul>
+      <div class="floater__btn prevent-select">
+        <i class="bi bi-plus floater__btn-icon-plus floater__btn-icon"></i>
+      </div>
+    </div>
+
+    <!-- ash bottom navigation start -->
+    <nav class="bottomNav">
+      <ul>
+        <li>
+          <a href="home.html">
+            <div>
+              <i class="bi bi-house"></i>
+            </div>
+          </a>
+        </li>
+        <li id="orders_role_section">
+          <a href="orders.html">
+            <div>
+              <i class="bi bi-bag-heart"></i>
+            </div>
+          </a>
+        </li>
+        <li id="myshop_role_section">
+          <a href="myshop.html">
+            <div>
+              <i class="bi bi-shop"></i>
+            </div>
+          </a>
+        </li>
+        <li id="mysettings_role_section">
+          <a href="mysettings.html">
+            <div>
+              <i class="bi bi-sliders"></i>
+            </div>
+          </a>
+        </li>
+      </ul>
+    </nav>
+    <!-- ash bottom navigation end -->
+
+    <script src="../assets/js/jquery-3.6.1.js"></script>
+    <script src="../assets/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/js/popper.min.js"></script>
+    <script src="../constant.js"></script>
+    <script src="../assets/js/script.js"></script>
+    <script src="../assets/js/templateFunctions.js"></script>
+
+    <script>
+      logoTemplateAdmin();
+
+    </script>
+</body>
+
+</html>

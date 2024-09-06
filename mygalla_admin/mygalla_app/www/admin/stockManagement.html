@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title id="my_shop_name"></title>
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+    />
+    <link rel="stylesheet" href="../assets/css/style.css" />
+  </head>
+
+  <body>
+    <div>
+      <div class="top-bar">
+        <a href="manageProduct.html">
+          <i class="bi bi-chevron-left"></i>
+        </a>
+      </div>
+      <div class="containerBody">
+        <h2>Stock Management</h2>
+
+        <div id="msg"></div>
+
+        <!-- <form class="add-product-form" id="updateStaff">
+
+                <input type="text" name="sid" id="sid" hidden>
+
+                <div class="form-group">
+                  <input type="text" class="form-control inputAsh" placeholder="Username" id="username" name="username" hidden>
+                </div>
+
+                <div class="form-group form-floating">
+                    <input type="number" class="form-control inputAsh" placeholder="Mobile" id="mobile" name="mobile">
+                    <label>Mobile / Username</label>
+                    <p id="mobile-error" class="form-text error-ash"></p>
+                </div>
+
+                <div class="form-group form-floating">
+                    <input type="text" class="form-control inputAsh" placeholder="Password" id="password" name="password">
+                    <label>Password</label>
+                </div>
+
+                <div class="form-group form-floating">
+                    <input type="text" class="form-control inputAsh" placeholder="Name" id="name" name="name">
+                    <label>Name</label>
+                </div>
+
+                <div class="form-group form-floating">
+                    <input type="text" class="form-control inputAsh" placeholder="Address" id="address" name="address">
+                    <label>Address</label>
+                </div>
+
+                <div class="form-group form-floating">
+                    <input type="text" class="form-control inputAsh" placeholder="Email" id="email" name="email">
+                    <label>Email</label>
+                    <p id="email-error" class="form-text error-ash"></p>
+                </div>
+
+                <div class="form-group form-floating">
+                    <input type="text" class="form-control" id="rtype" name="rtype" hidden>
+                    <input type="text" class="form-control" id="role_name" readonly hidden>
+                    <select class="form-control inputAsh" id="type_option">
+                        <option value="">select ....</option>
+                        <option value="3">Staff</option>
+                        <option value="4">Delivery Boy</option>
+                    </select>
+                    <label>Role</label>
+                  <p id="" class="form-text error-ash"></p>
+                </div>
+                
+                <div class="form-group staff-role-select" id="staff-role-list">
+
+                    <h5>Do not show</h5>
+                    
+                    <div class="custom-control custom-checkbox form-group">
+                        <input type="checkbox" class="custom-control-input" id="product_role_section" name="role[]" value="product_role_section">
+                        <label class="custom-control-label" for="role1">Product</label>
+                    </div>
+
+                    <div class="custom-control custom-checkbox form-group">
+                        <input type="checkbox" class="custom-control-input" id="category_role_section" name="role[]" value="category_role_section">
+                        <label class="custom-control-label" for="role2">Category</label>
+                    </div>
+
+                    <div class="custom-control custom-checkbox form-group">
+                        <input type="checkbox" class="custom-control-input" id="user_role_section" name="role[]" value="user_role_section">
+                        <label class="custom-control-label" for="role2">User</label>
+                    </div>
+
+                    <div class="custom-control custom-checkbox form-group">
+                        <input type="checkbox" class="custom-control-input" id="theme_role_section" name="role[]" value="theme_role_section">
+                        <label class="custom-control-label" for="role2">Theme</label>
+                    </div>
+
+                    <div class="custom-control custom-checkbox form-group">
+                        <input type="checkbox" class="custom-control-input" id="addons_role_section" name="role[]" value="addons_role_section">
+                        <label class="custom-control-label" for="role2">Addons</label>
+                    </div>
+
+                    <div class="custom-control custom-checkbox form-group">
+                        <input type="checkbox" class="custom-control-input" id="report_role_section" name="role[]" value="report_role_section">
+                        <label class="custom-control-label" for="role2">Report</label>
+                    </div>
+
+                    <div class="custom-control custom-checkbox form-group">
+                        <input type="checkbox" class="custom-control-input" id="pos_role_section" name="role[]" value="pos_role_section">
+                        <label class="custom-control-label" for="pos_role_section">POS</label>
+                    </div>
+
+                    <div class="custom-control custom-checkbox form-group">
+                        <input type="checkbox" class="custom-control-input" id="ordersH_role_section" name="role[]" value="ordersH_role_section">
+                        <label class="custom-control-label" for="ordersH_role_section">Orders</label>
+                    </div>
+        
+
+                </div>
+
+                  <button type="submit" id="submit" class="btn btn-primary ashBtn">Update Staff</button>
+              </form> -->
+        <div class="container" id="container"></div>
+      </div>
+    </div>
+
+    <!-- ash bottom navigation start -->
+    <div class="bottomNav">
+      <ul>
+        <li>
+          <a href="home.html">
+            <i class="bi bi-house"></i>
+          </a>
+        </li>
+        <li>
+          <a href="orders.html">
+            <i class="bi bi-bag-heart"></i>
+          </a>
+        </li>
+        <li>
+          <a href="myshop.html">
+            <i class="bi bi-shop"></i>
+          </a>
+        </li>
+        <li>
+          <a href="mysettings.html">
+            <i class="bi bi-sliders"></i>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <!-- ash bottom navigation end -->
+
+    <!-- Modal -->
+    <div
+      class="modal fade"
+      id="editStockModal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Stock Editor</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <form class="form-control" id="updateStockdata">
+              <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label"
+                  >Last Quantity</label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  id="lastQuantity"
+                  readonly
+                />
+              </div>
+
+              <div class="form-check form-switch">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  id="stockcheck"
+                />
+                <label class="form-check-label" for="flexSwitchCheckDefault"
+                  >Switch on to reduce stock</label
+                >
+              </div>
+              <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label"
+                  >Update Quantity</label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  id="Quantity"
+                  name="Quantity"
+                  placeholder="Enter Quantity"
+                />
+              </div>
+
+              <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label"
+                  >Update Price</label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  id="Price"
+                  name="buyingPrice"
+                  placeholder="Enter Price"
+                />
+              </div>
+
+              <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label"
+                  >Update Expiry</label
+                >
+                <input
+                  type="date"
+                  class="form-control"
+                  id="Expiry"
+                  name="expirydate"
+                  placeholder="Enter Date"
+                />
+              </div>
+              <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label"
+                  >Stock Update Reason</label
+                >
+                <select
+                  name="uptdStockres"
+                  class="form-select"
+                  aria-label="Default select example"
+                >
+                  <option selected value="">Open this select menu</option>
+                  <option value="Bad inventory">Bad inventory</option>
+                  <option value="Wrong entry">Wrong entry</option>
+                  <option value="Product expired">Product expired</option>
+                  <option value="Other">Other</option>
+                </select>
+              </div>
+              <hr />
+              <button type="button" class="btn btn-primary" id="submitBtn">
+                Save changes
+              </button>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="../assets/js/jquery-3.6.1.js"></script>
+    <script src="../assets/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/js/popper.min.js"></script>
+    <script src="../constant.js"></script>
+            <script src="../assets/js/script.js"></script>
+    <script src="../assets/js/templateFunctions.js"></script>
+    <script>
+      checkLogout();
+      printShopName();
+      // loadStaffDetails();
+      // mobileIsUsername();
+
+      const currentStock = (currentData) => {
+        console.log(currentData);
+        localStorage.setItem("qty", currentData.qty);
+        localStorage.setItem("price", currentData.price);
+        localStorage.setItem("sqty", currentData.sqty);
+        localStorage.setItem("expiry", currentData.expiry);
+        localStorage.setItem("stockItemid", currentData.id);
+        localStorage.setItem("stockPidid", currentData.pid);
+        // $("#Quantity").val(currentData.qty);
+        $("#Price").val(currentData.price);
+        $("#Expiry").val(currentData.expiry);
+        $("#lastQuantity").val(currentData.qty);
+      };
+
+      const updateStock = async () => {
+        // stock calculation
+
+        let stockItemid = localStorage.getItem("stockItemid");
+
+        let stockPidid = localStorage.getItem("stockPidid");
+
+        let oldqty = localStorage.getItem("qty");
+
+        let oldsqty = localStorage.getItem("sqty");
+
+        let newqty = $("#Quantity").val();
+
+        let newStockval, newsqty;
+
+        if (newqty == "" || newqty == null) {
+          newStockval = oldqty;
+
+          newsqty = oldsqty;
+        } else {
+          if ($("#stockcheck").is(":checked")) {
+            newStockval = parseInt(oldqty) - parseInt(newqty);
+
+            // newsqty = parseInt(oldsqty) - parseInt(newqty);
+            newsqty = oldsqty;
+
+          } else {
+            newStockval = parseInt(oldqty) + parseInt(newqty);
+
+            // newsqty = parseInt(oldsqty) + parseInt(newqty);
+            newsqty = oldsqty;
+          }
+        }
+
+        // Perform form submission
+        const formdata = new FormData($("#updateStockdata")[0]);
+        formdata.append("type", "109");
+        formdata.append("newStockval", newStockval);
+        formdata.append("newsqty", newsqty);
+        formdata.append("stockItemid", stockItemid);
+        formdata.append("stockPidid", stockPidid);
+        let req = await fetch(appAPI, { method: "POST", body: formdata });
+        let res = await req.json();
+        console.log(res.data.msg);
+        alert(res.data.msg);
+        location.reload();
+      };
+
+      $("#submitBtn").click(async function (event) {
+        await updateStock();
+      });
+
+      const loadStocktbl_template = (res) => {
+        let tableHtml = '<table class="table table-striped">';
+        tableHtml +=
+          "<thead><tr><th>Quantity</th><th>Sell Quantity</th><!--<th>Price</th><th>Expiry</th>--><th>Date</th><th>Option</th></tr></thead>";
+        tableHtml += "<tbody>";
+
+        res.forEach((row) => {
+          // const rowData = JSON.stringify(row).replace(/'/g, "&#39;");
+          tableHtml += `<tr><td>${row.qty}</td><td>${row.sqty}</td><td>${
+            row.date
+          }</td><td><button onclick='currentStock(${JSON.stringify(
+            row
+          )})' class="btn btn-primary"data-bs-toggle="modal" data-bs-target="#editStockModal">EDIT</button></td></tr>`;
+        });
+
+        tableHtml += "</tbody></table>";
+        return tableHtml;
+      };
+
+      const loadStockdata = async () => {
+        data = JSON.parse(localStorage.getItem("productPOST"));
+        console.log(data);
+        const formData = new FormData();
+        formData.append("type", "108");
+        formData.append("pid", data.id);
+        let req = await fetch(appAPI, { method: "POST", body: formData });
+        let res = await req.json();
+        console.log(res);
+
+        let tableHtml = loadStocktbl_template(res);
+
+        $("#container").append(tableHtml);
+      };
+
+      loadStockdata();
+    </script>
+  </body>
+</html>

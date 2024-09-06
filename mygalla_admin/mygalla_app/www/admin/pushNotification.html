@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title id="my_shop_name"></title>
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+    />
+    <link rel="stylesheet" href="../assets/css/style.css" />
+  </head>
+  <body>
+    <!-- ash top and body start -->
+    <div>
+      <div class="top-bar">
+        <a href="addons.html">
+          <i class="bi bi-chevron-left"></i>
+        </a>
+      </div>
+      <div class="containerBody">
+        <h3>Manage Push Notification</h3>
+
+        <div>
+          <div class="manageStock">
+            <h6>Set Notification Details</h6>
+            <form class="add-product-form" id="setnotification">
+              <!-- <input type="text" id="c_id" name="c_id" hidden> -->
+              <div class="form-group">
+                <img src="" id="preview_img" />
+                <label class="ash-img-upload">
+                  <input
+                    type="file"
+                    id="file"
+                    name="file"
+                    accept=".jpg, .png, .jpeg"
+                  />
+                  <i class="bi bi-camera"></i>
+                  <p>upload photo</p>
+                </label>
+                <p id="file_error" class="form-text error-ash"></p>
+              </div>
+              <div class="form-group">
+                <input
+                  type="text"
+                  class="form-control inputAsh"
+                  placeholder="Write Title"
+                  id="msg"
+                  name="Tmsg"
+                />
+                <p id="name_error" class="form-text error-ash"></p>
+              </div>
+              <div class="form-group">
+                <input
+                  type="text"
+                  class="form-control inputAsh"
+                  placeholder="Write Message"
+                  id="msg"
+                  name="Nmsg"
+                />
+                <p id="name_error" class="form-text error-ash"></p>
+              </div>
+
+              <button type="submit" id="submit" class="btn btn-primary ashBtn">
+                Set Notification
+              </button>
+            </form>
+          </div>
+
+          <!-- <div class="manageStock">
+                    <a href="addCategory.html" class="btn btn-primary ashBtn">Add More Category</a>
+                </div> -->
+          <hr />
+          <div>
+            <h3 class="delete-images-h3">Notification List</h3>
+            <hr />
+
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>Image</th>
+                  <th>Title</th>
+                  <th>Message</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody id="imgList"></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- ash top and body end -->
+
+    <!-- ash bottom navigation start -->
+    <div class="bottomNav">
+      <ul>
+        <li>
+          <a href="home.html">
+            <i class="bi bi-house"></i>
+          </a>
+        </li>
+        <li>
+          <a href="orders.html">
+            <i class="bi bi-bag-heart"></i>
+          </a>
+        </li>
+        <li>
+          <a href="myshop.html">
+            <i class="bi bi-shop"></i>
+          </a>
+        </li>
+        <li>
+          <a href="mysettings.html">
+            <i class="bi bi-sliders"></i>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <!-- ash bottom navigation end -->
+
+    <script src="../assets/js/jquery-3.6.1.js"></script>
+    <script src="../assets/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/js/popper.min.js"></script>
+    <!-- <script src="../assets/js/ashImageCompress.js"></script> -->
+    <script src="../assets/js/ashBannerImageCompress.js"></script>
+    <script src="../constant.js"></script>
+            <script src="../assets/js/script.js"></script>
+    <script src="../assets/js/templateFunctions.js"></script>
+    <script>
+        checkLogout();
+        printShopName();
+        // loadManageCategory();
+        // loadCategoryOption();
+    </script>
+    <script>
+     async function pushNotification(push_Info) {
+          //  console.log(push_Info);
+         
+           const formdata = new FormData;
+           formdata.append("type","111");
+           formdata.append("title", push_Info.title);
+           formdata.append("msg", push_Info.msg);
+           formdata.append("imageNm", push_Info.image);
+            req = await fetch(appAPI,{method:'POST', body: formdata});
+            res = await req.json();
+            // console.log(res);
+            // res == "1" ? alert("success") : alert("Failed");
+      }
+
+      async function loadAllnotification() {
+        const formData = new FormData();
+
+        formData.append("type", "117");
+
+        let req = await fetch(appAPI, { method: "POST", body: formData });
+
+        let data = await req.json();
+
+        console.log(data);
+let table = '';
+if(data.tbl_value == '') {
+    table = `<tr>
+        <td>${'No data Found'}</td>
+        <td>${'No data Found'}</td>
+        <td>${'No data Found'}</td>
+        <td>${'No data Found'}</td>
+    </tr>`;
+} else {
+
+   let tbdata = JSON.parse(data.tbl_value);
+table = `<tr>
+          
+    <td><img src="${imgLink}${tbdata.image}" width="70" height="50"></td>
+    <td>${tbdata.title}</td>
+    <td>${tbdata.msg}</td>
+    <td><button class="btn btn-primary" onclick='pushNotification(${JSON.stringify(tbdata)})'>Send</button></td>
+</tr>`;
+
+}
+
+$("#imgList").append(table);
+
+      }
+
+      loadAllnotification();
+    </script>
+
+    <script>
+      $("#setnotification").on("submit", async function (e) {
+        e.preventDefault();
+
+        if ($("#msg").val() == "") {
+          $("#file_error").html("");
+          $("#name_error").html(`enter name...`);
+        } else {
+          const formData = new FormData(this);
+
+          formData.append("ash", ash); // use for compress image
+
+          formData.append("type", "116");
+
+          let req = await fetch(appAPI, { method: "POST", body: formData });
+
+          let data = await req.json();
+
+          if (data.status == 1) {
+            alert("updated successfully");
+          } else {
+            alert("error in setup");
+          }
+        }
+      });
+    </script>
+  </body>
+</html>

@@ -132,6 +132,7 @@ body{
     align-items: center;
     justify-content: center;
 }
+
 .upadte_right_dialog{
     display: flex;
     align-items: center;
@@ -359,6 +360,10 @@ body{
 .modal-header .btn-close{
     box-shadow: unset !important;
 }
+input[type="checkbox"]{
+    accent-color: green;
+  }
+  
 @media(max-width:600px) {
     .top_loader {
         display: flex;

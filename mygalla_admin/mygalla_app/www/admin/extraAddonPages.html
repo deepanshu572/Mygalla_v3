@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title id="my_shop_name"></title>
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+    />
+    <link rel="stylesheet" href="../assets/css/style.css" />
+    <style>
+      .addpageBtn {
+        display: flex;
+        gap: 90px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- ash top and body start -->
+    <div>
+      <div class="top-bar">
+        <!-- <a href="addons.html"> -->
+        <a href="newpage.html">
+          <i class="bi bi-chevron-left"></i>
+        </a>
+        <div id="iBtn"></div>
+      </div>
+      <div class="containerBody">
+        <div class="addpageBtn">
+          <h3>Manage Pages</h3>
+          <!-- <a type="button" class="btn btn-primary" href="addnewpage.html">Add Pages</a> -->
+
+          <button
+            type="button"
+            class="btn btn-primary"
+            data-bs-toggle="modal"
+            data-bs-target="#addpagemodal"
+          >
+            Add page
+          </button>
+        </div>
+
+        <hr />
+
+        <div id="msg"></div>
+
+        <div>
+          <form id="updateOtherPages">
+            <div class="form-floating mb-3">
+              <select id="pageName" class="form-select">
+                <option value=""></option>
+              </select>
+              <label for="pageName">Select page</label>
+            </div>
+            <div hidden>
+              <input type="text" name="pid" id="pid" />
+              <input type="text" name="ptype" id="ptype" />
+            </div>
+            <div class="form-floating mb-3">
+              <input
+                type="text"
+                name="pageTitle"
+                id="pageTitle"
+                class="form-control"
+                placeholder="Enter page title"
+              />
+              <label for="pageTitle">Enter page title</label>
+            </div>
+            <div class="mb-3">
+              <label for="pageBody" class="form-label">Enter page body</label>
+              <textarea
+                class="form-control"
+                name="pageBody"
+                id="pageBody"
+                rows="10"
+              ></textarea>
+            </div>
+            <div class="col-md-12 text-center">
+              <button type="submit" class="btn btn-primary">Update</button>
+            </div>
+          </form>
+        </div>
+
+        <div class="container-fluid list-left-clear">
+          <div id="res"></div>
+        </div>
+      </div>
+    </div>
+    <!-- ash top and body end -->
+
+    <!-- ash bottom navigation start -->
+    <div class="bottomNav">
+      <ul>
+        <li>
+          <a href="home.html">
+            <i class="bi bi-house"></i>
+          </a>
+        </li>
+        <li>
+          <a href="orders.html">
+            <i class="bi bi-bag-heart"></i>
+          </a>
+        </li>
+        <li>
+          <a href="myshop.html">
+            <i class="bi bi-shop"></i>
+          </a>
+        </li>
+        <li>
+          <a href="mysettings.html">
+            <i class="bi bi-sliders"></i>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <!-- ash bottom navigation end -->
+
+    <!-- Modal -->
+    <div
+      class="modal fade"
+      id="addpagemodal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <form id="inputaddpages">
+              <div class="mb-3">
+                <label for="pagename" class="form-label">Enter page name</label>
+                <input
+                  id="pagename"
+                  name="pagename"
+                  type="text"
+                  class="form-control"
+                  placeholder="abc page"
+                />
+              </div>
+              <!-- <div class="mb-3">
+            <label for="pagename" class="form-label">Enter page name</label>
+            <input id="pagename" name="pagetype" type="text" class="form-control" placeholder="Enter page type">
+          </div> -->
+              <button type="submit" class="btn btn-primary">add page</button>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--modal-->
+
+    <script src="../assets/js/jquery-3.6.1.js"></script>
+    <script src="../assets/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/js/popper.min.js"></script>
+    <script src="../constant.js"></script>
+            <script src="../assets/js/script.js"></script>
+    <script src="../assets/js/templateFunctions.js"></script>
+    <script>
+      checkLogout();
+      otherPage();
+      printShopName();
+
+      $("#inputaddpages").submit(async function (e) {
+        e.preventDefault();
+        var currentDate = new Date();
+        var time = currentDate.toLocaleTimeString();
+        const formData = new FormData(this);
+
+        formData.append("type", "100");
+        formData.append("pagetype", time);
+        req = await fetch(appAPI, { method: "POST", body: formData });
+
+        res = await req.json();
+        data = res.data;
+        alert(data.msg);
+      });
+    </script>
+  </body>
+</html>

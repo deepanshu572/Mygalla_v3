@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="my_shop_name"></title>
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../assets/css/style.css" />
+</head>
+
+<body>
+    <!-- ash top and body start -->
+    <div>
+        <div class="top-bar">
+            <!-- <a href="addons.html"> -->
+            <a href="addons.html">
+                <i class="bi bi-chevron-left"></i>
+            </a>
+            <div id="iBtn"></div>
+        </div>
+        <div class="containerBody">
+            <div class="addpageBtn">
+                <h3>Page Style</h3>
+            </div>
+
+            <hr />
+
+            <div id="msg"></div>
+            <div class='container'>
+                <div style="display: flex;flex-direction: row;gap: 60px; justify-content: space-between;padding-bottom: 10px;">
+                    <span>Set Page style</span>
+                    <button type="button" id="changecat" onclick="chnageCatstyle()" class="btn btn-success"></button>
+                </div>
+               
+               
+                
+                <div style="display: flex;flex-direction: row;gap: 60px; justify-content: space-between;padding-bottom: 10px;">
+                    <span>Set wishlist style</span>
+                    <button type="button" id="changewishlist" onclick="chnagewishliststyle()"
+                        class="btn btn-success"></button>
+                </div>
+
+                 
+                <div style="display: flex;flex-direction: row;gap: 60px; justify-content: space-between;padding-bottom: 10px;">
+                    <span>Set buy now</span>
+                    <button type="button" id="changeBuyNow" onclick="changeBuyNow()"
+                        class="btn btn-success"></button>
+                </div>
+
+
+                <div style="display: flex;flex-direction: row;gap: 60px; justify-content: space-between; padding-bottom: 10px;">
+                    <span>Whatsapp Button</span>
+                    <button type="button" id="changeWhatsapp" onclick="changeWhatsapp()"
+                        class="btn btn-success"></button>
+                </div>
+
+            </div>
+
+            <div class="bottomNav">
+                <ul>
+                    <li>
+                        <a href="home.html">
+                            <i class="bi bi-house"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="orders.html">
+                            <i class="bi bi-bag-heart"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="myshop.html">
+                            <i class="bi bi-shop"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="mysettings.html">
+                            <i class="bi bi-sliders"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+
+            <script src="../assets/js/jquery-3.6.1.js"></script>
+            <script src="../assets/js/bootstrap.bundle.min.js"></script>
+            <script src="../assets/js/popper.min.js"></script>
+            <script src="../assets/js/ashImageCompress.js"></script>
+            <script src="../constant.js"></script>
+                    <script src="../assets/js/script.js"></script>
+    <script src="../assets/js/templateFunctions.js"></script>
+            <script>
+           printShopName();
+                const buttonState = async () => {
+                    const formData = new FormData();
+                    formData.append("type", "99");
+
+                    req = await fetch(appAPI, { method: "POST", body: formData });
+                    res = await req.json();
+                    console.log(res[0].tbl_value);
+                    data = res[0].tbl_value;
+                    if (data == 'main') {
+                        $("#changecat").val('all').html('ALL');
+                        $("#changecat").removeClass('btn-success');
+                        $("#changecat").addClass('btn-danger');
+                    } else {
+                        $("#changecat").val('main').html('MAIN');
+                    }
+
+                    // $("#changecat").val(res[0].tbl_value).html(res[0].tbl_value);
+                }
+
+
+                const wishlistState = async () => {
+                    const formData = new FormData();
+                    formData.append("type", "102");
+
+                    req = await fetch(appAPI, { method: "POST", body: formData });
+                    res = await req.json();
+                    console.log(res[0].tbl_value);
+                    data = res[0].tbl_value;
+                    if (data == 'Show') {
+                        $("#changewishlist").val('Hide').html('Hide');
+                        $("#changewishlist").removeClass('btn-success');
+                        $("#changewishlist").addClass('btn-danger');
+                    } else {
+                        $("#changewishlist").val('Show').html('Show');
+                        $("#changewishlist").removeClass('btn-danger');
+                        $("#changewishlist").addClass('btn-success');
+                    }
+
+                    // $("#changecat").val(res[0].tbl_value).html(res[0].tbl_value);
+                }
+
+                const chnageCatstyle = async () => {
+                    btnval = $("#changecat").val(); console.log(btnval);
+                    const formData = new FormData();
+                    formData.append("type", "98");
+                    formData.append("val", btnval);
+
+                    req = await fetch(appAPI, { method: "POST", body: formData });
+                    res = await req.json();
+                    data = res.data;
+                    alert(data.msg);
+                    location. reload()
+                }
+
+                const chnagewishliststyle = async () => {
+                    btnval = $("#changewishlist").val(); console.log(btnval);
+                    const formData = new FormData();
+                    formData.append("type", "101");
+                    formData.append("val", btnval);
+
+                    req = await fetch(appAPI, { method: "POST", body: formData });
+                    res = await req.json();
+                    data = res.data;
+                    alert(data.msg);
+                    wishlistState();
+                }
+
+                const loadBuyNow = async () => {
+                    const formData = new FormData();
+                    formData.append("type", "104");
+
+                    req = await fetch(appAPI, { method: "POST", body: formData });
+                    res = await req.json();
+                    console.log(res[0].tbl_value);
+                    data = res[0].tbl_value;
+                    if (data == 'On') {
+                        $("#changeBuyNow").val('Off').html('Off');
+                        $("#changeBuyNow").removeClass('btn-success');
+                        $("#changeBuyNow").addClass('btn-danger');
+                    } else {
+                        $("#changeBuyNow").val('On').html('On');
+                        $("#changeBuyNow").removeClass('btn-danger');
+                        $("#changeBuyNow").addClass('btn-success');
+                    }
+
+                    // $("#changecat").val(res[0].tbl_value).html(res[0].tbl_value);
+                }
+
+
+                const changeBuyNow = async () => {
+                    btnval = $("#changeBuyNow").val(); console.log(btnval);
+                    const formData = new FormData();
+                    formData.append("type", "105");
+                    formData.append("val", btnval);
+
+                    req = await fetch(appAPI, { method: "POST", body: formData });
+                    res = await req.json();
+                    data = res.data;
+                    alert(data.msg);
+                    loadBuyNow();
+                }
+
+                const changeWhatsapp = async () => {
+                    btnval = $("#changeWhatsapp").val(); console.log(btnval);
+                    // if(btnval == '1'){
+                    //     var WhatsappNo = prompt("Please Add your whatsapp No");
+                    // }
+                    const formData = new FormData();
+                    formData.append("type", "107");
+                    formData.append("val", btnval);
+                    // formData.append("WhatsappNo", WhatsappNo);
+
+                    req = await fetch(appAPI, { method: "POST", body: formData });
+                    res = await req.json();
+                    data = res.data;
+                    alert(data.msg);
+                    Whatsappstate();
+                }   
+                
+                const Whatsappstate = async () => {
+                    const formData = new FormData();
+                    formData.append("type", "106");
+
+                    req = await fetch(appAPI, { method: "POST", body: formData });
+                    res = await req.json();
+                    // console.log(res);
+                    data = res.tbl_value;
+                    if (data == '1') {
+                        console.log(data);
+                        $("#changeWhatsapp").val('0').html('Off');
+                        $("#changeWhatsapp").removeClass('btn-success');
+                        $("#changeWhatsapp").addClass('btn-danger');
+                    } else {
+                        $("#changeWhatsapp").val('1').html('On');
+                        $("#changeWhatsapp").removeClass('btn-danger');
+                        $("#changeWhatsapp").addClass('btn-success');
+                       
+                    }
+
+                    // $("#changecat").val(res[0].tbl_value).html(res[0].tbl_value);
+                }
+
+
+                loadBuyNow();
+                buttonState();
+                wishlistState();
+                Whatsappstate();
+            </script>
+</body>
+
+</html>

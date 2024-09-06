@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title id="my_shop_name"></title>
+  <link rel="stylesheet" href="../assets/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
+  <link rel="stylesheet" href="../assets/css/style.css" />
+</head>
+
+<body>
+  <!-- ash top and body start -->
+  <div>
+    <div class="top-bar">
+      <a href="home.html">
+        <i class="bi bi-chevron-left"></i>
+      </a>
+      <div id="iBtn"></div>
+    </div>
+
+    <div class="report-page">
+      <h3>Report</h3>
+
+      <div class="report-section">
+        <div class="report-head">
+          <div>
+            <label for="fr-date">From</label>
+            <input type="date" id="fr-date" onchange="getDate()" class="form-control" />
+          </div>
+          <div>
+            <label for="to-date">To</label>
+            <input type="date" id="to-date" onchange="getDate()" class="form-control" />
+          </div>
+        </div>
+        <div>
+          <div class="report-btn-list">
+            <div class="wrap-box">
+              <div class="box1">
+                <button class="button-report" onclick="getDateBtn('toady')">
+                  <i class="bi bi-calendar-date"></i>
+                  <p>Toady</p>
+                </button>
+              </div>
+              <div class="box1">
+                <button class="button-report" onclick="getDateBtn('yesterday')">
+                  <i class="bi bi-calendar-date"></i>
+                  <p>Yesterday</p>
+                </button>
+              </div>
+              <div class="box1">
+                <button class="button-report" onclick="getDateBtn('last7day')">
+                  <i class="bi bi-calendar-date"></i>
+                  <p>Last&nbsp;7&nbsp;day</p>
+                </button>
+              </div>
+              <div class="box1">
+                <button class="button-report" onclick="getDateBtn('thismonth')">
+                  <i class="bi bi-calendar-date"></i>
+                  <p>This&nbsp;month</p>
+                </button>
+              </div>
+              <div class="box1">
+                <button class="button-report" onclick="getDateBtn('lastmonth')">
+                  <i class="bi bi-calendar-date"></i>
+                  <p>Last&nbsp;month</p>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="report-body">
+
+          <div>
+            <h5>User</h5>
+            <hr />
+            <div id="user-table" class="table-class">
+              <table class="table mt-1">
+                <thead>
+                  <tr>
+                    <th>Date</th>
+                    <th>User</th>
+                  </tr>
+                </thead>
+                <tbody id="user-table-body"></tbody>
+              </table>
+            </div>
+            <div id="user-graph" class="graph-class"></div>
+          </div>
+
+          <div>
+            <h5>Orders</h5>
+            <hr />
+            <div id="order-table" class="table-class">
+              <table class="table mt-1">
+                <thead>
+                  <tr>
+                    <th>Date</th>
+                    <th>Volume</th>
+                  </tr>
+                </thead>
+                <tbody id="order-table-body"></tbody>
+              </table>
+            </div>
+            <div id="order-graph" class="graph-class"></div>
+          </div>
+
+          <div>
+            <h5>Product</h5>
+            <hr />
+            <div id="product-table" class="table-class">
+              <table class="table mt-1">
+                <thead>
+                  <tr>
+                    <th>Date</th>
+                    <th>Products</th>
+                    <th>Quantity</th>
+                  </tr>
+                </thead>
+                <tbody id="product-table-body"></tbody>
+              </table>
+            </div>
+            <div id="product-graph" class="graph-class"></div>
+          </div>
+
+          <div>
+            <h5>Order Type</h5>
+            <hr />
+            <div class="table-class">
+              <table class="table mt-1">
+                <thead>
+                  <tr>
+                    <th>Type</th>
+                    <th>Volume</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>POS</td>
+                    <td id="pos_count"></td>
+                  </tr>
+                  <tr>
+                    <td>APP</td>
+                    <td id="app_count"></td>
+                  </tr>
+                  <tr>
+                    <td>WEB</td>
+                    <td id="web_count"></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div id="order-type-graph" class="graph-class"></div>
+          </div>
+
+          <div>
+            <h5>Profit</h5>
+            <hr />
+            <div id="profit-table" class="table-class">
+              <table class="table mt-1">
+                <thead>
+                  <tr>
+                    <th>Date</th>
+                    <th>No of Sale</th>
+                    <th>Total Txn</th>
+                    <th>Profit</th>
+                  </tr>
+                </thead>
+                <tbody id="profit-table-body"></tbody>
+              </table>
+              <p class="c_t_transaction">Total transaction : &#8377; <span id="t_transaction"></span></p>
+              <p class="c_t_profit">Total Profit : &#8377; <span id="t_profit"></span></p>
+              <p></p>
+            </div>
+            <div id="profit-graph" class="graph-class"></div>
+          </div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- ash top and body end -->
+
+  <!-- ash bottom navigation start -->
+  <nav class="bottomNav">
+    <ul>
+      <li>
+        <a href="home.html">
+          <div>
+            <i class="bi bi-house"></i>
+          </div>
+          <div class="bottom-dot"></div>
+        </a>
+      </li>
+      <li id="orders_role_section">
+        <a href="orders.html">
+          <div>
+            <i class="bi bi-bag-heart"></i>
+          </div>
+        </a>
+      </li>
+      <li id="myshop_role_section">
+        <a href="myshop.html">
+          <div>
+            <i class="bi bi-shop"></i>
+          </div>
+        </a>
+      </li>
+      <li id="mysettings_role_section">
+        <a href="mysettings.html">
+          <div>
+            <i class="bi bi-sliders"></i>
+          </div>
+        </a>
+      </li>
+    </ul>
+  </nav>
+  <!-- ash bottom navigation end -->
+
+  <script src="../assets/js/jquery-3.6.1.js"></script>
+  <script src="../assets/js/bootstrap.bundle.min.js"></script>
+  <script src="../assets/js/popper.min.js"></script>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <script src="../constant.js"></script>
+          <script src="../assets/js/script.js"></script>
+    <script src="../assets/js/templateFunctions.js"></script>
+  <script>
+    checkLogout();
+    roleCheck();
+    printShopName();
+
+    // // function to handel get date
+    // function getDate() {
+    //   let frDate = $("#fr-date").val();
+    //   const dateObject1 = new Date(frDate);
+
+    //   if (isNaN(dateObject1.getTime())) {
+    //   } else {
+    //     frDate = dateObject1.toISOString().split("T")[0];
+    //   }
+
+    //   if (frDate != "") {
+    //     let toDate = $("#to-date").val();
+    //     const dateObject2 = new Date(toDate);
+
+    //     if (isNaN(dateObject2.getTime())) {
+    //     } else {
+    //       toDate = dateObject2.toISOString().split("T")[0];
+    //       loadAllChart(frDate, toDate);
+    //     }
+    //   } else {
+    //     alert("select both date");
+    //   }
+    // }
+
+    // // function to handel date on button click
+    // function getDateBtn(dateRange) {
+    //   let frDate = "";
+    //   let toDate = "";
+    //   const date = new Date();
+
+    //   if (dateRange == "toady") {
+
+    //     frDate = date.getFullYear() + "-" + parseInt(date.getMonth() + 1) + "-" + ("0" + date.getDate()).slice(-2);
+    //     toDate = frDate;
+
+    //   } else if (dateRange == "yesterday") {
+
+    //     frDate = date.getFullYear() + "-" + parseInt(date.getMonth() + 1) + "-" + ("0" + parseInt(date.getDate() - 1)).slice(-2);
+    //     toDate = frDate;
+
+    //   } else if (dateRange == "last7day") {
+
+    //     dateObject1 = new Date(Date.now() - 7 * 24 * 60 * 60 * 1000);
+    //     frDate = dateObject1.toISOString().split("T")[0];
+
+    //     toDate = date.getFullYear() + "-" + parseInt(date.getMonth() + 1) + "-" + ("0" + date.getDate()).slice(-2);
+
+    //   } else if (dateRange == "thismonth") {
+
+    //     let x = [];
+    //     dateObject1 = new Date(date.getFullYear(), date.getMonth() + 1, 1);
+
+    //     x = dateObject1.toISOString().split("T")[0].split('-');
+    //     x[2] = '01';
+    //     frDate = x.join('-');
+
+    //     toDate = dateObject1.toISOString().split("T")[0];
+
+    //   } else if (dateRange == "lastmonth") {
+
+    //     let x = [];
+    //     dateObject1 = new Date(date.getFullYear(), date.getMonth(), 1);
+
+    //     x = dateObject1.toISOString().split("T")[0].split('-');
+    //     x[2] = '01';
+    //     frDate = x.join('-');
+
+    //     toDate = dateObject1.toISOString().split("T")[0];
+
+    //   } else {
+    //   }
+    //   alert(frDate + " , " + toDate);
+    //   loadAllChart(frDate, toDate);
+    // }
+
+    // // function to handel chart loading
+    // function loadAllChart(frDate, toDate) {
+    //   frDate += " 00:00:00";
+    //   toDate += " 23:59:59";
+    //   $(".report-body").css("display", "block");
+    //   loadChartUser(frDate, toDate);
+    //   loadChartOrder(frDate, toDate);
+    //   loadChartProduct(frDate, toDate);
+    //   loadChartOrdertype(frDate, toDate);
+    //   loadChartProfit(frDate, toDate);
+    // }
+
+    // // load chart and table for user
+    // async function loadChartUser(start_date, end_date) {
+    //   const formData = new FormData();
+    //   formData.append("type", "53");
+    //   formData.append("start_date", start_date);
+    //   formData.append("end_date", end_date);
+    //   let req = await fetch(appAPI, { method: "POST", body: formData });
+    //   let res = await req.json();
+    //   let data = res.data;
+
+    //   let aggregatedData = data.reduce((result, { date, user_count }) => {
+    //     result[date] = (result[date] || 0) + parseInt(user_count);
+    //     return result;
+    //   }, {});
+
+    //   aggregatedData = Object.entries(aggregatedData).map(
+    //     ([date, user_count]) => ({ date, user_count })
+    //   );
+
+    //   // code for graph
+
+    //   const xValues = [];
+    //   const yValues = [];
+
+    //   aggregatedData.forEach((item) => {
+    //     xValues.push(item.date);
+    //     yValues.push(item.user_count);
+    //   });
+
+    //   const userData = [
+    //     { x: xValues, y: yValues, type: "bar", name: "no of users" },
+    //   ];
+
+    //   const userLayout = {
+    //     title: "User Graph",
+    //     showlegend: true,
+    //   };
+
+    //   const config = {
+    //     responsive: true,
+    //     scrollZoom: false,
+    //     staticPlot: true,
+    //     displayModeBar: false,
+    //   };
+
+    //   Plotly.newPlot("user-graph", userData, userLayout, config);
+
+    //   // code for print table
+    //   $("#user-table-body").html("");
+    //   aggregatedData.forEach(({ date, user_count }) => {
+    //     $("#user-table-body").append(
+    //       `<tr><td>${date}</td><td>${user_count}</td></tr>`
+    //     );
+    //   });
+    // }
+
+    // // load chart and table for order
+    // async function loadChartOrder(start_date, end_date) {
+    //   const formData = new FormData();
+    //   formData.append("type", "54");
+    //   formData.append("start_date", start_date);
+    //   formData.append("end_date", end_date);
+    //   let req = await fetch(appAPI, { method: "POST", body: formData });
+    //   let res = await req.json();
+    //   let data = res.data;
+
+    //   let aggregatedData = data.reduce((result, { date, order_count }) => {
+    //     result[date] = (result[date] || 0) + parseInt(order_count);
+    //     return result;
+    //   }, {});
+
+    //   aggregatedData = Object.entries(aggregatedData).map(
+    //     ([date, order_count]) => ({ date, order_count })
+    //   );
+
+    //   // code for graph
+
+    //   const xValues = [];
+    //   const yValues = [];
+
+    //   aggregatedData.forEach((item) => {
+    //     xValues.push(item.date);
+    //     yValues.push(item.order_count);
+    //   });
+
+    //   const orderData = [
+    //     { x: xValues, y: yValues, type: "bar", name: "no of orders" },
+    //   ];
+
+    //   const orderLayout = {
+    //     title: "Order Graph",
+    //     showlegend: true,
+    //   };
+
+    //   const config = {
+    //     responsive: true,
+    //     scrollZoom: false,
+    //     staticPlot: true,
+    //     displayModeBar: false,
+    //   };
+
+    //   Plotly.newPlot("order-graph", orderData, orderLayout, config);
+
+    //   // code for print table
+    //   $("#order-table-body").html("");
+    //   aggregatedData.forEach(({ date, order_count }) => {
+    //     $("#order-table-body").append(
+    //       `<tr><td>${date}</td><td>${order_count}</td></tr>`
+    //     );
+    //   });
+    // }
+
+    // // load chart and table for product
+    // async function loadChartProduct(start_date, end_date) {
+    //   const formData = new FormData();
+    //   formData.append("type", "55");
+    //   formData.append("start_date", start_date);
+    //   formData.append("end_date", end_date);
+    //   let req = await fetch(appAPI, { method: "POST", body: formData });
+    //   let res = await req.json();
+    //   let data = res.data;
+
+    //   const aggregatedData = {};
+
+    //   data.forEach((item) => {
+    //     const key = `${item.var_id}_${item.date}_${item.product_nm}`;
+
+    //     if (!aggregatedData[key]) {
+    //       aggregatedData[key] = {
+    //         var_id: item.var_id,
+    //         qty: 0,
+    //         price: item.price,
+    //         date: item.date,
+    //         product_nm: item.product_nm,
+    //       };
+    //     }
+
+    //     aggregatedData[key].qty += parseInt(item.qty);
+    //   });
+
+    //   const newData = Object.values(aggregatedData);
+
+    //   // code for graph
+
+    //   const traces = {};
+
+    //   newData.forEach((item) => {
+    //     const key = `${item.product_nm} + ${item.var_id}`;
+
+    //     if (!traces[key]) {
+    //       traces[key] = {
+    //         x: [],
+    //         y: [],
+    //         mode: "markers+lines",
+    //         name: `${item.product_nm}`,
+    //         type: "scatter",
+    //       };
+    //     }
+
+    //     traces[key].x.push(item.date);
+    //     traces[key].y.push(item.qty);
+    //   });
+
+    //   const productData = Object.values(traces);
+
+    //   const productLayout = {
+    //     showlegend: true,
+    //     legend: { x: 0, y: 6 },
+    //   };
+
+    //   const config = {
+    //     responsive: true,
+    //     scrollZoom: false,
+    //     staticPlot: true,
+    //     displayModeBar: false,
+    //   };
+
+    //   Plotly.newPlot("product-graph", productData, productLayout, config);
+
+    //   // code for print table
+    //   $("#product-table-body").html("");
+    //   newData.forEach(({ date, product_nm, price, qty }) => {
+    //     $("#product-table-body").append(
+    //       `<tr>
+    //         <td>${date}</td><td>${product_nm} <br> &#8377; ${price}</td><td> ${qty} </td>
+    //       </tr>`
+    //     );
+    //   });
+    // }
+
+    // // load chart and table for order type
+    // async function loadChartOrdertype(start_date, end_date) {
+
+    //   const formData = new FormData();
+    //   formData.append("type", "56");
+    //   formData.append("start_date", start_date);
+    //   formData.append("end_date", end_date);
+    //   let req = await fetch(appAPI, { method: "POST", body: formData });
+    //   let res = await req.json();
+    //   let data = res.data;
+
+    //   const xValues = ["POS", "APP", "WEB"];
+    //   const yValues = [data.pos_count, data.app_count, data.web_count];
+
+    //   const orderTypeData = [
+    //     { x: xValues, y: yValues, type: "bar", name: "Volume" },
+    //   ];
+
+    //   const orderTypeLayout = {
+    //     showlegend: true,
+    //   };
+
+    //   const config = {
+    //     responsive: true,
+    //     scrollZoom: false,
+    //     staticPlot: true,
+    //     displayModeBar: false,
+    //   };
+
+    //   Plotly.newPlot("order-type-graph", orderTypeData, orderTypeLayout, config);
+
+    //   // code for print table
+    //   $("#pos_count").html(data.pos_count);
+    //   $("#web_count").html(data.web_count);
+    //   $("#app_count").html(data.app_count);
+
+    // }
+
+    // // load chart and table for profit
+    // async function loadChartProfit(start_date, end_date) {
+
+    //   const formData = new FormData();
+    //   formData.append("type", "52");
+    //   formData.append("start_date", start_date);
+    //   formData.append("end_date", end_date);
+    //   let req = await fetch(appAPI, { method: "POST", body: formData });
+    //   let res = await req.json();
+    //   let { data } = res;
+
+    //   data = data.filter(item => item.status == "ORDERED");
+
+    //   const countByTxnDate = data.reduce((acc, item) => {
+    //     acc[item.txn_date] = (acc[item.txn_date] || 0) + 1;
+    //     return acc;
+    //   }, {});
+
+    //   let no_of_sale = Object.entries(countByTxnDate).map(([txn_date, no_of_sale]) => ({
+    //     no_of_sale,
+    //     txn_date
+    //   }));
+
+
+    //   let total_txn_profit = data.reduce((acc, item) => {
+    //     const { txn_date, selling_price, buying_price, quantity } = item;
+    //     const totalTxn = parseFloat(selling_price) * parseFloat(quantity);
+    //     const totalProfit = (parseFloat(selling_price) - parseFloat(buying_price)) * parseFloat(quantity);
+
+    //     if (!acc[txn_date]) {
+    //       acc[txn_date] = {
+    //         txn_date,
+    //         total_txn: totalTxn.toFixed(2),
+    //         total_profit: totalProfit.toFixed(2)
+    //       };
+    //     } else {
+    //       acc[txn_date].total_txn = (parseFloat(acc[txn_date].total_txn) + totalTxn).toFixed(2);
+    //       acc[txn_date].total_profit = (parseFloat(acc[txn_date].total_profit) + totalProfit).toFixed(2);
+    //     }
+
+    //     return acc;
+    //   }, {});
+
+    //   total_txn_profit = Object.values(total_txn_profit);
+
+    //   const mergedData = [];
+
+    //   no_of_sale.forEach(saleItem => {
+    //     const correspondingProfitItem = total_txn_profit.find(profitItem => profitItem.txn_date === saleItem.txn_date);
+    //     if (correspondingProfitItem) {
+    //       mergedData.push({
+    //         ...saleItem,
+    //         ...correspondingProfitItem
+    //       });
+    //     }
+    //   });
+
+    //   // code for graph
+
+    //   const xValues = [];
+    //   const yValues = [];
+
+    //   mergedData.forEach((item) => {
+    //     xValues.push(item.txn_date);
+    //     yValues.push(item.total_profit);
+    //   });
+
+    //   const profitData = [
+    //     { x: xValues, y: yValues, type: "bar", name: "no of orders" },
+    //   ];
+
+    //   const profitLayout = {
+    //     title: "Order Graph",
+    //     showlegend: true,
+    //   };
+
+    //   const config = {
+    //     responsive: true,
+    //     scrollZoom: false,
+    //     staticPlot: true,
+    //     displayModeBar: false,
+    //   };
+
+    //   Plotly.newPlot("profit-graph", profitData, profitLayout, config);
+
+
+
+    //   // code for print table
+
+    //   const { total_txn, total_profit } = mergedData.reduce((acc, item) => {
+    //     acc.total_txn += parseFloat(item.total_txn);
+    //     acc.total_profit += parseFloat(item.total_profit);
+    //     return acc;
+    //   }, { total_txn: 0, total_profit: 0 });
+
+    //   $("#t_transaction").html(`${total_txn.toFixed(2)}`);
+    //   $("#t_profit").html(`${total_profit.toFixed(2)}`);
+
+    //   $("#profit-table-body").html("");
+    //   mergedData.forEach(({ txn_date, no_of_sale, total_txn, total_profit }) => {
+    //     $("#profit-table-body").append(
+    //       `<tr><td>${txn_date}</td><td>${no_of_sale}</td><td>${total_txn}</td><td>${total_profit}</td></tr>`
+    //     );
+    //   });
+
+
+
+    // }
+  </script>
+</body>
+
+</html>

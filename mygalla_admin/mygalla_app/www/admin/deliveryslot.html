@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title id="my_shop_name"></title>
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+    />
+    <link rel="stylesheet" href="../assets/css/style.css" />
+  </head>
+  <body>
+    <!-- ash top and body start -->
+    <div>
+      <div class="top-bar">
+        <a href="addons.html">
+          <i class="bi bi-chevron-left"></i>
+        </a>
+        <div id="iBtn"></div>
+      </div>
+      <div class="containerBody">
+        <h3>Add new delivery slot</h3>
+        <hr />
+
+        <div id="msg"></div>
+
+        <div>
+          <form id="add-slot">
+            <div class="form-floating mb-3">
+              <input
+                type="text"
+                name="name"
+                id="name"
+                class="form-control"
+                placeholder="Enter slot name"
+              />
+              <label for="name">Enter slot name</label>
+            </div>
+            <div class="form-floating mb-3">
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Enter slot type name"
+                id="type_name"
+                name="type_name"
+              />
+              <label for="type_name">Enter slot type name</label>
+            </div>
+
+            <div class="form-floating mb-3">
+              <select
+                name="payment_type"
+                id="payment_type"
+                class="form-control"
+              >
+                <option value=""></option>
+                <option value="FREE">FREE</option>
+                <option value="PAID">PAID</option>
+              </select>
+              <label for="payment_type">Select type {Free , Paid}</label>
+            </div>
+
+            <div id="slot_change_payment">
+              <div class="form-floating mb-3">
+                <input
+                  type="number"
+                  id="amount"
+                  name="amount"
+                  class="form-control"
+                  placeholder="Enter amount"
+                  value="0"
+                />
+                <label for="amount">Enter amount</label>
+              </div>
+
+              <div class="form-floating mb-3">
+                <select
+                  name="amount_type"
+                  id="amount_type"
+                  class="form-control"
+                >
+                  <option value=""></option>
+                  <option value="FLAT">FLAT</option>
+                  <option value="PERCENT">IN PERCENT</option>
+                </select>
+                <label for="amount_type"
+                  >Select amount type {flat , percent (%)}</label
+                >
+              </div>
+            </div>
+
+            <div class="form-floating mb-3" style="display: none">
+              <input
+                type="text"
+                class="form-control"
+                id="upto_condition"
+                value="NULL"
+                name="upto_condition"
+              />
+            </div>
+
+            <button type="submit" class="btn btn-primary">ADD NEW</button>
+          </form>
+        </div>
+        <hr />
+
+        <div class="container-fluid list-left-clear">
+          <div id="res"></div>
+        </div>
+      </div>
+    </div>
+    <!-- ash top and body end -->
+
+    <!-- ash bottom navigation start -->
+    <div class="bottomNav">
+      <ul>
+        <li>
+          <a href="home.html">
+            <i class="bi bi-house"></i>
+          </a>
+        </li>
+        <li>
+          <a href="orders.html">
+            <i class="bi bi-bag-heart"></i>
+          </a>
+        </li>
+        <li>
+          <a href="myshop.html">
+            <i class="bi bi-shop"></i>
+          </a>
+        </li>
+        <li>
+          <a href="mysettings.html">
+            <i class="bi bi-sliders"></i>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <!-- ash bottom navigation end -->
+
+    <script src="../assets/js/jquery-3.6.1.js"></script>
+    <script src="../assets/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/js/popper.min.js"></script>
+    <script src="../constant.js"></script>
+            <script src="../assets/js/script.js"></script>
+    <script src="../assets/js/templateFunctions.js"></script>
+    <script>
+      checkLogout();
+      loadAllSlot();
+      printShopName();
+    </script>
+  </body>
+</html>
