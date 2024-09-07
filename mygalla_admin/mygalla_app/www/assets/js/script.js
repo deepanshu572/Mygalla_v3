@@ -943,3 +943,15 @@ function addonsData() {
   $("#res").append(addonsId);
   // console.log(addonsId);
 }
+
+function PosData() {
+  x = 1;
+  var posDataId = " ";
+  product_data.map((item) => {    
+    posDataId += posproductTempelate(item ,x);
+    x++;
+  });
+
+  $("#res").append(posDataId);
+  // console.log(addonsId);
+}

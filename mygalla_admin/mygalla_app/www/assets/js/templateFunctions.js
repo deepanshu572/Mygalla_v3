@@ -32,6 +32,9 @@ function loadProduct(data, x) {
               </div>
     </div>`;
 }
+function manageProduct() {
+  location.href = "manageProduct.html";
+}
 function disableProduct() {
   //pending section
 }
@@ -56,10 +59,6 @@ function loadCategoryProduct(data) {
           </p>
         </div>
         <div>
-          <button 
-            type="button" 
-            onclick='manageCategory(${JSON.stringify(data)})' 
-            class="btn btn-warning">Manage</button>
           <button 
             type="button"
             id="${data.id}"
@@ -125,10 +124,6 @@ function categoryListTemplate(data, x) {
           </p>
         </div>
         <div>
-          <button 
-            type="button" 
-            onclick='manageCategory(${JSON.stringify(data)})' 
-            class="btn btn-warning">Manage</button>
           ${btn}
         </div>
       </div>
@@ -322,5 +317,36 @@ function addonsTemplate(data , x) {
         </div>
       </div>`
 }
-
+function posproductTempelate(data , x) {
+  return`<div class="product-card">
+                  <div class="product-card-top">
+                      <span>S NO :  ${x}  </span>
+                      <span> ${data.stock} more left </span>
+                  </div>
+                  <div class="product-card-bottom">
+                      <div>
+                          <img src="${data.image}">
+                      </div>
+                      <div>
+                          <p> Name : ${data.title}<br> 
+                          </p>
+                          <p> Price : ₹ ${data.price}. </p>
+                      </div>
+                      
+                  </div>
+                  <div>
+                      <div id="addToPOSBtnDiv">
+                          <button type="button" id="addToPOSBtn${data.id}" onclick="addtoPOS(${JSON.stringify(data)})" class="btn btn-success">
+                              <i class="bi bi-plus-lg"></i>  ADD
+                          </button>
+                          <div id="addToPOSCounter57" class="addToPOSCounter" style="display:none;">
+                              <button type="button" id="addToPOSBtn57" onclick="addtoPOSMinus()" class="btn btn-success">-</button>
+                              <input id="addToPOSInput57" value="1" readonly="">
+                              <button type="button" id="addToPOSBtn57" onclick="addtoPOSPlus()" class="btn btn-success">+</button>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+  `
+}
 

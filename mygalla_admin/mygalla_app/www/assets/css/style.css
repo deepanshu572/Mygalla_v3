@@ -3,30 +3,19 @@
 {
 	/* --theme:#ee7117; */
 	/* --theme:#006615; */
-	--theme:green;
+	--theme:#008000;
 	--theme-bg:#f5f5f5;
 	--shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	--shadow1: 1px 1px 7px #d9d9d9;
+	--shadow2: 1px 1px 0px #eaeaea;
+	--shadow3: 1px 1px 4px #eae9e9;
 	--back-shadow: 0px 4px 10px 0px #0000004D;
-	--bg-shadow1:2px 7px 9px 0 #b6b6b6bf;
-	--bg-shadow3:2px 2px 5px #9a9a9abf;
-	--bg-shadow4:-2px 5px 10px #00000040;
-	--bg-shadow5:1px 2px 12px #cbcbcbbf;
 	--bg-shadow6:1px 1px 9px #a1a1a1;
-	--bg-shadow7:0 0 1px gray;
-	--bg-shadow8:0 -2px 5px #00000013;
-	--bg-shadow9:1px 6px 8px #9a9a9abf;
-	--border:2px solid #e5e5e5;
-	--border2:1px solid gray;
-	--border3:2px solid gray;
-	--border4:2px solid #c9c9c9;
-	--border5:2px solid #dadada;
-	--border6:2px solid #f9f9f9;
-	--black-color:#000;
 	--main-bg:#f7f7f7;
 	--green:#00ff19;
-	--red:#f34235;
-	--white:#fff;
-	--white-type:#ececec
+	/* --red:#f34235; */
+	--white:#fff
+	/* --white-type:#ececec */
 }
 *{
 	font-family: "Poppins", sans-serif !important;
@@ -378,6 +367,7 @@ admin code start
 	position:fixed;
 	top:0;
 	left:0;
+	box-shadow: var(--shadow2);
 	z-index:999;
 	column-gap:2vw
 }
@@ -573,12 +563,12 @@ input[type="file"]
 
 .product-card
 {
-	width:88vw;
-	background-color:#fff;
-	border-radius:2vh;
-	margin-left:.8vh;
-	margin-top:2.5vh;
-	box-shadow:var(--shadow)
+    width: 88vw;
+    background-color: #fff;
+    border-radius: 10px;
+    margin-left: .8vh;
+    margin-top: 2.5vh;
+	box-shadow: 1px 1px 5px #e4e4e4;
 }
 
 .product-card-top
@@ -599,7 +589,9 @@ input[type="file"]
 
 .product-card-bottom
 {
-	display:flex
+	display: flex;
+    align-items: center;
+    padding: 0px 10px
 }
 
 .product-card-bottom > div
@@ -612,7 +604,7 @@ input[type="file"]
 {
 	flex:1;
 	width:20vw;
-	height:20vw;
+	height:26vw;
 	margin-left:2px;
 	overflow:hidden
 }
@@ -620,8 +612,7 @@ input[type="file"]
 .product-card-bottom > div:nth-child(1) > img
 {
 	width:inherit;
-	height:inherit;
-	margin-top:10px
+	height:inherit
 }
 
 .product-card-bottom > div:nth-child(2)
@@ -637,6 +628,7 @@ input[type="file"]
 	display:flex;
 	flex-direction:column;
 	row-gap:.8vh;
+	justify-content: center;
 	padding:6px
 }
 
@@ -746,6 +738,9 @@ input[type="file"]
 	padding:20px 10px;
 	margin:auto;
 	margin-top:3vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
 	box-shadow:var(--shadow)
 }
 
@@ -1409,13 +1404,17 @@ input[type="file"]
 
 .srchTopInput1
 {
-	height:35px;
-	width:40vw;
-	border:none;
-	border-radius:25px;
-	box-shadow:var(--shadow);
-	padding-left:20px;
-	padding-right:20px
+	height: 35px;
+    width: 48vw;
+    border: none;
+    border-radius: 6px;
+    box-shadow: var(--shadow1);
+    padding-left: 20px;
+    padding-right: 20px;
+    outline: none;
+    font-size: 12px;
+	position: relative;
+    left: 95px;
 }
 
 .scannerBtnPOS
@@ -1436,12 +1435,12 @@ input[type="file"]
 	position:fixed;
 	top:74px;
 	left:0;
-	padding:0 20px;
+	padding:4px 53px;
 	z-index:11;
 	display:flex;
 	justify-content:space-between;
 	align-items:center;
-	box-shadow:2px 2px 9px #d8d8d8;
+	box-shadow:var(--shadow2);
 	padding-bottom:8px
 }
 
@@ -1938,6 +1937,9 @@ input[type="file"]
 	flex-direction:column;
 	background-color:#fff
 }
+.range-visible{
+	box-shadow: var(--shadow2);
+}
 
 .top-bar-product
 {
@@ -1984,12 +1986,17 @@ input[type="file"]
 
 .product-select > select
 {
-	width:21vw;
 	margin:4px;
 	padding:1px 5px;
-	border-radius:0;
-	border:1px solid #d1cece;
-	color:#7e7e7e
+	height: 35px;
+    width: 23vw;
+    border: none;
+    border-radius: 6px;
+    box-shadow: var(--shadow3);
+    padding-left: 20px;
+    padding-right: 20px;
+    outline: none;
+    font-size: 12px;
 }
 
 .scannerBtnPOSProductPage
@@ -2005,12 +2012,15 @@ input[type="file"]
 
 .srchTopInputProductPage
 {
-	height:35px;
-	width:50vw;
-	border:none;
-	border-radius:25px;
-	box-shadow:var(--shadow);
-	padding:0 20px
+	height: 35px;
+    width: 48vw;
+    border: none;
+    border-radius: 6px;
+    box-shadow: var(--shadow3);
+    padding-left: 20px;
+    padding-right: 20px;
+    outline: none;
+    font-size: 12px;
 }
 
 .info-pg-btn
@@ -2113,8 +2123,22 @@ input[type="file"]
     font-size: 12px;
     padding-top: 9px
 }
-
+.pos-body #res .product-card-bottom > div:nth-child(2) p{
+	display: -webkit-box;
+-webkit-line-clamp: 3;
+-webkit-box-orient: vertical;
+overflow: hidden;
+text-overflow: ellipsis;
+margin: 0;
+}
 @media (min-width: 600px) and (max-width: 2000px) {
+	.manageStock{
+		align-items: center;
+	}
+	.form-center{
+		width: 72%;
+		margin: auto;
+	}
 	#preview_img
 	{
 		width:18vw
@@ -2168,17 +2192,15 @@ input[type="file"]
 		flex-wrap:wrap;
 		flex-direction:column;
 		gap:1px;
-		border:1px solid #cdcdcd;
-		box-shadow:unset!important
 	}
 
 	.srchTopInputProductPage
 	{
-		border-radius:7px;
+		/* border-radius:7px;
 		box-shadow:none!important;
 		border:1px solid #bcbcbc;
 		font-size:13px;
-		outline:none
+		outline:none */
 	}
 
 	.scannerBtnPOSProductPage
@@ -2308,7 +2330,6 @@ input[type="file"]
 		width:100%;
 		height:100%;
 		object-fit:contain;
-		margin-bottom:10px
 	}
 
 	.admin-home-top-shop-name
@@ -2551,8 +2572,9 @@ input[type="file"]
 
 	#res .product-card-bottom > div:nth-child(1)
 	{
-		width:89px;
-		height:105px
+		width: 165px;
+		padding: 0px;
+        height: 105px
 	}
 
 	#res .product-card-bottom > div:nth-child(1) > img
@@ -2969,15 +2991,7 @@ input[type="file"]
 		text-transform:capitalize
 	}
 
-	.top-bar
-	{
-		box-shadow:1px 1px 5px #cfcdcd
-	}
-
-	.product-panel-top-bar
-	{
-		box-shadow:1px 1px 4px #d2cbcb
-	}
+	
 
 	.invoice
 	{
@@ -3265,13 +3279,6 @@ input[type="file"]
 		font-weight:200
 	}
 
-	.product-select > select
-	{
-		padding:3px 5px;
-		border-radius:5px;
-		color:#000;
-		font-size:14px
-	}
 
 	.update-shop i
 	{
@@ -3610,8 +3617,48 @@ input[type="file"]
 	align-items:center;
 	width:390px
 }
+#addToPOSBtnDiv button{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 5px;
+	background-color: var(--theme);
+
+}
 
 @media (max-width: 600px) {
+	.product-select > select
+	{
+		width: 123px;
+	}
+	.pos-header{
+		padding: 4px 28px;
+	}
+	.product-card-bottom > div:nth-child(1) > img {
+		width: 100%;
+		height: 100%;
+		margin-top: 10px;
+		object-fit: contain;
+	}
+	
+	.srchTopInput1{
+		position: unset;
+	}
+	.pos-body #res{
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+	#addToPOSBtnDiv {
+		width: 100%;
+        padding-bottom: 18px;
+        display: flex;
+        justify-content: end;
+        padding-right: 15px;
+	}
+	#addToPOSBtnDiv button{
+		width: 28%;
+	}
 	#setnotification .form-group
 	{
 		width:auto
@@ -4187,6 +4234,15 @@ a{
     font-size: 14px;
     padding: 0px 11px;
 }
+.pos-header .btn-primary:hover{
+	background-color: var(--theme);
+	
+}
+.pos-header .btn-primary{
+	background-color: var(--theme);
+    border: none;
+}
+
 
 @media (max-width: 600px) {
     .logo_inp, .logo_input_box {
@@ -4202,9 +4258,17 @@ a{
 	.upadte_right_dialog .modal-body {
         padding: 0;
     }
+	.admin_main .admin-home-top-shop-name{
+		width: 90vw;
+	}
+	.admin_main{
+       background: url(../images/bg.webp);
+       height: 100vh;
+	}
 }
 
 @media (min-width: 600px) and (max-width: 2000px) {
+
 	.hero_right_admin_inp svg{
 		margin-right: 11px;
 	}
