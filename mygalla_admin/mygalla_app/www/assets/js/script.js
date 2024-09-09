@@ -1,6 +1,7 @@
 const product_data = [
   {
     id: 1,
+    status : 1,
     title: "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
     price: 109.95,
     description:
@@ -15,6 +16,7 @@ const product_data = [
   },
   {
     id: 2,
+    status : 1,
     title: "Mens Casual Premium Slim Fit T-Shirts ",
     price: 22.3,
     description:
@@ -30,6 +32,7 @@ const product_data = [
   },
   {
     id: 3,
+    status : 1,
     title: "Mens Cotton Jacket",
     price: 55.99,
     description:
@@ -44,6 +47,7 @@ const product_data = [
   },
   {
     id: 4,
+    status : 1,
     title: "Mens Casual Slim Fit",
     price: 15.99,
     description:
@@ -58,6 +62,7 @@ const product_data = [
   },
   {
     id: 5,
+    status : 1,
     title:
       "John Hardy Women's Legends Naga Gold & Silver Dragon Station Chain Bracelet",
     price: 695,
@@ -73,6 +78,7 @@ const product_data = [
   },
   {
     id: 6,
+    status : 0,
     title: "Solid Gold Petite Micropave ",
     price: 168,
     description:
@@ -87,6 +93,7 @@ const product_data = [
   },
   {
     id: 7,
+    status : 1,
     title: "White Gold Plated Princess",
     price: 9.99,
     description:
@@ -101,6 +108,7 @@ const product_data = [
   },
   {
     id: 8,
+    status : 1,
     title: "Pierced Owl Rose Gold Plated Stainless Steel Double",
     price: 10.99,
     description:
@@ -115,6 +123,7 @@ const product_data = [
   },
   {
     id: 9,
+    status : 1,
     title: "WD 2TB Elements Portable External Hard Drive - USB 3.0 ",
     price: 64,
     description:
@@ -129,6 +138,7 @@ const product_data = [
   },
   {
     id: 10,
+    status : 0,
     title: "SanDisk SSD PLUS 1TB Internal SSD - SATA III 6 Gb/s",
     price: 109,
     description:
@@ -143,6 +153,7 @@ const product_data = [
   },
   {
     id: 11,
+    status : 1,
     title:
       "Silicon Power 256GB SSD 3D NAND A55 SLC Cache Performance Boost SATA III 2.5",
     price: 109,
@@ -158,6 +169,7 @@ const product_data = [
   },
   {
     id: 12,
+    status : 0,
     title:
       "WD 4TB Gaming Drive Works with Playstation 4 Portable External Hard Drive",
     price: 114,
@@ -173,6 +185,7 @@ const product_data = [
   },
   {
     id: 13,
+    status : 1,
     title: "Acer SB220Q bi 21.5 inches Full HD (1920 x 1080) IPS Ultra-Thin",
     price: 599,
     description:
@@ -187,6 +200,7 @@ const product_data = [
   },
   {
     id: 14,
+    status : 0,
     title:
       "Samsung 49-Inch CHG90 144Hz Curved Gaming Monitor (LC49HG90DMNXZA) – Super Ultrawide Screen QLED ",
     price: 999.99,
@@ -202,6 +216,7 @@ const product_data = [
   },
   {
     id: 15,
+    status : 1,
     title: "BIYLACLESEN Women's 3-in-1 Snowboard Jacket Winter Coats",
     price: 56.99,
     description:
@@ -216,6 +231,7 @@ const product_data = [
   },
   {
     id: 16,
+    status : 1,
     title:
       "Lock and Love Women's Removable Hooded Faux Leather Moto Biker Jacket",
     price: 29.95,
@@ -231,6 +247,7 @@ const product_data = [
   },
   {
     id: 17,
+    status : 1,
     title: "Rain Jacket Women Windbreaker Striped Climbing Raincoats",
     price: 39.99,
     description:
@@ -245,6 +262,7 @@ const product_data = [
   },
   {
     id: 18,
+    status : 0,
     title: "MBJ Women's Solid Short Sleeve Boat Neck V ",
     price: 9.85,
     description:
@@ -259,6 +277,7 @@ const product_data = [
   },
   {
     id: 19,
+    status : 0,
     title: "Opna Women's Short Sleeve Moisture",
     price: 7.95,
     description:
@@ -273,6 +292,7 @@ const product_data = [
   },
   {
     id: 20,
+    status : 1,
     title: "DANVOUY Womens T Shirt Casual Cotton Short",
     price: 12.99,
     description:
@@ -707,6 +727,7 @@ const addonsDataarr = [
     id: "1",
     link : "https://www.youtube.com/embed/0Qwx391JAWk?si=5RJ4iUM98wuzzwuf",
     name : "THEME",
+    pagelink : "theme.html",
     img : "https://img.icons8.com/clouds/100/add.png",
     fprice : "3000",
     price : "2500",
@@ -716,7 +737,8 @@ const addonsDataarr = [
   {
     id: "2",
     link : "https://www.youtube.com/embed/0Qwx391JAWk?si=5RJ4iUM98wuzzwuf",
-    name : "THEME",
+    name : "BANNER",
+    pagelink : "banner.html",
     img : "https://img.icons8.com/clouds/100/add.png",
     fprice : "3000",
     price : "2500",
@@ -726,7 +748,8 @@ const addonsDataarr = [
   {
     id: "3",
     link : "https://www.youtube.com/embed/0Qwx391JAWk?si=5RJ4iUM98wuzzwuf",
-    name : "THEME",
+    name : "COUPONS",
+    pagelink : "coupon.html",
     img : "https://img.icons8.com/clouds/100/add.png",
     fprice : "3000",
     price : "2500",
@@ -736,7 +759,8 @@ const addonsDataarr = [
   {
     id: "4",
     link : "https://www.youtube.com/embed/0Qwx391JAWk?si=5RJ4iUM98wuzzwuf",
-    name : "THEME",
+    name : "DELIVERY SLOT",
+    pagelink : "deliveryslot.html",
     img : "https://img.icons8.com/clouds/100/add.png",
     fprice : "3000",
     price : "2500",
@@ -746,7 +770,8 @@ const addonsDataarr = [
   {
     id: "5",
     link : "https://www.youtube.com/embed/0Qwx391JAWk?si=5RJ4iUM98wuzzwuf",
-    name : "THEME",
+    name : "TAKEAWAY",
+    pagelink : "#",
     img : "https://img.icons8.com/clouds/100/add.png",
     fprice : "3000",
     price : "2500",
@@ -756,7 +781,8 @@ const addonsDataarr = [
   {
     id: "6",
     link : "https://www.youtube.com/embed/0Qwx391JAWk?si=5RJ4iUM98wuzzwuf",
-    name : "THEME",
+    name : "ONLINE PAYMENT",
+    pagelink : "paymentSetting.html",
     img : "https://img.icons8.com/clouds/100/add.png",
     fprice : "3000",
     price : "2500",
@@ -766,7 +792,8 @@ const addonsDataarr = [
   {
     id: "7",
     link : "https://www.youtube.com/embed/0Qwx391JAWk?si=5RJ4iUM98wuzzwuf",
-    name : "THEME",
+    name : "CANCEL ORDER",
+    pagelink : "cancelorder.html",
     img : "https://img.icons8.com/clouds/100/add.png",
     fprice : "3000",
     price : "2500",
@@ -776,7 +803,8 @@ const addonsDataarr = [
   {
     id: "8",
     link : "https://www.youtube.com/embed/0Qwx391JAWk?si=5RJ4iUM98wuzzwuf",
-    name : "THEME",
+    name : "DELIVERY",
+    pagelink : "#",
     img : "https://img.icons8.com/clouds/100/add.png",
     fprice : "3000",
     price : "2500",
@@ -786,7 +814,8 @@ const addonsDataarr = [
   {
     id: "9",
     link : "https://www.youtube.com/embed/0Qwx391JAWk?si=5RJ4iUM98wuzzwuf",
-    name : "THEME",
+    name : "PAGES",
+    pagelink : "newpage.html",
     img : "https://img.icons8.com/clouds/100/add.png",
     fprice : "3000",
     price : "2500",
@@ -796,7 +825,8 @@ const addonsDataarr = [
   {
     id: "10",
     link : "https://www.youtube.com/embed/0Qwx391JAWk?si=5RJ4iUM98wuzzwuf",
-    name : "THEME",
+    name : "GST",
+    pagelink : "#",
     img : "https://img.icons8.com/clouds/100/add.png",
     fprice : "3000",
     price : "2500",
@@ -806,7 +836,8 @@ const addonsDataarr = [
   {
     id: "11",
     link : "https://www.youtube.com/embed/0Qwx391JAWk?si=5RJ4iUM98wuzzwuf",
-    name : "THEME",
+    name : "CATEGORY STYLE",
+    pagelink : "setCatStyle.html",
     img : "https://img.icons8.com/clouds/100/add.png",
     fprice : "3000",
     price : "2500",
@@ -816,7 +847,8 @@ const addonsDataarr = [
   {
     id: "12",
     link : "https://www.youtube.com/embed/0Qwx391JAWk?si=5RJ4iUM98wuzzwuf",
-    name : "THEME",
+    name : " REFER AND EARN",
+    pagelink : "manage_Refer_and_earn.html",
     img : "https://img.icons8.com/clouds/100/add.png",
     fprice : "3000",
     price : "2500",
@@ -826,7 +858,8 @@ const addonsDataarr = [
   {
     id: "13",
     link : "https://www.youtube.com/embed/0Qwx391JAWk?si=5RJ4iUM98wuzzwuf",
-    name : "THEME",
+    name : "PUSH NOTIFICATION",
+    pagelink : "pushNotification.html",
     img : "https://img.icons8.com/clouds/100/add.png",
     fprice : "3000",
     price : "2500",
@@ -836,12 +869,85 @@ const addonsDataarr = [
   {
     id: "14",
     link : "https://www.youtube.com/embed/0Qwx391JAWk?si=5RJ4iUM98wuzzwuf",
-    name : "THEME",
+    name : "MIN ORDER",
+    pagelink : "minmumVal.html",
     img : "https://img.icons8.com/clouds/100/add.png",
     fprice : "3000",
     price : "2500",
     discount : "16.9%",
     description : "Transform the look and feel of your device effortlessly with our dynamic Theme section. Dive into a world of..."
+  }
+];
+const order_data = [
+  {
+    orderId: "ORD27334646473",
+    orderStatus: "Placed",
+    orderFrom: "Pos",
+    no_item: "4",
+    totalAmount: "4000"
+  },
+  {
+    orderId: "ORD27334646473",
+    orderStatus: "Placed",
+    orderFrom: "App",
+    no_item: "9",
+    totalAmount: "5000"
+  },
+  {
+    orderId: "ORD27334646473",
+    orderStatus: "Placed",
+    orderFrom: "Pos",
+    no_item: "2",
+    totalAmount: "2000"
+  },
+  {
+    orderId: "ORD27334646473",
+    orderStatus: "Placed",
+    orderFrom: "App",
+    no_item: "48",
+    totalAmount: "6000"
+  },
+  {
+    orderId: "ORD27334646473",
+    orderStatus: "Placed",
+    orderFrom: "Pos",
+    no_item: "14",
+    totalAmount: "12000"
+  },
+  {
+    orderId: "ORD27334646473",
+    orderStatus: "Placed",
+    orderFrom: "Pos",
+    no_item: "4",
+    totalAmount: "4000"
+  },
+  {
+    orderId: "ORD27334646473",
+    orderStatus: "Placed",
+    orderFrom: "App",
+    no_item: "9",
+    totalAmount: "5000"
+  },
+  {
+    orderId: "ORD27334646473",
+    orderStatus: "Placed",
+    orderFrom: "Pos",
+    no_item: "2",
+    totalAmount: "2000"
+  },
+  {
+    orderId: "ORD27334646473",
+    orderStatus: "Placed",
+    orderFrom: "App",
+    no_item: "48",
+    totalAmount: "6000"
+  },
+  {
+    orderId: "ORD27334646473",
+    orderStatus: "Placed",
+    orderFrom: "Pos",
+    no_item: "14",
+    totalAmount: "12000"
   }
 ];
 
@@ -953,5 +1059,43 @@ function PosData() {
   });
 
   $("#res").append(posDataId);
-  // console.log(addonsId);
+}
+function loadPOSItem() {
+  x = 1;
+  var PosDataId = " ";
+  product_data.map((item) => {    
+    PosDataId += PosDataTemplate(item ,x);
+    x++;
+  });
+
+  $("#res").append(PosDataId);
+}
+function orderListItem() {
+  var OrderDataId = " ";
+  order_data.map((item) => {    
+    OrderDataId += OrderDataTemplate(item , 1);
+  });
+
+  $("#orderList").append(OrderDataId);
+}
+function DeleveryBoyorderListItem() {
+  var DeleveryBoyOrderDataId = " ";
+  order_data.map((item) => {    
+    DeleveryBoyOrderDataId += OrderDataTemplate(item , 2);
+  });
+
+  $("#orderList").append(DeleveryBoyOrderDataId);
+}
+function loadAllCategroyKA() {
+  x = 1;
+  var LoadCategoryDataId = " ";
+  category_data.map((item) => {    
+    LoadCategoryDataId += LoadCategoryTemplate(item ,x);
+    x++;
+  });
+
+  $("#res").append(LoadCategoryDataId);
+}
+function gotoposCheckout() {
+    location.href = "posCheckout.html";
 }

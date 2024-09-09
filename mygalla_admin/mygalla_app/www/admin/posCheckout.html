@@ -59,14 +59,14 @@
             <div class="row">
               <div class="form-floating col form-group">
                 <input type="number" class="form-control inputAsh" id="discountval" name="discountval" value="0" />
-                <label for="discountval">Enter discount</label>
+                <label for="discountval" class="update-label">Enter discount</label>
               </div>
               <div class="form-floating col form-group">
                 <select name="discount_mode" id="discount_mode" class="form-control inputAsh">
                   <option value="flat">FLAT</option>
                   <option value="percent">PERCENT</option>
                 </select>
-                <label for="discount_mode">Discount type</label>
+                <label for="discount_mode" class="update-label">Discount type</label>
               </div>
             </div>
             <p id="error_1" class="form-text error-ash"></p>
@@ -103,7 +103,7 @@
           </div>
         </div>
 
-        <div id="res"></div>
+        <div id="res" class="res-update"></div>
       </div>
     </div>
   </div>
@@ -143,11 +143,7 @@
           <script src="../assets/js/script.js"></script>
     <script src="../assets/js/templateFunctions.js"></script>
   <script>
-    checkLogout();
     loadPOSItem();
-    loadPOSTotal();
-    loadGSTStatusCheckout();
-    printShopName();
   </script>
 </body>
 

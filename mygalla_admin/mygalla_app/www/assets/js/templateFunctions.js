@@ -35,9 +35,15 @@ function loadProduct(data, x) {
 function manageProduct() {
   location.href = "manageProduct.html";
 }
-function disableProduct() {
-  //pending section
-}
+// function disableProduct(id , status) {
+//   let btnColor = status == 1 ? "danger" : "success";
+//   let btnText = status == 1 ? "Disable" : "Enable";
+//   let a = status == 1 ? "success" : "danger";
+//   $(`#${id}`).removeClass(`btn btn-${a}`)
+//   $(`#${id}`).addClass(`btn btn-${btnColor}`)
+//   $(`#${id}`).html(btnText);
+//   console.log(btnText);     
+// }
 
 function loadCategoryProduct(data) {
   return `
@@ -311,7 +317,7 @@ function addonsTemplate(data , x) {
             
           ${btn}
          
-            <a class="btn btn-warning" href="theme.html">manage</a>
+            <a class="btn btn-warning" href="${data.pagelink}">manage</a>
         
           </div>
         </div>
@@ -350,3 +356,92 @@ function posproductTempelate(data , x) {
   `
 }
 
+function PosDataTemplate(data , x) {
+  return `
+  <div class="product-card">
+                  <div class="product-card-top">
+                      <span>S NO : ${x}  </span>
+                      <span class="pro_err_msg">  </span>
+                  </div>
+                  <div class="product-card-bottom">
+                      <div>
+                          <img src="${data.image}">
+                      </div>
+                      <div>
+                          <p> Name : ${data.title} <br> 
+                          </p>
+                          <p> Price : ₹ ${data.price}. </p>
+                      </div>
+                      
+                  </div>
+                  <div>
+                      <div id="addToPOSBtnDiv">                       
+                          <div id="addToPOSCounter57" class="addToPOSCounter">
+                              <button type="button" id="addToPOSBtn57" onclick="addtoPOSMinusCheckout({&quot;var_id&quot;:&quot;57&quot;,&quot;pro_id&quot;:&quot;73&quot;,&quot;name&quot;:&quot;Sunfeast YiPPee! Magic Masala Instant Noodles, 720 g (Pack of 12)&quot;,&quot;sku&quot;:&quot;123456&quot;,&quot;price&quot;:&quot;111&quot;,&quot;qty&quot;:84,&quot;cgst&quot;:&quot;2&quot;,&quot;sgst&quot;:&quot;2&quot;,&quot;imgs&quot;:&quot;3.JPG&quot;})" class="btn btn-success">-</button>
+                              <input id="addToPOSInput57" value="" readonly="">
+                              <button type="button" id="addToPOSBtn57" onclick="addtoPOSPlusCheckout({&quot;var_id&quot;:&quot;57&quot;,&quot;pro_id&quot;:&quot;73&quot;,&quot;name&quot;:&quot;Sunfeast YiPPee! Magic Masala Instant Noodles, 720 g (Pack of 12)&quot;,&quot;sku&quot;:&quot;123456&quot;,&quot;price&quot;:&quot;111&quot;,&quot;qty&quot;:84,&quot;cgst&quot;:&quot;2&quot;,&quot;sgst&quot;:&quot;2&quot;,&quot;imgs&quot;:&quot;3.JPG&quot;})" class="btn btn-success">+</button>
+                          </div>
+                      </div>
+                  </div>
+              </div>`
+}
+
+function OrderDataTemplate(data , a) {
+  let link = a == 1? "orderHistoryDetails.html?":"orderHistoryDetailsDeliveryPanel.html?"
+  return`
+  <div class="order-card">
+          <div class="order-card-top">
+              <span>ORDER ID :  ${data.orderId}  </span>
+              <span class="order-type"> ${data.orderFrom} </span>
+          </div>
+          <div class="order-card-bottom">
+              <div style="display:none;"></div>
+              <div>
+                  <p>
+                      Status : ${data.orderStatus} <br> 
+                      No of items : ${data.no_item} <br>
+                      Total Amount : ₹ ${data.totalAmount}
+                  </p>
+              </div>
+              <div>
+              <a href="${link + data.orderId}" class="btn"> View Details
+              </a>
+              </div>
+          </div>
+      </div>
+  `
+}
+
+function LoadCategoryTemplate(data , x) {
+  return`
+  <div class="product-card">
+          <div class="product-card-top">
+            <span> 
+              # ${x}
+              
+            </span>
+            <span>
+              
+                <input type="checkbox" id="catList${x}" onclick="getCategoryData()">
+              
+            </span>
+          </div>
+          <div class="product-card-bottom">
+            <div>
+                <img src="${data.url}" onerror="this.onerror=null; this.src=' https://pos.kalamitcompany.com/api/images//noimg.jpg ';" alt="img">
+            </div>
+            <div>
+              <p>
+                  Name : ${data.name} <br>
+              </p>
+            </div>
+            <div>
+              
+                  <button type="button" onclick="addCatFromKalam()" class="btn"> 
+                  Add </button>
+              
+            </div>
+          </div>
+        </div>
+  `
+}

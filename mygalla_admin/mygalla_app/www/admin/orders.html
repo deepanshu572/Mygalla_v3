@@ -39,34 +39,49 @@
           <div class="report-btn-list">
             <div class="wrap-box">
               <div class="box1">
-                <button class="button-report" onclick=" displayOrder2('toady')">
+                <input type="radio" name="filter" id="btn1">
+                <label for="btn1">
+                <div class="button-report" onclick=" displayOrder2('toady')" >
                   <i class="bi bi-calendar-date"></i>
                   <p>Today</p>
-                </button>
+                </div>
+              </label>
               </div>
               <div class="box1">
-                <button class="button-report" onclick="displayOrder2('yesterday')">
+                <input type="radio" name="filter" id="btn2">
+                <label for="btn2">
+                <div class="button-report" onclick="displayOrder2('yesterday')">
                   <i class="bi bi-calendar-date"></i>
                   <p>Yesterday</p>
-                </button>
+                </div>
+              </label>
               </div>
               <div class="box1">
-                <button class="button-report" onclick="displayOrder2('last7day')">
+                <input type="radio" name="filter" id="btn3">
+                <label for="btn3">
+                <div class="button-report" onclick="displayOrder2('last7day')">
                   <i class="bi bi-calendar-date"></i>
                   <p>Last&nbsp;7&nbsp;day</p>
-                </button>
+                </div>
+                </label>
               </div>
               <div class="box1">
-                <button class="button-report" onclick="displayOrder2('thismonth')">
+                <input type="radio" name="filter" id="btn4">
+                <label for="btn4">
+                <div class="button-report" onclick="displayOrder2('thismonth')">
                   <i class="bi bi-calendar-date"></i>
                   <p>This&nbsp;month</p>
-                </button>
+                </div>
+                </label>
               </div>
               <div class="box1">
-                <button class="button-report" onclick="displayOrder2('lastmonth')">
+                <input type="radio" name="filter" id="btn5">
+                <label for="btn5">
+                <div class="button-report" onclick="displayOrder2('lastmonth')">
                   <i class="bi bi-calendar-date"></i>
                   <p>Last&nbsp;month</p>
-                </button>
+                </div>
+                </label>
               </div>
             </div>
           </div>
@@ -188,35 +203,47 @@
         <div class="report-btn-list">
           <div class="wrap-box">
             <div class="box1">
-              <button class="button-report" onclick="displayOrder('all')">
+              <input type="radio" name="filter" id="btn6">
+              <label for="btn6">
+              <div class="button-report" onclick="displayOrder('all')">
                 <i class="bi bi-check-all"></i>
                 <p>All</p>
-              </button>
+              </div>
+              </label>
             </div>
             <div class="box1">
-              <button class="button-report" onclick="displayOrder('pos')">
+              <input type="radio" name="filter" id="btn7">
+              <label for="btn7">
+              <div class="button-report" onclick="displayOrder('pos')">
                 <i class="bi bi-globe"></i>
                 <p>POS</p>
-              </button>
+              </div>
+              </label>
             </div>
             <div class="box1">
-              <button class="button-report" onclick="displayOrder('app')">
+              <input type="radio" name="filter" id="btn8">
+              <label for="btn8">
+              <div class="button-report" onclick="displayOrder('app')">
                 <i class="bi bi-phone"></i>
                 <p>APP</p>
-              </button>
+              </div>
+              </label>
             </div>
             <div class="box1">
-              <button class="button-report" onclick="displayOrder('web')">
+              <input type="radio" name="filter" id="btn9">
+              <label for="btn9">
+              <div class="button-report" onclick="displayOrder('web')">
                 <i class="bi bi-window"></i>
                 <p>WEB</p>
-              </button>
+              </div>
+              </label>
             </div>
 
           </div>
         </div>
       </div>
 
-      <div id="orderList"></div>
+      <div id="orderList" class="res-update"></div>
 
     </div>
   </div>
@@ -280,134 +307,7 @@
           <script src="../assets/js/script.js"></script>
     <script src="../assets/js/templateFunctions.js"></script>
   <script>
-    checkLogout();
-    printShopName();
-    displayOrder('all');
-
-
-    // phase2 code
-
-    // function orderRange(){
-    //   frDate = new Date($("#frDate").val()) ;
-    //   toDate =new Date($("#toDate").val()) ;
-
-    //   console.log(frDate,toDate)
-    // }
-
-    function getDate() {
-  let frDate = $("#fr-date").val();
-  const dateObject1 = new Date(frDate);
-
-  if (isNaN(dateObject1.getTime())) {
-  } else {
-    frDate = dateObject1.toISOString().split("T")[0];
-  }
-
-  if (frDate != "") {
-    let toDate = $("#to-date").val();
-    const dateObject2 = new Date(toDate);
-
-    if (isNaN(dateObject2.getTime())) {
-    } else {
-      toDate = dateObject2.toISOString().split("T")[0];
-      displayOrdersorting(frDate, toDate);
-    }
-  } else {
-    alert("select both date");
-  }
-}
-
-    const displayOrder2 = (dateRange)=>{
-      let frDate = "";
-  let toDate = "";
-  const date = new Date();
-
-  if (dateRange == "toady") {
-    frDate =
-      date.getFullYear() +
-      "-" +
-      parseInt(date.getMonth() + 1) +
-      "-" +
-      ("0" + date.getDate()).slice(-2);
-    toDate = frDate;
-  } else if (dateRange == "yesterday") {
-    frDate =
-      date.getFullYear() +
-      "-" +
-      parseInt(date.getMonth() + 1) +
-      "-" +
-      ("0" + parseInt(date.getDate() - 1)).slice(-2);
-    toDate = frDate;
-  } else if (dateRange == "last7day") {
-    dateObject1 = new Date(Date.now() - 7 * 24 * 60 * 60 * 1000);
-    frDate = dateObject1.toISOString().split("T")[0];
-
-    toDate =
-      date.getFullYear() +
-      "-" +
-      parseInt(date.getMonth() + 1) +
-      "-" +
-      ("0" + date.getDate()).slice(-2);
-  } else if (dateRange == "thismonth") {
-    let x = [];
-    dateObject1 = new Date(date.getFullYear(), date.getMonth() + 1, 1);
-
-    x = dateObject1.toISOString().split("T")[0].split("-");
-    x[2] = "01";
-    frDate = x.join("-");
-
-    toDate = dateObject1.toISOString().split("T")[0];
-  } else if (dateRange == "lastmonth") {
-    let x = [];
-    dateObject1 = new Date(date.getFullYear(), date.getMonth(), 1);
-
-    x = dateObject1.toISOString().split("T")[0].split("-");
-    x[2] = "01";
-    frDate = x.join("-");
-
-    toDate = dateObject1.toISOString().split("T")[0];
-  } else {
-  }
-  // alert(frDate + " , " + toDate);
-  // loadAllChart(frDate, toDate);
-     console.log(frDate , toDate);
-
-     displayOrdersorting(frDate,toDate);
-    }
-
-
-  async function displayOrdersorting(frDate, toDate) {
-  $("#orderList").html("");
-  order_type = localStorage.getItem("order_type");
-  const formData = new FormData();
-  formData.append("type", "110");
-  formData.append("frDate", frDate);
-  formData.append("toDate", toDate);
-  formData.append("order_type", order_type);
-  
-  let req = await fetch(appAPI, { method: "POST", body: formData });
-  let res = await req.json();
-  
-  console.log(res);
-
-  if (res.data.length === 0) { 
-    $("#orderList").html(`  
-          <div class="list-end">
-            NO MORE DATA
-          </div>
-      `);
-  } else {
-    res.data.map((item) => {
-      $("#orderList").append(orderCardTemplate(item, item.user_id));
-    });
-   
-  }
-}
-
-
-
-
-    // phase2 code 
+    orderListItem();
   </script>
 </body>
 

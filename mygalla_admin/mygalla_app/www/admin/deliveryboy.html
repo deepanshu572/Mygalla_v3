@@ -27,46 +27,58 @@
           <div class="report-btn-list">
             <div class="wrap-box">
               <div class="box1">
-                <button
+                <input type="radio" name="filter" id="btn1">
+                <label for="btn1">
+                <div
                   class="button-report"
                   onclick="displayOrderDeliveryPanel('all')"
                 >
                   <i class="bi bi-check-all"></i>
                   <p>All</p>
-                </button>
+                </div>
+                </label>
               </div>
               <div class="box1">
-                <button
+                <input type="radio" name="filter" id="btn2">
+                <label for="btn2">
+                <div
                   class="button-report"
                   onclick="displayOrderDeliveryPanel('pos')"
                 >
                   <i class="bi bi-globe"></i>
                   <p>POS</p>
-                </button>
+                </div>
+                </label>
               </div>
               <div class="box1">
-                <button
+                <input type="radio" name="filter" id="btn3">
+                <label for="btn3">
+                <div
                   class="button-report"
                   onclick="displayOrderDeliveryPanel('app')"
                 >
                   <i class="bi bi-phone"></i>
                   <p>APP</p>
-                </button>
+                </div>
+                </label>
               </div>
               <div class="box1">
-                <button
+                <input type="radio" name="filter" id="btn4">
+                <label for="btn4">
+                <div
                   class="button-report"
                   onclick="displayOrderDeliveryPanel('web')"
                 >
                   <i class="bi bi-window"></i>
                   <p>WEB</p>
-                </button>
+                </div>
+                </label>
               </div>
             </div>
           </div>
         </div>
 
-        <div id="orderList"></div>
+        <div id="orderList" class="res-update"></div>
       </div>
     </div>
 
@@ -113,10 +125,8 @@
             <script src="../assets/js/script.js"></script>
     <script src="../assets/js/templateFunctions.js"></script>
     <script>
-      checkLogout();
-      displayOrderDeliveryPanel("all");
-      roleCheck();
-      printShopName();
+      DeleveryBoyorderListItem();
+
     </script>
   </body>
 </html>
