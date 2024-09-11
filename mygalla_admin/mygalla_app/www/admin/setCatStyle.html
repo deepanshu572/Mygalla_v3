@@ -21,39 +21,39 @@
             <div id="iBtn"></div>
         </div>
         <div class="containerBody">
-            <div class="addpageBtn">
+            <div class="addpageBtn_head">
                 <h3>Page Style</h3>
             </div>
 
             <hr />
 
             <div id="msg"></div>
-            <div class='container'>
-                <div style="display: flex;flex-direction: row;gap: 60px; justify-content: space-between;padding-bottom: 10px;">
+            <div class='container catStyle'>
+                <div class="page_stylecat">
                     <span>Set Page style</span>
-                    <button type="button" id="changecat" onclick="chnageCatstyle()" class="btn btn-success"></button>
+                    <button type="button" id="changecat" onclick="chnageCatstyle()" class="btn btn-success">off</button>
                 </div>
                
                
                 
-                <div style="display: flex;flex-direction: row;gap: 60px; justify-content: space-between;padding-bottom: 10px;">
+                <div class="page_stylecat">
                     <span>Set wishlist style</span>
                     <button type="button" id="changewishlist" onclick="chnagewishliststyle()"
-                        class="btn btn-success"></button>
+                        class="btn btn-success">on</button>
                 </div>
 
                  
-                <div style="display: flex;flex-direction: row;gap: 60px; justify-content: space-between;padding-bottom: 10px;">
+                <div class="page_stylecat">
                     <span>Set buy now</span>
                     <button type="button" id="changeBuyNow" onclick="changeBuyNow()"
-                        class="btn btn-success"></button>
+                        class="btn btn-success">off</button>
                 </div>
 
 
-                <div style="display: flex;flex-direction: row;gap: 60px; justify-content: space-between; padding-bottom: 10px;">
+                <div class="page_stylecat">
                     <span>Whatsapp Button</span>
                     <button type="button" id="changeWhatsapp" onclick="changeWhatsapp()"
-                        class="btn btn-success"></button>
+                        class="btn btn-success">on</button>
                 </div>
 
             </div>
@@ -88,8 +88,9 @@
             <script src="../assets/js/bootstrap.bundle.min.js"></script>
             <script src="../assets/js/popper.min.js"></script>
             <script src="../assets/js/ashImageCompress.js"></script>
-            <script src="../constant.js"></script>
-                    <script src="../assets/js/script.js"></script>
+             <script src="../assets/js/constant.js"></script>
+                     <script src="../assets/js/helper.js"></script>
+<script src="../assets/js/script.js"></script>
     <script src="../assets/js/templateFunctions.js"></script>
             <script>
            printShopName();

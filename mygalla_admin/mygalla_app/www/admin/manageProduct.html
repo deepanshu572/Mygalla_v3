@@ -58,7 +58,7 @@
                 <label for="newprice">Buying price *</label>
                 <p id="error_2" class="form-text error-ash"></p>
               </div>
-              <div id="expiryDiv">
+              <div id="expiryDiv" class="expiryDiv">
                 <div class="form-group form-floating">
                   <input
                     type="date"
@@ -67,11 +67,11 @@
                     name="expiry"
                     placeholder="Enter new price for user"
                   />
-                  <label for="expiry">Product expiry date (if any)</label>
+                  <label for="expiry" class="label_update">Product expiry date (if any)</label>
                   <p id="error_3" class="form-text error-ash"></p>
                 </div>
               </div>
-              <button type="submit" class="btn btn-primary ashBtn">
+              <button type="submit" class="btn btn-theme ashBtn">
                 UPDATE
               </button>
             </form>
@@ -216,7 +216,7 @@
                     name="cgst"
                     value="0"
                   />
-                  <label for="gst">CGST</label>
+                  <label for="gst" class="label_update">CGST</label>
                   <p id="cgst_error" class="form-text error-ash"></p>
                 </div>
                 <div class="form-group form-floating">
@@ -228,11 +228,11 @@
                     name="sgst"
                     value="0"
                   />
-                  <label for="gst">SGST</label>
+                  <label for="gst" class="label_update">SGST</label>
                   <p id="sgst_error" class="form-text error-ash"></p>
                 </div>
               </div>
-              <button type="submit" id="submit" class="btn btn-primary ashBtn">
+              <button type="submit" id="submit" class="btn btn-theme ashBtn">
                 update product
               </button>
             </form>
@@ -240,11 +240,11 @@
 
           <div class="manageStock">
             <div class="extra-server">
-              <a href="addMoreVarient.html" class="btn btn-primary">
+              <a href="addMoreVarient.html" class="btn btn-theme">
                 <i class="bi bi-folder-plus"></i>
               </a>
 
-              <a href="addMoreImages.html" class="btn btn-primary">
+              <a href="addMoreImages.html" class="btn btn-theme">
                 <i class="bi bi-images"></i>
               </a>
 
@@ -307,8 +307,9 @@
     <script src="../assets/js/bootstrap.bundle.min.js"></script>
     <script src="../assets/js/popper.min.js"></script>
     <script src="../assets/js/ashImageCompress.js"></script>
-    <script src="../constant.js"></script>
-            <script src="../assets/js/script.js"></script>
+     <script src="../assets/js/constant.js"></script>
+             <script src="../assets/js/helper.js"></script>
+<script src="../assets/js/script.js"></script>
     <script src="../assets/js/templateFunctions.js"></script>
     <script>
       // custom code

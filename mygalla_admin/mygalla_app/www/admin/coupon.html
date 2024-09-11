@@ -29,7 +29,7 @@
         <div id="msg"></div>
 
         <!-- ash top and body start -->
-        <div>
+        <div class="coupons_div">
           <button
             type="button"
             class="btn coupons_btns"
@@ -46,7 +46,7 @@
 
         <!-- Modal -->
         <div
-          class="modal fade"
+          class="modal fade modal_page"
           id="coupanModal"
           tabindex="-1"
           aria-labelledby="coupanModalLabel"
@@ -57,7 +57,7 @@
               <div class="modal-body">
                 <button
                   type="button"
-                  class="btn btn-danger"
+                  class="btn btn-update"
                   data-bs-dismiss="modal"
                   aria-label="Close"
                 >
@@ -67,7 +67,7 @@
                 <form id="coupan_submit_modal">
                   <input type="text" name="cid" hidden />
                   <br />
-                  <div class="form-group form-floating">
+                  <div class="form-group form-floating select-btn">
                     <input
                       type="text"
                       placeholder="Coupon Name"
@@ -77,7 +77,7 @@
                     <label for="name">Coupon name </label>
                   </div>
                   <br />
-                  <div class="form-group form-floating">
+                  <div class="form-group form-floating select-btn">
                     <select id="c_type" name="c_type" class="form-control">
                       <option value="flat">FLAT VALUE</option>
                       <option value="percent">IN PERCENT (%)</option>
@@ -85,7 +85,7 @@
                     <label for="c_type">Discount type { flat / percent }</label>
                   </div>
                   <br />
-                  <div class="form-group form-floating">
+                  <div class="form-group form-floating select-btn">
                     <input
                       type="number"
                       name="c_value"
@@ -95,7 +95,7 @@
                     <label for="c_value">Discount value</label>
                   </div>
                   <br />
-                  <div class="form-group form-floating">
+                  <div class="form-group form-floating select-btn">
                     <input
                       type="text"
                       placeholder="Coupon Description"
@@ -149,13 +149,12 @@
     <script src="../assets/js/jquery-3.6.1.js"></script>
     <script src="../assets/js/bootstrap.bundle.min.js"></script>
     <script src="../assets/js/popper.min.js"></script>
-    <script src="../constant.js"></script>
-            <script src="../assets/js/script.js"></script>
+     <script src="../assets/js/constant.js"></script>
+             <script src="../assets/js/helper.js"></script>
+<script src="../assets/js/script.js"></script>
     <script src="../assets/js/templateFunctions.js"></script>
     <script>
-      checkLogout();
       loadCoupons();
-      printShopName();
     </script>
   </body>
 </html>

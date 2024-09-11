@@ -29,11 +29,11 @@
             <div id="res"></div>
         </div> -->
 
-            <div class="container">
+            <div class="container refer_earn_page">
 
-                <div class="border border-3 p-2">
+                <div class="toggle_items p-2">
                     <h6>Current Selected Mode</h6>
-                    <input id="referStatus" type="text" class="form-control" readonly>
+                    <input id="referStatus" type="text" class="form-control bg" readonly>
                     <div class="form-check form-switch mt-3">
                     <input class="form-check-input" type="checkbox" id="toggleRefermode">
                     <label class="form-check-label" for="toggleRefermode">Switch To Customer</label>
@@ -43,24 +43,24 @@
           
                 
 
-                <div id="admin_refer" class="refer_admin border border-3 p-3 mt-4 d-none">
+                <div id="admin_refer" class="refer_admin toggle_items p-3 mt-4 d-none">
                     <div class="input-group mb-3">
-                        <input id="viewCode" type="text" class="form-control" placeholder="Admin's code"
+                        <input id="viewCode" type="text" class="form-control bg" placeholder="Admin's code"
                             aria-label="Recipient's username" aria-describedby="button-addon2" readonly>
 
-                        <button class="btn btn-outline-secondary" onclick="generateCode()" type="button">Generate
+                        <button class="btn bg_btn" onclick="generateCode()" type="button">Generate
                             Code</button>
                     </div>
 
                     <input id="referVal" type="text" class="form-control" placeholder="Refer Value"
                         aria-label="Recipient's username" aria-describedby="button-addon2">
-                    <button class="btn btn-success mt-2" onclick="saveCode('admin')" type="button">Save</button>
+                    <button class="btn btn-success mt-3" onclick="saveCode('admin')" type="button">Save</button>
 
 
                 </div>
 
 
-                <div id="customer_refer" class="border border-3 p-3 mt-4 d-none">
+                <div id="customer_refer" class="toggle_items p-3 mt-4 d-none">
 
                     <select id="wallReciver" class="form-select form-select-md mb-3 mt-3"
                         aria-label=".form-select-lg example">
@@ -123,26 +123,12 @@
         <script src="../assets/js/jquery-3.6.1.js"></script>
         <script src="../assets/js/bootstrap.bundle.min.js"></script>
         <script src="../assets/js/popper.min.js"></script>
-        <script src="../constant.js"></script>
-                <script src="../assets/js/script.js"></script>
+         <script src="../assets/js/constant.js"></script>
+                 <script src="../assets/js/helper.js"></script>
+<script src="../assets/js/script.js"></script>
     <script src="../assets/js/templateFunctions.js"></script>
         <script>
-            checkLogout();
-            roleCheck();
-            chk_referSts();
-            // document.getElementById('exampleModal')
-            //     .addEventListener('show.bs.modal', function (event) {
-
-            //         var button = event.relatedTarget;
-            //         var id = button.getAttribute('data-bs-id');
-            //         var name = button.getAttribute('data-bs-name');
-            //         var links = button.getAttribute('data-bs-links');
-            //         var description = button.getAttribute('data-bs-description');
-            //         $("#addonName").html(`# ${id} ${name}`);
-            //         $("#modal-desc").html(description);
-            //         $("#yt-frame").attr("src", links);
-
-            //     });
+          
 
             $("#toggleRefermode").change(function () {
 

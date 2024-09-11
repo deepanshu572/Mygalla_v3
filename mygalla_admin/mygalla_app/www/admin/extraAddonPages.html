@@ -11,12 +11,6 @@
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
     />
     <link rel="stylesheet" href="../assets/css/style.css" />
-    <style>
-      .addpageBtn {
-        display: flex;
-        gap: 90px;
-      }
-    </style>
   </head>
   <body>
     <!-- ash top and body start -->
@@ -31,11 +25,11 @@
       <div class="containerBody">
         <div class="addpageBtn">
           <h3>Manage Pages</h3>
-          <!-- <a type="button" class="btn btn-primary" href="addnewpage.html">Add Pages</a> -->
+          <!-- <a type="button" class="btn btn-theme" href="addnewpage.html">Add Pages</a> -->
 
           <button
             type="button"
-            class="btn btn-primary"
+            class="btn btn-theme"
             data-bs-toggle="modal"
             data-bs-target="#addpagemodal"
           >
@@ -48,7 +42,7 @@
         <div id="msg"></div>
 
         <div>
-          <form id="updateOtherPages">
+          <form id="updateOtherPages" class="updateOtherPages">
             <div class="form-floating mb-3">
               <select id="pageName" class="form-select">
                 <option value=""></option>
@@ -79,7 +73,7 @@
               ></textarea>
             </div>
             <div class="col-md-12 text-center">
-              <button type="submit" class="btn btn-primary">Update</button>
+              <button type="submit" class="btn btn-theme">Update</button>
             </div>
           </form>
         </div>
@@ -120,13 +114,13 @@
 
     <!-- Modal -->
     <div
-      class="modal fade"
+      class="modal fade modal_page modal_page_add"
       id="addpagemodal"
       tabindex="-1"
       aria-labelledby="exampleModalLabel"
       aria-hidden="true"
     >
-      <div class="modal-dialog">
+      <div class="modal-dialog modal_page">
         <div class="modal-content">
           <div class="modal-header">
             <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
@@ -153,18 +147,10 @@
             <label for="pagename" class="form-label">Enter page name</label>
             <input id="pagename" name="pagetype" type="text" class="form-control" placeholder="Enter page type">
           </div> -->
-              <button type="submit" class="btn btn-primary">add page</button>
+              <button type="submit" class="btn btn-theme">add page</button>
             </form>
           </div>
-          <div class="modal-footer">
-            <button
-              type="button"
-              class="btn btn-secondary"
-              data-bs-dismiss="modal"
-            >
-              Close
-            </button>
-          </div>
+         
         </div>
       </div>
     </div>
@@ -174,8 +160,9 @@
     <script src="../assets/js/jquery-3.6.1.js"></script>
     <script src="../assets/js/bootstrap.bundle.min.js"></script>
     <script src="../assets/js/popper.min.js"></script>
-    <script src="../constant.js"></script>
-            <script src="../assets/js/script.js"></script>
+     <script src="../assets/js/constant.js"></script>
+             <script src="../assets/js/helper.js"></script>
+<script src="../assets/js/script.js"></script>
     <script src="../assets/js/templateFunctions.js"></script>
     <script>
       checkLogout();

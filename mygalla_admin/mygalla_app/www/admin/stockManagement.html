@@ -119,7 +119,7 @@
 
                 </div>
 
-                  <button type="submit" id="submit" class="btn btn-primary ashBtn">Update Staff</button>
+                  <button type="submit" id="submit" class="btn btn-theme ashBtn">Update Staff</button>
               </form> -->
         <div class="container" id="container"></div>
       </div>
@@ -250,7 +250,7 @@
                 </select>
               </div>
               <hr />
-              <button type="button" class="btn btn-primary" id="submitBtn">
+              <button type="button" class="btn btn-theme" id="submitBtn">
                 Save changes
               </button>
             </form>
@@ -271,8 +271,9 @@
     <script src="../assets/js/jquery-3.6.1.js"></script>
     <script src="../assets/js/bootstrap.bundle.min.js"></script>
     <script src="../assets/js/popper.min.js"></script>
-    <script src="../constant.js"></script>
-            <script src="../assets/js/script.js"></script>
+     <script src="../assets/js/constant.js"></script>
+             <script src="../assets/js/helper.js"></script>
+<script src="../assets/js/script.js"></script>
     <script src="../assets/js/templateFunctions.js"></script>
     <script>
       checkLogout();
@@ -358,7 +359,7 @@
             row.date
           }</td><td><button onclick='currentStock(${JSON.stringify(
             row
-          )})' class="btn btn-primary"data-bs-toggle="modal" data-bs-target="#editStockModal">EDIT</button></td></tr>`;
+          )})' class="btn btn-theme"data-bs-toggle="modal" data-bs-target="#editStockModal">EDIT</button></td></tr>`;
         });
 
         tableHtml += "</tbody></table>";

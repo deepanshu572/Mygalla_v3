@@ -27,11 +27,11 @@
             <div id="msg"></div>
 
             <div class="container">
-                <form id="invoice_form">
+                <form id="invoice_form" class="invoice_form">
                     
                     <div class="mb-3">
                         <label for="exampleInputEmail1" class="form-label">GST Number</label>
-                        <input type="text" id="gstval" name="gstval" class="form-control" id="exampleInputEmail1"
+                        <input type="text" id="gstval" name="gstval" class="form-control bg" id="exampleInputEmail1"
                             aria-describedby="emailHelp" readonly />
                     </div>
                     <div class="mb-3">
@@ -41,7 +41,7 @@
                     </div>
 
                   
-                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <button type="submit" class="btn btn-theme">Submit</button>
                 </form>
 
                 <div class="more-wrap-btns">
@@ -92,8 +92,9 @@
     <script src="../assets/js/jquery-3.6.1.js"></script>
     <script src="../assets/js/bootstrap.bundle.min.js"></script>
     <script src="../assets/js/popper.min.js"></script>
-    <script src="../constant.js"></script>
-            <script src="../assets/js/script.js"></script>
+     <script src="../assets/js/constant.js"></script>
+             <script src="../assets/js/helper.js"></script>
+<script src="../assets/js/script.js"></script>
     <script src="../assets/js/templateFunctions.js"></script>
     <script>
         checkLogout();

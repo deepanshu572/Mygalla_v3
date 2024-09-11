@@ -63,17 +63,17 @@
                 <p id="name_error" class="form-text error-ash"></p>
               </div>
 
-              <button type="submit" id="submit" class="btn btn-primary ashBtn">
+              <button type="submit" id="submit" class="btn btn-theme ashBtn">
                 Set Notification
               </button>
             </form>
           </div>
 
           <!-- <div class="manageStock">
-                    <a href="addCategory.html" class="btn btn-primary ashBtn">Add More Category</a>
+                    <a href="addCategory.html" class="btn btn-theme ashBtn">Add More Category</a>
                 </div> -->
-          <hr />
-          <div>
+          <!-- <hr /> -->
+          <div class="notification">
             <h3 class="delete-images-h3">Notification List</h3>
             <hr />
 
@@ -126,16 +126,15 @@
     <script src="../assets/js/popper.min.js"></script>
     <!-- <script src="../assets/js/ashImageCompress.js"></script> -->
     <script src="../assets/js/ashBannerImageCompress.js"></script>
-    <script src="../constant.js"></script>
-            <script src="../assets/js/script.js"></script>
+     <script src="../assets/js/constant.js"></script>
+    <script src="../assets/js/helper.js"></script>
+    <script src="../assets/js/script.js"></script>
     <script src="../assets/js/templateFunctions.js"></script>
     <script>
-        checkLogout();
-        printShopName();
-        // loadManageCategory();
-        // loadCategoryOption();
+      loadManageCategory1();
+     
     </script>
-    <script>
+    <!-- <script>
      async function pushNotification(push_Info) {
           //  console.log(push_Info);
          
@@ -176,7 +175,7 @@ table = `<tr>
     <td><img src="${imgLink}${tbdata.image}" width="70" height="50"></td>
     <td>${tbdata.title}</td>
     <td>${tbdata.msg}</td>
-    <td><button class="btn btn-primary" onclick='pushNotification(${JSON.stringify(tbdata)})'>Send</button></td>
+    <td><button class="btn btn-theme" onclick='pushNotification(${JSON.stringify(tbdata)})'>Send</button></td>
 </tr>`;
 
 }
@@ -213,6 +212,6 @@ $("#imgList").append(table);
           }
         }
       });
-    </script>
+    </script> -->
   </body>
 </html>

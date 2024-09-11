@@ -951,6 +951,115 @@ const order_data = [
   }
 ];
 
+const banner_data = [
+   {
+    "type" : "Bottom",
+    "image" : "https://pos.kalamitcompany.com/api/images/KA_BNR_20240316114036.jpg"
+  },
+   {
+    "type" : "Bottom",
+    "image" : "https://pos.kalamitcompany.com/api/images/KA_BNR_20240826041009.jpg"
+  },
+   {
+    "type" : "Bottom",
+    "image" : "https://pos.kalamitcompany.com/api/images/KA_BNR_20240826041958.jpg"
+  },
+   {
+    "type" : "Bottom",
+    "image" : "https://pos.kalamitcompany.com/api/images/KA_BNR_20240826042042.jpg"
+  },
+   {
+    "type" : "Bottom",
+    "image" : "https://pos.kalamitcompany.com/api/images/KA_BNR_20240826042120.jpg"
+  },
+   {
+    "type" : "Top",
+    "image" : "https://pos.kalamitcompany.com/api/images/KA_BNR_20240316114036.jpg"
+  },
+   {
+    "type" : "Top",
+    "image" : "https://pos.kalamitcompany.com/api/images/KA_BNR_20240826041009.jpg"
+  },
+   {
+    "type" : "Top",
+    "image" : "https://pos.kalamitcompany.com/api/images/KA_BNR_20240826041958.jpg"
+  },
+   {
+    "type" : "Top",
+    "image" : "https://pos.kalamitcompany.com/api/images/KA_BNR_20240826042042.jpg"
+  },
+   {
+    "type" : "Top",
+    "image" : "https://pos.kalamitcompany.com/api/images/KA_BNR_20240826042120.jpg"
+  },
+];
+
+const manage_data= [
+  {
+    "image":"https://pos.kalamitcompany.com/api/images/KA_BNR_20240826042120.jpg",
+    "title":"offers",
+    "msg":"best deals"
+  },
+  {
+    "image":"https://pos.kalamitcompany.com/api/images/KA_BNR_20240826042120.jpg",
+    "title":"offers",
+    "msg":"best deals"
+  },
+  {
+    "image":"https://pos.kalamitcompany.com/api/images/KA_BNR_20240826042120.jpg",
+    "title":"offers",
+    "msg":"best deals"
+  },
+  {
+    "image":"https://pos.kalamitcompany.com/api/images/KA_BNR_20240826042120.jpg",
+    "title":"offers",
+    "msg":"best deals"
+  },
+  {
+    "image":"https://pos.kalamitcompany.com/api/images/KA_BNR_20240826042120.jpg",
+    "title":"offers",
+    "msg":"best deals"
+  },
+  {
+    "image":"https://pos.kalamitcompany.com/api/images/KA_BNR_20240826042120.jpg",
+    "title":"offers",
+    "msg":"best deals"
+  },
+  {
+    "image":"https://pos.kalamitcompany.com/api/images/KA_BNR_20240826042120.jpg",
+    "title":"offers",
+    "msg":"best deals"
+  }
+];
+
+const loadCoupons_data = [
+      {
+        "coupons":"10",
+        "items":"Flat , 10",
+        "off":"50%"
+      },
+      {
+        "coupons":"10",
+        "items":"Flat , 10",
+        "off":"50%"
+      },
+      {
+        "coupons":"10",
+        "items":"percent , 10",
+        "off":"50%"
+      },
+      {
+        "coupons":"10",
+        "items":"Flat , 10",
+        "off":"50%"
+      },
+      {
+        "coupons":"10",
+        "items":"percent , 10",
+        "off":"50%"
+      }
+];
+
 // floating button
 var $floater = $(".floater");
 var $floater__list = $(".floater__list");
@@ -1098,4 +1207,38 @@ function loadAllCategroyKA() {
 }
 function gotoposCheckout() {
     location.href = "posCheckout.html";
+}
+function loadAllBannerImages() {
+  x = 1;
+  var loadAllBannerImagesDataId = " ";
+  banner_data.map((item) => {    
+    loadAllBannerImagesDataId += loadAllBannerImagesTemplate(item ,x);
+    x++;
+  });
+
+  $("#imgList").append(loadAllBannerImagesDataId);
+}
+function loadManageCategory1() {
+  var loadManageCategoryDataId = " ";
+  manage_data.map((item) => {    
+    loadManageCategoryDataId += loadManageCategoryTemplate(item);
+  });
+
+  $("#imgList").append(loadManageCategoryDataId);
+}
+function loadCoupons() {
+  var loadCouponsDataId = " ";
+  loadCoupons_data.map((item) => {    
+    loadCouponsDataId += loadCouponsTemplate(item);
+  });
+
+  $("#coupon-list").append(loadCouponsDataId);
+}
+function loadorderDetail() {
+  var load_product_list_invoiceDataId = " ";
+  product_data.map((item) => {    
+    load_product_list_invoiceDataId += load_product_list_invoiceTemplate(item);
+  });
+
+  $("#load_product_list_invoice").append(load_product_list_invoiceDataId);
 }

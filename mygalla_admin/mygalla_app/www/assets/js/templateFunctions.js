@@ -445,3 +445,66 @@ function LoadCategoryTemplate(data , x) {
         </div>
   `
 }
+
+function loadAllBannerImagesTemplate(data ,x) {
+  return`
+          <tr>
+            <th> ${x} </th>
+            <td>
+              <img src="${data.image}" alt="image" class="img-thumbnail">
+            </td>
+            <td> <div class="td-type"> ${data.type} </div></td>
+            <td>
+             <div class="td-btn"> 
+            <button onclick="deleteBannerImage()" class="btn btn-danger">
+              <i class="bi bi-trash"></i>
+            </button>
+            </div>
+            </td>
+          </tr>
+        `
+}
+function loadManageCategoryTemplate(data) {
+  return`
+          <tr>      
+            <td><img src="${data.image}" width="70" height="50"></td>
+            <td><div class="manage_title">${data.title}</div></td>
+            <td><div class="manage_msg"> ${data.msg} </div></td>
+            <td><div class="manage_btn"><button class="btn btn-primary" onclick="pushNotification()">Send</button></div></td>
+        </tr>
+        `
+}
+function loadCouponsTemplate(data) {
+  return`
+  <div>
+              <div class="card">
+                <div class="card-header">
+                  Coupon ${data.coupons}off
+                </div>
+                <div class="card-body">
+
+                  <h5 class="card-title">${data.items}</h5>
+                  <p class="card-text"> Flat ${data.off}off on your next shopping </p>
+
+                  <button class="btn btn-warning" type="button" data-bs-toggle="modal" data-bs-target="#coupanModal" data-bs-cid="7" data-bs-name="20off" data-bs-type="flat" data-bs-value="20" data-bs-description="Flat 50 off on your next shopping">Edit</button>
+
+                  <button class="btn btn-danger" onclick="deleteCoupons(7)">Delete</button>
+                </div>
+              </div>
+
+          </div>`
+}
+
+function load_product_list_invoiceTemplate(data) {
+   return `
+   <div class="order-summry-pro-card">
+              <div class="order-summry-pro-card-left">
+                  <img src="${data.image}" alt="${data.image}">
+              </div>
+              <div class="order-summry-pro-card-right">
+                  <span class="os-pnm">${data.title}</span>
+                  <span class="os-pr">price:${data.price} , qty : ${data.qty} </span>
+              </div>
+          </div>
+    `
+}
