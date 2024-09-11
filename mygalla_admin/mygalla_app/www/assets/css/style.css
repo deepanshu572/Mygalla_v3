@@ -4365,6 +4365,9 @@ a {
 		width: 100%;
 
 	}
+	.product-card{
+		margin-left: 0;
+	}
 }
 #setminval .btn-theme
 {
