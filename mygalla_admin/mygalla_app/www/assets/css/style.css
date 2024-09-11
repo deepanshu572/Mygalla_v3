@@ -423,12 +423,9 @@ admin code start
 }
 
 .add-product-form {
-	margin-top: 4vh;
-	display: flex;
-	flex-wrap: wrap;
-	flex-direction: column;
-	justify-content: center
+	margin-top: 4vh
 }
+
 
 input[type="file"] {
 	display: none
@@ -1368,14 +1365,13 @@ input[type="file"] {
 
 .report-body>div {
 	width: 100%;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	margin: 15px 0;
-	border-radius: 20px;
-	box-shadow: var(--shadow);
-	overflow: hidden;
-	padding: 0 11vw
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 15px 0;
+    border-radius: 10px;
+    box-shadow: var(--shadow1);
+    overflow: hidden;
 }
 
 .report-body h5 {
@@ -4239,6 +4235,9 @@ a {
 }
 
 @media (max-width: 600px) {
+	.add-product-form .form-group{
+		margin-bottom: 13px;
+	}
 	.order-card{
 		margin-left: 0;
 	}
@@ -4377,6 +4376,13 @@ a {
 }
 
 @media (min-width: 600px) and (max-width: 2000px) {
+	.add-product-form {
+		display: flex;
+	flex-wrap: wrap;
+	flex-direction: column;
+	justify-content: center
+	}
+
 	.manageStock .form-group{
 		width: 73%;
 	}
