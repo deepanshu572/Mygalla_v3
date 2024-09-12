@@ -1,7 +1,7 @@
 const product_data = [
   {
     id: 1,
-    status : 1,
+    status: 1,
     title: "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
     price: 109.95,
     description:
@@ -16,7 +16,7 @@ const product_data = [
   },
   {
     id: 2,
-    status : 1,
+    status: 1,
     title: "Mens Casual Premium Slim Fit T-Shirts ",
     price: 22.3,
     description:
@@ -32,7 +32,7 @@ const product_data = [
   },
   {
     id: 3,
-    status : 1,
+    status: 1,
     title: "Mens Cotton Jacket",
     price: 55.99,
     description:
@@ -47,7 +47,7 @@ const product_data = [
   },
   {
     id: 4,
-    status : 1,
+    status: 1,
     title: "Mens Casual Slim Fit",
     price: 15.99,
     description:
@@ -62,7 +62,7 @@ const product_data = [
   },
   {
     id: 5,
-    status : 1,
+    status: 1,
     title:
       "John Hardy Women's Legends Naga Gold & Silver Dragon Station Chain Bracelet",
     price: 695,
@@ -78,7 +78,7 @@ const product_data = [
   },
   {
     id: 6,
-    status : 0,
+    status: 0,
     title: "Solid Gold Petite Micropave ",
     price: 168,
     description:
@@ -93,7 +93,7 @@ const product_data = [
   },
   {
     id: 7,
-    status : 1,
+    status: 1,
     title: "White Gold Plated Princess",
     price: 9.99,
     description:
@@ -108,7 +108,7 @@ const product_data = [
   },
   {
     id: 8,
-    status : 1,
+    status: 1,
     title: "Pierced Owl Rose Gold Plated Stainless Steel Double",
     price: 10.99,
     description:
@@ -123,7 +123,7 @@ const product_data = [
   },
   {
     id: 9,
-    status : 1,
+    status: 1,
     title: "WD 2TB Elements Portable External Hard Drive - USB 3.0 ",
     price: 64,
     description:
@@ -138,7 +138,7 @@ const product_data = [
   },
   {
     id: 10,
-    status : 0,
+    status: 0,
     title: "SanDisk SSD PLUS 1TB Internal SSD - SATA III 6 Gb/s",
     price: 109,
     description:
@@ -153,7 +153,7 @@ const product_data = [
   },
   {
     id: 11,
-    status : 1,
+    status: 1,
     title:
       "Silicon Power 256GB SSD 3D NAND A55 SLC Cache Performance Boost SATA III 2.5",
     price: 109,
@@ -169,7 +169,7 @@ const product_data = [
   },
   {
     id: 12,
-    status : 0,
+    status: 0,
     title:
       "WD 4TB Gaming Drive Works with Playstation 4 Portable External Hard Drive",
     price: 114,
@@ -185,7 +185,7 @@ const product_data = [
   },
   {
     id: 13,
-    status : 1,
+    status: 1,
     title: "Acer SB220Q bi 21.5 inches Full HD (1920 x 1080) IPS Ultra-Thin",
     price: 599,
     description:
@@ -200,7 +200,7 @@ const product_data = [
   },
   {
     id: 14,
-    status : 0,
+    status: 0,
     title:
       "Samsung 49-Inch CHG90 144Hz Curved Gaming Monitor (LC49HG90DMNXZA) – Super Ultrawide Screen QLED ",
     price: 999.99,
@@ -216,7 +216,7 @@ const product_data = [
   },
   {
     id: 15,
-    status : 1,
+    status: 1,
     title: "BIYLACLESEN Women's 3-in-1 Snowboard Jacket Winter Coats",
     price: 56.99,
     description:
@@ -231,7 +231,7 @@ const product_data = [
   },
   {
     id: 16,
-    status : 1,
+    status: 1,
     title:
       "Lock and Love Women's Removable Hooded Faux Leather Moto Biker Jacket",
     price: 29.95,
@@ -247,7 +247,7 @@ const product_data = [
   },
   {
     id: 17,
-    status : 1,
+    status: 1,
     title: "Rain Jacket Women Windbreaker Striped Climbing Raincoats",
     price: 39.99,
     description:
@@ -262,7 +262,7 @@ const product_data = [
   },
   {
     id: 18,
-    status : 0,
+    status: 0,
     title: "MBJ Women's Solid Short Sleeve Boat Neck V ",
     price: 9.85,
     description:
@@ -277,7 +277,7 @@ const product_data = [
   },
   {
     id: 19,
-    status : 0,
+    status: 0,
     title: "Opna Women's Short Sleeve Moisture",
     price: 7.95,
     description:
@@ -292,7 +292,7 @@ const product_data = [
   },
   {
     id: 20,
-    status : 1,
+    status: 1,
     title: "DANVOUY Womens T Shirt Casual Cotton Short",
     price: 12.99,
     description:
@@ -718,165 +718,179 @@ const logoData = [
   { imgsrc: "../assets/images/shop_logo2.png" },
 ];
 const themeDatarr = [
-  {img : "../assets/images/theme1.png"},
-  {img : "../assets/images/theme1.png"}
+  { img: "../assets/images/theme1.png" },
+  { img: "../assets/images/theme1.png" },
 ];
 
 const addonsDataarr = [
   {
     id: "1",
-    link : "https://www.youtube.com/embed/0Qwx391JAWk?si=5RJ4iUM98wuzzwuf",
-    name : "THEME",
-    pagelink : "theme.html",
-    img : "https://img.icons8.com/clouds/100/add.png",
-    fprice : "3000",
-    price : "2500",
-    discount : "16.9%",
-    description : "Transform the look and feel of your device effortlessly with our dynamic Theme section. Dive into a world of..."
+    link: "https://www.youtube.com/embed/0Qwx391JAWk?si=5RJ4iUM98wuzzwuf",
+    name: "THEME",
+    pagelink: "theme.html",
+    img: "https://img.icons8.com/clouds/100/add.png",
+    fprice: "3000",
+    price: "2500",
+    discount: "16.9%",
+    description:
+      "Transform the look and feel of your device effortlessly with our dynamic Theme section. Dive into a world of...",
   },
   {
     id: "2",
-    link : "https://www.youtube.com/embed/0Qwx391JAWk?si=5RJ4iUM98wuzzwuf",
-    name : "BANNER",
-    pagelink : "banner.html",
-    img : "https://img.icons8.com/clouds/100/add.png",
-    fprice : "3000",
-    price : "2500",
-    discount : "16.9%",
-    description : "Transform the look and feel of your device effortlessly with our dynamic Theme section. Dive into a world of..."
+    link: "https://www.youtube.com/embed/0Qwx391JAWk?si=5RJ4iUM98wuzzwuf",
+    name: "BANNER",
+    pagelink: "banner.html",
+    img: "https://img.icons8.com/clouds/100/add.png",
+    fprice: "3000",
+    price: "2500",
+    discount: "16.9%",
+    description:
+      "Transform the look and feel of your device effortlessly with our dynamic Theme section. Dive into a world of...",
   },
   {
     id: "3",
-    link : "https://www.youtube.com/embed/0Qwx391JAWk?si=5RJ4iUM98wuzzwuf",
-    name : "COUPONS",
-    pagelink : "coupon.html",
-    img : "https://img.icons8.com/clouds/100/add.png",
-    fprice : "3000",
-    price : "2500",
-    discount : "16.9%",
-    description : "Transform the look and feel of your device effortlessly with our dynamic Theme section. Dive into a world of..."
+    link: "https://www.youtube.com/embed/0Qwx391JAWk?si=5RJ4iUM98wuzzwuf",
+    name: "COUPONS",
+    pagelink: "coupon.html",
+    img: "https://img.icons8.com/clouds/100/add.png",
+    fprice: "3000",
+    price: "2500",
+    discount: "16.9%",
+    description:
+      "Transform the look and feel of your device effortlessly with our dynamic Theme section. Dive into a world of...",
   },
   {
     id: "4",
-    link : "https://www.youtube.com/embed/0Qwx391JAWk?si=5RJ4iUM98wuzzwuf",
-    name : "DELIVERY SLOT",
-    pagelink : "deliveryslot.html",
-    img : "https://img.icons8.com/clouds/100/add.png",
-    fprice : "3000",
-    price : "2500",
-    discount : "16.9%",
-    description : "Transform the look and feel of your device effortlessly with our dynamic Theme section. Dive into a world of..."
+    link: "https://www.youtube.com/embed/0Qwx391JAWk?si=5RJ4iUM98wuzzwuf",
+    name: "DELIVERY SLOT",
+    pagelink: "deliveryslot.html",
+    img: "https://img.icons8.com/clouds/100/add.png",
+    fprice: "3000",
+    price: "2500",
+    discount: "16.9%",
+    description:
+      "Transform the look and feel of your device effortlessly with our dynamic Theme section. Dive into a world of...",
   },
   {
     id: "5",
-    link : "https://www.youtube.com/embed/0Qwx391JAWk?si=5RJ4iUM98wuzzwuf",
-    name : "TAKEAWAY",
-    pagelink : "#",
-    img : "https://img.icons8.com/clouds/100/add.png",
-    fprice : "3000",
-    price : "2500",
-    discount : "16.9%",
-    description : "Transform the look and feel of your device effortlessly with our dynamic Theme section. Dive into a world of..."
+    link: "https://www.youtube.com/embed/0Qwx391JAWk?si=5RJ4iUM98wuzzwuf",
+    name: "TAKEAWAY",
+    pagelink: "#",
+    img: "https://img.icons8.com/clouds/100/add.png",
+    fprice: "3000",
+    price: "2500",
+    discount: "16.9%",
+    description:
+      "Transform the look and feel of your device effortlessly with our dynamic Theme section. Dive into a world of...",
   },
   {
     id: "6",
-    link : "https://www.youtube.com/embed/0Qwx391JAWk?si=5RJ4iUM98wuzzwuf",
-    name : "ONLINE PAYMENT",
-    pagelink : "paymentSetting.html",
-    img : "https://img.icons8.com/clouds/100/add.png",
-    fprice : "3000",
-    price : "2500",
-    discount : "16.9%",
-    description : "Transform the look and feel of your device effortlessly with our dynamic Theme section. Dive into a world of..."
+    link: "https://www.youtube.com/embed/0Qwx391JAWk?si=5RJ4iUM98wuzzwuf",
+    name: "ONLINE PAYMENT",
+    pagelink: "paymentSetting.html",
+    img: "https://img.icons8.com/clouds/100/add.png",
+    fprice: "3000",
+    price: "2500",
+    discount: "16.9%",
+    description:
+      "Transform the look and feel of your device effortlessly with our dynamic Theme section. Dive into a world of...",
   },
   {
     id: "7",
-    link : "https://www.youtube.com/embed/0Qwx391JAWk?si=5RJ4iUM98wuzzwuf",
-    name : "CANCEL ORDER",
-    pagelink : "cancelorder.html",
-    img : "https://img.icons8.com/clouds/100/add.png",
-    fprice : "3000",
-    price : "2500",
-    discount : "16.9%",
-    description : "Transform the look and feel of your device effortlessly with our dynamic Theme section. Dive into a world of..."
+    link: "https://www.youtube.com/embed/0Qwx391JAWk?si=5RJ4iUM98wuzzwuf",
+    name: "CANCEL ORDER",
+    pagelink: "cancelorder.html",
+    img: "https://img.icons8.com/clouds/100/add.png",
+    fprice: "3000",
+    price: "2500",
+    discount: "16.9%",
+    description:
+      "Transform the look and feel of your device effortlessly with our dynamic Theme section. Dive into a world of...",
   },
   {
     id: "8",
-    link : "https://www.youtube.com/embed/0Qwx391JAWk?si=5RJ4iUM98wuzzwuf",
-    name : "DELIVERY",
-    pagelink : "#",
-    img : "https://img.icons8.com/clouds/100/add.png",
-    fprice : "3000",
-    price : "2500",
-    discount : "16.9%",
-    description : "Transform the look and feel of your device effortlessly with our dynamic Theme section. Dive into a world of..."
+    link: "https://www.youtube.com/embed/0Qwx391JAWk?si=5RJ4iUM98wuzzwuf",
+    name: "DELIVERY",
+    pagelink: "#",
+    img: "https://img.icons8.com/clouds/100/add.png",
+    fprice: "3000",
+    price: "2500",
+    discount: "16.9%",
+    description:
+      "Transform the look and feel of your device effortlessly with our dynamic Theme section. Dive into a world of...",
   },
   {
     id: "9",
-    link : "https://www.youtube.com/embed/0Qwx391JAWk?si=5RJ4iUM98wuzzwuf",
-    name : "PAGES",
-    pagelink : "newpage.html",
-    img : "https://img.icons8.com/clouds/100/add.png",
-    fprice : "3000",
-    price : "2500",
-    discount : "16.9%",
-    description : "Transform the look and feel of your device effortlessly with our dynamic Theme section. Dive into a world of..."
+    link: "https://www.youtube.com/embed/0Qwx391JAWk?si=5RJ4iUM98wuzzwuf",
+    name: "PAGES",
+    pagelink: "newpage.html",
+    img: "https://img.icons8.com/clouds/100/add.png",
+    fprice: "3000",
+    price: "2500",
+    discount: "16.9%",
+    description:
+      "Transform the look and feel of your device effortlessly with our dynamic Theme section. Dive into a world of...",
   },
   {
     id: "10",
-    link : "https://www.youtube.com/embed/0Qwx391JAWk?si=5RJ4iUM98wuzzwuf",
-    name : "GST",
-    pagelink : "#",
-    img : "https://img.icons8.com/clouds/100/add.png",
-    fprice : "3000",
-    price : "2500",
-    discount : "16.9%",
-    description : "Transform the look and feel of your device effortlessly with our dynamic Theme section. Dive into a world of..."
+    link: "https://www.youtube.com/embed/0Qwx391JAWk?si=5RJ4iUM98wuzzwuf",
+    name: "GST",
+    pagelink: "#",
+    img: "https://img.icons8.com/clouds/100/add.png",
+    fprice: "3000",
+    price: "2500",
+    discount: "16.9%",
+    description:
+      "Transform the look and feel of your device effortlessly with our dynamic Theme section. Dive into a world of...",
   },
   {
     id: "11",
-    link : "https://www.youtube.com/embed/0Qwx391JAWk?si=5RJ4iUM98wuzzwuf",
-    name : "CATEGORY STYLE",
-    pagelink : "setCatStyle.html",
-    img : "https://img.icons8.com/clouds/100/add.png",
-    fprice : "3000",
-    price : "2500",
-    discount : "16.9%",
-    description : "Transform the look and feel of your device effortlessly with our dynamic Theme section. Dive into a world of..."
+    link: "https://www.youtube.com/embed/0Qwx391JAWk?si=5RJ4iUM98wuzzwuf",
+    name: "CATEGORY STYLE",
+    pagelink: "setCatStyle.html",
+    img: "https://img.icons8.com/clouds/100/add.png",
+    fprice: "3000",
+    price: "2500",
+    discount: "16.9%",
+    description:
+      "Transform the look and feel of your device effortlessly with our dynamic Theme section. Dive into a world of...",
   },
   {
     id: "12",
-    link : "https://www.youtube.com/embed/0Qwx391JAWk?si=5RJ4iUM98wuzzwuf",
-    name : " REFER AND EARN",
-    pagelink : "manage_Refer_and_earn.html",
-    img : "https://img.icons8.com/clouds/100/add.png",
-    fprice : "3000",
-    price : "2500",
-    discount : "16.9%",
-    description : "Transform the look and feel of your device effortlessly with our dynamic Theme section. Dive into a world of..."
+    link: "https://www.youtube.com/embed/0Qwx391JAWk?si=5RJ4iUM98wuzzwuf",
+    name: " REFER AND EARN",
+    pagelink: "manage_Refer_and_earn.html",
+    img: "https://img.icons8.com/clouds/100/add.png",
+    fprice: "3000",
+    price: "2500",
+    discount: "16.9%",
+    description:
+      "Transform the look and feel of your device effortlessly with our dynamic Theme section. Dive into a world of...",
   },
   {
     id: "13",
-    link : "https://www.youtube.com/embed/0Qwx391JAWk?si=5RJ4iUM98wuzzwuf",
-    name : "PUSH NOTIFICATION",
-    pagelink : "pushNotification.html",
-    img : "https://img.icons8.com/clouds/100/add.png",
-    fprice : "3000",
-    price : "2500",
-    discount : "16.9%",
-    description : "Transform the look and feel of your device effortlessly with our dynamic Theme section. Dive into a world of..."
+    link: "https://www.youtube.com/embed/0Qwx391JAWk?si=5RJ4iUM98wuzzwuf",
+    name: "PUSH NOTIFICATION",
+    pagelink: "pushNotification.html",
+    img: "https://img.icons8.com/clouds/100/add.png",
+    fprice: "3000",
+    price: "2500",
+    discount: "16.9%",
+    description:
+      "Transform the look and feel of your device effortlessly with our dynamic Theme section. Dive into a world of...",
   },
   {
     id: "14",
-    link : "https://www.youtube.com/embed/0Qwx391JAWk?si=5RJ4iUM98wuzzwuf",
-    name : "MIN ORDER",
-    pagelink : "minmumVal.html",
-    img : "https://img.icons8.com/clouds/100/add.png",
-    fprice : "3000",
-    price : "2500",
-    discount : "16.9%",
-    description : "Transform the look and feel of your device effortlessly with our dynamic Theme section. Dive into a world of..."
-  }
+    link: "https://www.youtube.com/embed/0Qwx391JAWk?si=5RJ4iUM98wuzzwuf",
+    name: "MIN ORDER",
+    pagelink: "minmumVal.html",
+    img: "https://img.icons8.com/clouds/100/add.png",
+    fprice: "3000",
+    price: "2500",
+    discount: "16.9%",
+    description:
+      "Transform the look and feel of your device effortlessly with our dynamic Theme section. Dive into a world of...",
+  },
 ];
 const order_data = [
   {
@@ -884,172 +898,187 @@ const order_data = [
     orderStatus: "Placed",
     orderFrom: "Pos",
     no_item: "4",
-    totalAmount: "4000"
+    totalAmount: "4000",
   },
   {
     orderId: "ORD27334646473",
     orderStatus: "Placed",
     orderFrom: "App",
     no_item: "9",
-    totalAmount: "5000"
+    totalAmount: "5000",
   },
   {
     orderId: "ORD27334646473",
     orderStatus: "Placed",
     orderFrom: "Pos",
     no_item: "2",
-    totalAmount: "2000"
+    totalAmount: "2000",
   },
   {
     orderId: "ORD27334646473",
     orderStatus: "Placed",
     orderFrom: "App",
     no_item: "48",
-    totalAmount: "6000"
+    totalAmount: "6000",
   },
   {
     orderId: "ORD27334646473",
     orderStatus: "Placed",
     orderFrom: "Pos",
     no_item: "14",
-    totalAmount: "12000"
+    totalAmount: "12000",
   },
   {
     orderId: "ORD27334646473",
     orderStatus: "Placed",
     orderFrom: "Pos",
     no_item: "4",
-    totalAmount: "4000"
+    totalAmount: "4000",
   },
   {
     orderId: "ORD27334646473",
     orderStatus: "Placed",
     orderFrom: "App",
     no_item: "9",
-    totalAmount: "5000"
+    totalAmount: "5000",
   },
   {
     orderId: "ORD27334646473",
     orderStatus: "Placed",
     orderFrom: "Pos",
     no_item: "2",
-    totalAmount: "2000"
+    totalAmount: "2000",
   },
   {
     orderId: "ORD27334646473",
     orderStatus: "Placed",
     orderFrom: "App",
     no_item: "48",
-    totalAmount: "6000"
+    totalAmount: "6000",
   },
   {
     orderId: "ORD27334646473",
     orderStatus: "Placed",
     orderFrom: "Pos",
     no_item: "14",
-    totalAmount: "12000"
-  }
+    totalAmount: "12000",
+  },
 ];
 
 const banner_data = [
-   {
-    "type" : "Bottom",
-    "image" : "https://thumbs.dreamstime.com/b/online-shop-banner-building-icon-grocery-shopping-market-basket-products-isometric-concept-highly-detailed-96795715.jpg"
+  {
+    type: "Bottom",
+    image:
+      "https://thumbs.dreamstime.com/b/online-shop-banner-building-icon-grocery-shopping-market-basket-products-isometric-concept-highly-detailed-96795715.jpg",
   },
-   {
-    "type" : "Bottom",
-    "image" : "http://www.a-yabloko.ru/storage/news/.thumbs/7079a4c0fbf4ad184c3c2fe4ea42ee54_w880.jpg"
+  {
+    type: "Bottom",
+    image:
+      "http://www.a-yabloko.ru/storage/news/.thumbs/7079a4c0fbf4ad184c3c2fe4ea42ee54_w880.jpg",
   },
-   {
-    "type" : "Bottom",
-    "image" : "https://thumbs.dreamstime.com/b/online-shop-banner-building-icon-grocery-shopping-market-basket-products-isometric-concept-highly-detailed-96795715.jpg"
+  {
+    type: "Bottom",
+    image:
+      "https://thumbs.dreamstime.com/b/online-shop-banner-building-icon-grocery-shopping-market-basket-products-isometric-concept-highly-detailed-96795715.jpg",
   },
-   {
-    "type" : "Bottom",
-    "image" : "http://www.a-yabloko.ru/storage/news/.thumbs/7079a4c0fbf4ad184c3c2fe4ea42ee54_w880.jpg"
+  {
+    type: "Bottom",
+    image:
+      "http://www.a-yabloko.ru/storage/news/.thumbs/7079a4c0fbf4ad184c3c2fe4ea42ee54_w880.jpg",
   },
-   {
-    "type" : "Bottom",
-    "image" : "https://thumbs.dreamstime.com/b/online-shop-banner-building-icon-grocery-shopping-market-basket-products-isometric-concept-highly-detailed-96795715.jpg"
+  {
+    type: "Bottom",
+    image:
+      "https://thumbs.dreamstime.com/b/online-shop-banner-building-icon-grocery-shopping-market-basket-products-isometric-concept-highly-detailed-96795715.jpg",
   },
-   {
-    "type" : "Bottom",
-    "image" : "http://www.a-yabloko.ru/storage/news/.thumbs/7079a4c0fbf4ad184c3c2fe4ea42ee54_w880.jpg"
+  {
+    type: "Bottom",
+    image:
+      "http://www.a-yabloko.ru/storage/news/.thumbs/7079a4c0fbf4ad184c3c2fe4ea42ee54_w880.jpg",
   },
-   {
-    "type" : "Bottom",
-    "image" : "https://thumbs.dreamstime.com/b/online-shop-banner-building-icon-grocery-shopping-market-basket-products-isometric-concept-highly-detailed-96795715.jpg"
+  {
+    type: "Bottom",
+    image:
+      "https://thumbs.dreamstime.com/b/online-shop-banner-building-icon-grocery-shopping-market-basket-products-isometric-concept-highly-detailed-96795715.jpg",
   },
-   {
-    "type" : "Bottom",
-    "image" : "http://www.a-yabloko.ru/storage/news/.thumbs/7079a4c0fbf4ad184c3c2fe4ea42ee54_w880.jpg"
-  }
+  {
+    type: "Bottom",
+    image:
+      "http://www.a-yabloko.ru/storage/news/.thumbs/7079a4c0fbf4ad184c3c2fe4ea42ee54_w880.jpg",
+  },
 ];
 
-const manage_data= [
+const manage_data = [
   {
-    "image":"https://pos.kalamitcompany.com/api/images/KA_BNR_20240826042120.jpg",
-    "title":"offers",
-    "msg":"best deals"
+    image:
+      "https://pos.kalamitcompany.com/api/images/KA_BNR_20240826042120.jpg",
+    title: "offers",
+    msg: "best deals",
   },
   {
-    "image":"https://pos.kalamitcompany.com/api/images/KA_BNR_20240826042120.jpg",
-    "title":"offers",
-    "msg":"best deals"
+    image:
+      "https://pos.kalamitcompany.com/api/images/KA_BNR_20240826042120.jpg",
+    title: "offers",
+    msg: "best deals",
   },
   {
-    "image":"https://pos.kalamitcompany.com/api/images/KA_BNR_20240826042120.jpg",
-    "title":"offers",
-    "msg":"best deals"
+    image:
+      "https://pos.kalamitcompany.com/api/images/KA_BNR_20240826042120.jpg",
+    title: "offers",
+    msg: "best deals",
   },
   {
-    "image":"https://pos.kalamitcompany.com/api/images/KA_BNR_20240826042120.jpg",
-    "title":"offers",
-    "msg":"best deals"
+    image:
+      "https://pos.kalamitcompany.com/api/images/KA_BNR_20240826042120.jpg",
+    title: "offers",
+    msg: "best deals",
   },
   {
-    "image":"https://pos.kalamitcompany.com/api/images/KA_BNR_20240826042120.jpg",
-    "title":"offers",
-    "msg":"best deals"
+    image:
+      "https://pos.kalamitcompany.com/api/images/KA_BNR_20240826042120.jpg",
+    title: "offers",
+    msg: "best deals",
   },
   {
-    "image":"https://pos.kalamitcompany.com/api/images/KA_BNR_20240826042120.jpg",
-    "title":"offers",
-    "msg":"best deals"
+    image:
+      "https://pos.kalamitcompany.com/api/images/KA_BNR_20240826042120.jpg",
+    title: "offers",
+    msg: "best deals",
   },
   {
-    "image":"https://pos.kalamitcompany.com/api/images/KA_BNR_20240826042120.jpg",
-    "title":"offers",
-    "msg":"best deals"
-  }
+    image:
+      "https://pos.kalamitcompany.com/api/images/KA_BNR_20240826042120.jpg",
+    title: "offers",
+    msg: "best deals",
+  },
 ];
 
 const loadCoupons_data = [
-      {
-        "coupons":"10",
-        "items":"Flat , 10",
-        "off":"50%"
-      },
-      {
-        "coupons":"10",
-        "items":"Flat , 10",
-        "off":"50%"
-      },
-      {
-        "coupons":"10",
-        "items":"percent , 10",
-        "off":"50%"
-      },
-      {
-        "coupons":"10",
-        "items":"Flat , 10",
-        "off":"50%"
-      },
-      {
-        "coupons":"10",
-        "items":"percent , 10",
-        "off":"50%"
-      }
+  {
+    coupons: "10",
+    items: "Flat , 10",
+    off: "50%",
+  },
+  {
+    coupons: "10",
+    items: "Flat , 10",
+    off: "50%",
+  },
+  {
+    coupons: "10",
+    items: "percent , 10",
+    off: "50%",
+  },
+  {
+    coupons: "10",
+    items: "Flat , 10",
+    off: "50%",
+  },
+  {
+    coupons: "10",
+    items: "percent , 10",
+    off: "50%",
+  },
 ];
 
 // floating button
@@ -1061,7 +1090,6 @@ $floater.on("click", function (e) {
   $floater__list.toggleClass("displaybock");
   e.stopPropagation();
 });
-
 
 function toggleEye(id, attr) {
   $(`#${id}`).toggleClass("bi-eye bi-eye-slash");
@@ -1078,7 +1106,7 @@ function load_all_product() {
   var loadData = " ";
   product_data.map((item) => {
     loadData += loadProduct(item);
-    x++
+    x++;
   });
 
   $("#res").append(loadData);
@@ -1107,8 +1135,8 @@ function logoadmindata() {
 function loadUserdata() {
   x = 1;
   var userId = " ";
-  user_data.map((item) => {    
-    userId += userTemplate(item ,x);
+  user_data.map((item) => {
+    userId += userTemplate(item, x);
     x++;
   });
 
@@ -1119,7 +1147,7 @@ function themeData() {
   var themeid = " ";
   themeDatarr.map((item) => {
     // console.log(item);
-    
+
     themeid += themeTemplate(item);
   });
 
@@ -1131,7 +1159,7 @@ function staffData() {
   var staffId = " ";
   user_data.map((item) => {
     // console.log(item);
-    
+
     staffId += addStaffTemplate(item);
   });
 
@@ -1142,8 +1170,8 @@ function staffData() {
 function addonsData() {
   x = 1;
   var addonsId = " ";
-  addonsDataarr.map((item) => {    
-    addonsId += addonsTemplate(item ,x);
+  addonsDataarr.map((item) => {
+    addonsId += addonsTemplate(item, x);
     x++;
   });
 
@@ -1154,8 +1182,8 @@ function addonsData() {
 function PosData() {
   x = 1;
   var posDataId = " ";
-  product_data.map((item) => {    
-    posDataId += posproductTempelate(item ,x);
+  product_data.map((item) => {
+    posDataId += posproductTempelate(item, x);
     x++;
   });
 
@@ -1164,8 +1192,8 @@ function PosData() {
 function loadPOSItem() {
   x = 1;
   var PosDataId = " ";
-  product_data.map((item) => {    
-    PosDataId += PosDataTemplate(item ,x);
+  product_data.map((item) => {
+    PosDataId += PosDataTemplate(item, x);
     x++;
   });
 
@@ -1173,16 +1201,16 @@ function loadPOSItem() {
 }
 function orderListItem() {
   var OrderDataId = " ";
-  order_data.map((item) => {    
-    OrderDataId += OrderDataTemplate(item , 1);
+  order_data.map((item) => {
+    OrderDataId += OrderDataTemplate(item, 1);
   });
 
   $("#orderList").append(OrderDataId);
 }
 function DeleveryBoyorderListItem() {
   var DeleveryBoyOrderDataId = " ";
-  order_data.map((item) => {    
-    DeleveryBoyOrderDataId += OrderDataTemplate(item , 2);
+  order_data.map((item) => {
+    DeleveryBoyOrderDataId += OrderDataTemplate(item, 2);
   });
 
   $("#orderList").append(DeleveryBoyOrderDataId);
@@ -1190,21 +1218,21 @@ function DeleveryBoyorderListItem() {
 function loadAllCategroyKA() {
   x = 1;
   var LoadCategoryDataId = " ";
-  category_data.map((item) => {    
-    LoadCategoryDataId += LoadCategoryTemplate(item ,x);
+  category_data.map((item) => {
+    LoadCategoryDataId += LoadCategoryTemplate(item, x);
     x++;
   });
 
   $("#res").append(LoadCategoryDataId);
 }
 function gotoposCheckout() {
-    location.href = "posCheckout.html";
+  location.href = "posCheckout.html";
 }
 function loadAllBannerImages() {
   x = 1;
   var loadAllBannerImagesDataId = " ";
-  banner_data.map((item) => {    
-    loadAllBannerImagesDataId += loadAllBannerImagesTemplate(item ,x);
+  banner_data.map((item) => {
+    loadAllBannerImagesDataId += loadAllBannerImagesTemplate(item, x);
     x++;
   });
 
@@ -1212,7 +1240,7 @@ function loadAllBannerImages() {
 }
 function loadManageCategory1() {
   var loadManageCategoryDataId = " ";
-  manage_data.map((item) => {    
+  manage_data.map((item) => {
     loadManageCategoryDataId += loadManageCategoryTemplate(item);
   });
 
@@ -1220,7 +1248,7 @@ function loadManageCategory1() {
 }
 function loadCoupons() {
   var loadCouponsDataId = " ";
-  loadCoupons_data.map((item) => {    
+  loadCoupons_data.map((item) => {
     loadCouponsDataId += loadCouponsTemplate(item);
   });
 
@@ -1228,7 +1256,7 @@ function loadCoupons() {
 }
 function loadorderDetail() {
   var load_product_list_invoiceDataId = " ";
-  product_data.map((item) => {    
+  product_data.map((item) => {
     load_product_list_invoiceDataId += load_product_list_invoiceTemplate(item);
   });
 
@@ -1240,49 +1268,58 @@ User app code start
 ================ */
 function UserCategory() {
   var TopcategoryId = " ";
-  category_data.map((item) => {    
+  category_data.map((item) => {
     TopcategoryId += UserTopcategoryTemplate(item);
   });
 
   $("#Topcategory").append(TopcategoryId);
 }
 
-function Usercarousel() {
-  x= 1;
+function Topbannercarousel() {
+  x = 1;
   var TopUsercarouselId = " ";
-  banner_data.map((item) => {    
-    TopUsercarouselId += UserTopcarouselTemplate(item ,x);
-    x++
+  banner_data.map((item) => {
+    TopUsercarouselId += TopbannercarouselTemplate(item, x);
+    x++;
   });
 
-  $("#Usercarousel").append(TopUsercarouselId);
+  $("#Userbanner").append(TopUsercarouselId);
 
-  $('.carousel-main').trigger('destroy.owl.carousel');
-$('.carousel-main').owlCarousel({
-  stagePadding: 50,
-  loop:true,
-  margin:10,
-  nav:false,
-  dots: true,
-  responsive:{
-      0:{
-          items:1
+  $(".carousel-main").trigger("destroy.owl.carousel");
+  $(".carousel-main").owlCarousel({
+    stagePadding: 50,
+    loop: true,
+    margin: 10,
+    nav: false,
+    dots: true,
+    responsive: {
+      0: {
+        items: 1,
       },
-      600:{
-          items:2
+      600: {
+        items: 2,
       },
-      1000:{
-          items:3
-      }
-  }
-});
+      1000: {
+        items: 3,
+      },
+    },
+  });
 
-$('.carousel-main').trigger('refresh.owl.carousel');
-
-
-
+  $(".carousel-main").trigger("refresh.owl.carousel");
 }
 
+function categoryCarousel() {
+  x = 1;
+  var UsercategoryCarouselId = " ";
+  category_data.map((item) => {
+    UsercategoryCarouselId += categoryCarouselTemplate(item, x);
+    x++;
+  });
+
+  $("#Usercategory").append(UsercategoryCarouselId);
+
+  
+}
 
 /* ================
 User app code end

@@ -523,11 +523,18 @@ User app code start
         </div>
       `
     }
-    function UserTopcarouselTemplate(data ,x) {
+    function TopbannercarouselTemplate(data ,x) {
        return `<div class="crousel_items crousel_items${x}">
           <img src="${data.image}" alt="">
         </div>
        `
+    }
+    function categoryCarouselTemplate(data) {
+        // return `
+        // <div class="crousel_items crousel_items${x}">
+        //   <img src="${data.url}" alt="">
+        // </div>
+        // `
     }
 
 /* ================

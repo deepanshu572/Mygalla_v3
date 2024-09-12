@@ -4528,7 +4528,12 @@ a {
 /* ================
 app code start
 ================ */
-.main
+
+.main{
+	padding-bottom: 5rem;
+
+}
+
 h1,
 h2,
 h3,
@@ -4668,8 +4673,6 @@ h6 {
     padding: 10px;
 }
 .Usercarousel .owl-dots .owl-dot{
-	width: 15px;
-    height: 15px;
     border-radius: 50%;
     background: var(--theme-bg1);
     border: none;
@@ -4736,8 +4739,72 @@ h6 {
 .usershop_head h4 {
 	font-weight: 600 !important;
 }
-
+.usershop_load_more a {
+	text-decoration: none;
+	color: #fff;
+	background: var(--theme);
+	padding: 8px 19px;
+	border-radius: 14px;
+}
+.usershop_load_more {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 20px;
+}
+.scroller-update{
+	width: 100%;
+    overflow-x: auto;
+    white-space: nowrap;
+}
+.scroller-div{
+	white-space: nowrap;
+    padding: 23px 10px;
+    display: inline-flex;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.user_box1 {
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.user_img {
+    background: #11bf1124;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    background: #ffff;
+}
+.footer div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5px;
+}
+.footer div i {
+    font-size: 23px;
+}
+.footer div p {
+    margin: 0;
+}
 @media (max-width: 800px) {
+	.user_box1 {
+		width: 115px;
+	}
 	.usershop_head h4{
 		font-size: 22px;
 	}
@@ -4837,8 +4904,16 @@ h6 {
 .crousel_items{
 	height: 117px !important;
 }
+.Usercarousel .owl-dots .owl-dot{
+	width: 10px;
+    height: 10px;
+}
 }
 @media (min-width: 600px) and (max-width: 2000px) {
+	.Usercarousel .owl-dots .owl-dot{
+		width: 15px;
+		height: 15px;
+	}
 	.usershop_item_bg {
 		width: 207px;
 	}
