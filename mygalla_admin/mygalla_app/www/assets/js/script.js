@@ -954,44 +954,36 @@ const order_data = [
 const banner_data = [
    {
     "type" : "Bottom",
-    "image" : "https://pos.kalamitcompany.com/api/images/KA_BNR_20240316114036.jpg"
+    "image" : "https://thumbs.dreamstime.com/b/online-shop-banner-building-icon-grocery-shopping-market-basket-products-isometric-concept-highly-detailed-96795715.jpg"
   },
    {
     "type" : "Bottom",
-    "image" : "https://pos.kalamitcompany.com/api/images/KA_BNR_20240826041009.jpg"
+    "image" : "http://www.a-yabloko.ru/storage/news/.thumbs/7079a4c0fbf4ad184c3c2fe4ea42ee54_w880.jpg"
   },
    {
     "type" : "Bottom",
-    "image" : "https://pos.kalamitcompany.com/api/images/KA_BNR_20240826041958.jpg"
+    "image" : "https://thumbs.dreamstime.com/b/online-shop-banner-building-icon-grocery-shopping-market-basket-products-isometric-concept-highly-detailed-96795715.jpg"
   },
    {
     "type" : "Bottom",
-    "image" : "https://pos.kalamitcompany.com/api/images/KA_BNR_20240826042042.jpg"
+    "image" : "http://www.a-yabloko.ru/storage/news/.thumbs/7079a4c0fbf4ad184c3c2fe4ea42ee54_w880.jpg"
   },
    {
     "type" : "Bottom",
-    "image" : "https://pos.kalamitcompany.com/api/images/KA_BNR_20240826042120.jpg"
+    "image" : "https://thumbs.dreamstime.com/b/online-shop-banner-building-icon-grocery-shopping-market-basket-products-isometric-concept-highly-detailed-96795715.jpg"
   },
    {
-    "type" : "Top",
-    "image" : "https://pos.kalamitcompany.com/api/images/KA_BNR_20240316114036.jpg"
+    "type" : "Bottom",
+    "image" : "http://www.a-yabloko.ru/storage/news/.thumbs/7079a4c0fbf4ad184c3c2fe4ea42ee54_w880.jpg"
   },
    {
-    "type" : "Top",
-    "image" : "https://pos.kalamitcompany.com/api/images/KA_BNR_20240826041009.jpg"
+    "type" : "Bottom",
+    "image" : "https://thumbs.dreamstime.com/b/online-shop-banner-building-icon-grocery-shopping-market-basket-products-isometric-concept-highly-detailed-96795715.jpg"
   },
    {
-    "type" : "Top",
-    "image" : "https://pos.kalamitcompany.com/api/images/KA_BNR_20240826041958.jpg"
-  },
-   {
-    "type" : "Top",
-    "image" : "https://pos.kalamitcompany.com/api/images/KA_BNR_20240826042042.jpg"
-  },
-   {
-    "type" : "Top",
-    "image" : "https://pos.kalamitcompany.com/api/images/KA_BNR_20240826042120.jpg"
-  },
+    "type" : "Bottom",
+    "image" : "http://www.a-yabloko.ru/storage/news/.thumbs/7079a4c0fbf4ad184c3c2fe4ea42ee54_w880.jpg"
+  }
 ];
 
 const manage_data= [
@@ -1242,3 +1234,56 @@ function loadorderDetail() {
 
   $("#load_product_list_invoice").append(load_product_list_invoiceDataId);
 }
+
+/* ================
+User app code start
+================ */
+function UserCategory() {
+  var TopcategoryId = " ";
+  category_data.map((item) => {    
+    TopcategoryId += UserTopcategoryTemplate(item);
+  });
+
+  $("#Topcategory").append(TopcategoryId);
+}
+
+function Usercarousel() {
+  x= 1;
+  var TopUsercarouselId = " ";
+  banner_data.map((item) => {    
+    TopUsercarouselId += UserTopcarouselTemplate(item ,x);
+    x++
+  });
+
+  $("#Usercarousel").append(TopUsercarouselId);
+
+  $('.carousel-main').trigger('destroy.owl.carousel');
+$('.carousel-main').owlCarousel({
+  stagePadding: 50,
+  loop:true,
+  margin:10,
+  nav:false,
+  dots: true,
+  responsive:{
+      0:{
+          items:1
+      },
+      600:{
+          items:2
+      },
+      1000:{
+          items:3
+      }
+  }
+});
+
+$('.carousel-main').trigger('refresh.owl.carousel');
+
+
+
+}
+
+
+/* ================
+User app code end
+================ */

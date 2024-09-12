@@ -42,7 +42,7 @@ function manageProduct() {
 //   $(`#${id}`).removeClass(`btn btn-${a}`)
 //   $(`#${id}`).addClass(`btn btn-${btnColor}`)
 //   $(`#${id}`).html(btnText);
-//   console.log(btnText);     
+//   console.log(btnText);
 // }
 
 function loadCategoryProduct(data) {
@@ -264,13 +264,9 @@ function addStaffTemplate(data) {
 function staffManage() {
   window.location.href = "staffManage.html";
 }
-function updateUserStatus() {
-  
-}
+function updateUserStatus() {}
 
-
-function addonsTemplate(data , x) {
-  
+function addonsTemplate(data, x) {
   let btnColor = data.status == 1 ? "success" : "danger";
   let btnText = data.status == 1 ? "Disable" : "Enable";
 
@@ -279,7 +275,7 @@ function addonsTemplate(data , x) {
     class="btn btn-${btnColor}">${btnText}</button>
   `;
 
-  return`
+  return `
   <div class="product-card">
         <div class="product-card-top">
           <span> # ${x}: ${data.name}  </span>
@@ -321,10 +317,10 @@ function addonsTemplate(data , x) {
         
           </div>
         </div>
-      </div>`
+      </div>`;
 }
-function posproductTempelate(data , x) {
-  return`<div class="product-card">
+function posproductTempelate(data, x) {
+  return `<div class="product-card">
                   <div class="product-card-top">
                       <span>S NO :  ${x}  </span>
                       <span> ${data.stock} more left </span>
@@ -342,7 +338,11 @@ function posproductTempelate(data , x) {
                   </div>
                   <div>
                       <div id="addToPOSBtnDiv">
-                          <button type="button" id="addToPOSBtn${data.id}" onclick="addtoPOS(${JSON.stringify(data)})" class="btn btn-success">
+                          <button type="button" id="addToPOSBtn${
+                            data.id
+                          }" onclick="addtoPOS(${JSON.stringify(
+    data
+  )})" class="btn btn-success">
                               <i class="bi bi-plus-lg"></i>  ADD
                           </button>
                           <div id="addToPOSCounter57" class="addToPOSCounter" style="display:none;">
@@ -353,10 +353,10 @@ function posproductTempelate(data , x) {
                       </div>
                   </div>
               </div>
-  `
+  `;
 }
 
-function PosDataTemplate(data , x) {
+function PosDataTemplate(data, x) {
   return `
   <div class="product-card">
                   <div class="product-card-top">
@@ -383,12 +383,15 @@ function PosDataTemplate(data , x) {
                           </div>
                       </div>
                   </div>
-              </div>`
+              </div>`;
 }
 
-function OrderDataTemplate(data , a) {
-  let link = a == 1? "orderHistoryDetails.html?":"orderHistoryDetailsDeliveryPanel.html?"
-  return`
+function OrderDataTemplate(data, a) {
+  let link =
+    a == 1
+      ? "orderHistoryDetails.html?"
+      : "orderHistoryDetailsDeliveryPanel.html?";
+  return `
   <div class="order-card">
           <div class="order-card-top">
               <span>ORDER ID :  ${data.orderId}  </span>
@@ -409,11 +412,11 @@ function OrderDataTemplate(data , a) {
               </div>
           </div>
       </div>
-  `
+  `;
 }
 
-function LoadCategoryTemplate(data , x) {
-  return`
+function LoadCategoryTemplate(data, x) {
+  return `
   <div class="product-card">
           <div class="product-card-top">
             <span> 
@@ -443,11 +446,11 @@ function LoadCategoryTemplate(data , x) {
             </div>
           </div>
         </div>
-  `
+  `;
 }
 
-function loadAllBannerImagesTemplate(data ,x) {
-  return`
+function loadAllBannerImagesTemplate(data, x) {
+  return `
           <tr>
             <th> ${x} </th>
             <td>
@@ -462,20 +465,20 @@ function loadAllBannerImagesTemplate(data ,x) {
             </div>
             </td>
           </tr>
-        `
+        `;
 }
 function loadManageCategoryTemplate(data) {
-  return`
+  return `
           <tr>      
             <td><img src="${data.image}" width="70" height="50"></td>
             <td><div class="manage_title">${data.title}</div></td>
             <td><div class="manage_msg"> ${data.msg} </div></td>
             <td><div class="manage_btn"><button class="btn btn-primary" onclick="pushNotification()">Send</button></div></td>
         </tr>
-        `
+        `;
 }
 function loadCouponsTemplate(data) {
-  return`
+  return `
   <div>
               <div class="card">
                 <div class="card-header">
@@ -492,11 +495,11 @@ function loadCouponsTemplate(data) {
                 </div>
               </div>
 
-          </div>`
+          </div>`;
 }
 
 function load_product_list_invoiceTemplate(data) {
-   return `
+  return `
    <div class="order-summry-pro-card">
               <div class="order-summry-pro-card-left">
                   <img src="${data.image}" alt="${data.image}">
@@ -506,5 +509,27 @@ function load_product_list_invoiceTemplate(data) {
                   <span class="os-pr">price:${data.price} , qty : ${data.qty} </span>
               </div>
           </div>
-    `
+    `;
 }
+
+/* ================
+User app code start
+================ */
+
+    function UserTopcategoryTemplate(data) {
+      return `
+        <div>
+          <a href="#">${data.name}</a>
+        </div>
+      `
+    }
+    function UserTopcarouselTemplate(data ,x) {
+       return `<div class="crousel_items crousel_items${x}">
+          <img src="${data.image}" alt="">
+        </div>
+       `
+    }
+
+/* ================
+User app code end
+================ */

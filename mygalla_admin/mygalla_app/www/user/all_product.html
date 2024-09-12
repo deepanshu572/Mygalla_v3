@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title id="my_shop_name_t">mygalla</title>
+    <link rel="shortcut icon" href="assets/res/icon.png" type="image/x-icon" />
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+    />
+    <link rel="stylesheet" href="../assets/css/owl.carousel.min.css" />
+    <link rel="stylesheet" href="../assets/css/owl.theme.default.min.css" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+
+  <body>
+    <div class="main All-Product">
+      <div class="main-header">
+        <div class="header">
+          <div class="head1">
+            <i class="bi bi-justify i1 menu"></i>
+            <a href="home.html">
+              <h2 id="my_shop_name">MyGalla</h2>
+            </a>
+          </div>
+          <a href="cart.html">
+            <div class="head3">
+              <i class="bi bi-cart-fill"></i>
+              <span>
+                <b>
+                  <span id="cart-count-link"></span>
+                </b>
+              </span>
+            </div>
+          </a>
+          <div class="head2">
+            <button
+              type="button"
+              data-bs-toggle="offcanvas"
+              data-bs-target="#offcanvasRight"
+              aria-controls="offcanvasRight"
+            >
+              <i class="bi bi-cart4"></i>
+              <span>
+                <b>
+                  <!-- <span id="cart_item_d">0</span> -->
+                  <span id="cart-count"></span>
+                  items
+                </b>
+              </span>
+            </button>
+          </div>
+
+          <div
+            class="offcanvas offcanvas-end"
+            tabindex="-1"
+            id="offcanvasRight"
+            aria-labelledby="offcanvasRightLabel"
+          >
+            <div class="offcanvas-header">
+              <h5 class="offcanvas-title" id="offcanvasRightLabel">My Cart</h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="offcanvas"
+                aria-label="Close"
+              ></button>
+            </div>
+
+            <div class="offcanvas-body">
+              <div class="header-changes">
+                <div class="cart-item-wrapper">
+                  <div id="right-side-cart-top-msg"></div>
+                  <div id="right-side-cart"></div>
+                </div>
+                <div class="checkout-detail">
+                  <div id="right-side-cart-total"></div>
+                  <div id="right-side-cart-address-box"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="header-search">
+          <div class="last-header">
+            <i class="bi bi-search"></i>
+            <input type="text" placeholder="Search “Grocery” "  onclick="gotoProductSrch()"/>
+            <i class="bi bi-upc-scan"  id="scanBtnQR"></i>
+          </div>
+          <!-- Button trigger modal -->
+          <button
+            type="button"
+            class="btn"
+            data-bs-toggle="modal"
+            data-bs-target="#exampleModal"
+          >
+            <i class="bi bi-sliders"></i>
+          </button>
+        </div>
+        <div class="category-filter product-select" id="catgContainer">
+          <button class="catgbuttonContainer" id="main_catg_div">
+            <img
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTouQOusIObvNKfJ2Y1rk5ztBb_U_P_QPBCZNq5SgvIBQ&amp;s"
+              id="main_catg_img"
+              alt="Image"
+            />
+            <span class="buttonText" id="main_catg_name">All</span>
+          </button>
+          <i class="bi bi-arrow-right"></i>
+        </div>
+      </div>
+
+      <div class="resp-nav sidebar" style="display: none">
+        <div class="sidebar-box" id="navone"></div>
+      </div>
+
+      <div class="product-section update-trending-section last-section">
+        <div class="product-item-box update-item-box update-padding" id="loadAllProduct">  
+        </div>
+      </div>
+    </div>
+
+    <div class="footer" id="navtwo"></div>
+
+    <!-- variant modal start  -->
+
+    <div
+      class="modal modal-bottom fade"
+      id="variantModal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">More variants</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <div class="variantList">
+              <div id="prodContainer" class="product_var_container"></div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- variant modal end  -->
+
+    <!-- sort Modal -->
+    <div
+      class="modal fade product"
+      id="exampleModal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-wrapper">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Filter</h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <div class="gtr">
+                <div class="Wrapper-body-item">
+                  <button
+                    class="btn btn-light btn-but rounded-pill"
+                    onclick="filterProduct(this,'SortByNameA_Z')"
+                  >
+                  <label for="one">Sort by name (A-Z)</label>
+
+                  <input name="sortOption" type="radio" id="one" value="one">
+                                  </button>
+                </div>
+                <div class="Wrapper-body-item">
+                  <button
+                    class="btn btn-light btn-but rounded-pill"
+                    onclick="filterProduct(this,'SortByNameZ_A')"
+                  >
+                  <label for="two">Sort by name (Z-A)</label>
+                                    <input name="sortOption" type="radio" id="two" value="two">
+                                    
+                  </button>
+                </div>
+                <div class="Wrapper-body-item">
+                  <button
+                    class="btn btn-light btn-but rounded-pill"
+                    onclick="filterProduct(this,'SortByPriceL_H')"
+                  >
+                  <label for="three">Sort by price ( low - high )</label>
+                  <input name="sortOption" type="radio" id="three" value="three">
+                                    </button>
+                </div>
+                <div class="Wrapper-body-item">
+                  <button
+                    class="btn btn-light btn-but rounded-pill"
+                    onclick="filterProduct(this,'SortByPriceH_L')"
+                  >
+                  <label for="four">Sort by price ( high -low )
+                  </label>
+                  <input name="sortOption" type="radio" id="four" value="four">
+               
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+              >
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- sort Modal -->
+
+    <script src="../cordova.js"></script>
+    <script src="../assets/js/jquery-3.6.1.js"></script>
+    <script src="../assets/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/js/popper.min.js"></script>
+    <script src="../assets/js/owl.carousel.min.js"></script>
+    <script src="../assets/js/dexie.js"></script>
+    <script src="../constant.js"></script>
+    <script src="assets/js/app.js"></script>
+    <script src="assets/js/script.js"></script>
+
+  <script>
+
+    printShopName();
+    rightSideCartLoad();
+    loadNav("home");
+    loadCartCount();
+
+    // old function call
+
+    loadUserDataHome();
+
+    // testing function
+
+    loadProductAllProduct();
+    loadcatgSlider();
+  </script>
+
+    <script>
+      var prevScrollpos = window.pageYOffset;
+
+      window.onscroll = function () {
+        var currentScrollPos = window.pageYOffset;
+        if (prevScrollpos > currentScrollPos) {
+          document.querySelector(".product-select").style.display = "flex";
+        } else {
+          document.querySelector(".product-select").style.display = "none";
+        }
+        prevScrollpos = currentScrollPos;
+      };
+    </script>
+  </body>
+</html>
