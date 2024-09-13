@@ -4972,8 +4972,13 @@ h6 {
 	.scroller-div {
 		grid-template-columns:repeat(12, minmax(100px, 1fr));
 	}
-	.user_box1 {
-		width: 115px;
+	.user_img{
+		width: 70px;
+		height: 70px;
+		padding: 9px;
+	}
+	.user_box1{
+		height: 96px;
 	}
 	.usershop_head h4{
 		font-size: 22px;
@@ -5082,9 +5087,12 @@ h6 {
 padding: 10px 6px
 }
 .scroller-div{
-	column-gap: 6vw;
-    row-gap: 3vh;
+	column-gap: 0vw;
+	row-gap: 0vh;
 
+}
+.user_text p{
+	font-weight: 400;
 }
 .left_cart_price b {
 	font-size: 11px;
