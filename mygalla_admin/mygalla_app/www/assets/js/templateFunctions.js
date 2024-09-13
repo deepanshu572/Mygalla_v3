@@ -541,6 +541,41 @@ User app code start
               </div>
         `
     }
+    function productCarouselTemplate(data) {
+      return `
+      <div class="product_item_box">
+              <div class="product_item_img">
+                <img src="${data.image}" alt="">
+              </div>
+              <div class="product_item_content">
+                <div class="product_item_heart">
+                  <i class="bi bi-heart"></i>
+                </div>
+                <div class="product_item_star_section">
+                  <div class="product_rating">
+                    <p>${data.rating.rate}</p>
+                    <i class="bi bi-star-fill"></i>
+                  </div>
+                  <i class="bi bi-three-dots"></i>
+                </div>
+                <div class="product_item_name">
+                  <p>${data.title}</p>
+                </div>
+                <div class="product_item_detail_cart_section">
+                  <div class="left_cart_price">
+                    <b>₹ ${data.price}</b>
+                    <del>₹ ${data.fakePrice}</del>
+                  </div>
+                  <div class="right_cart_box">
+                     <button>-</button>
+                     <input type="number" value="01">
+                     <button>+</button>
+                  </div>
+                </div>
+              </div>
+             </div>
+      `
+    }
 
 /* ================
 User app code end

@@ -201,12 +201,25 @@
         <div class="usercategory_head">
           <h5>Choose From Categories</h5>
           <div class="btn-container">
-            <button id="prevBtn"><i class="bi bi-chevron-left"></i></button>
-            <button id="nextBtn"><i class="bi bi-chevron-right"></i></button>
+            <button id="prevBtn1"><i class="bi bi-chevron-left"></i></button>
+            <button id="nextBtn1"><i class="bi bi-chevron-right"></i></button>
           </div>
         </div>
-        <div class="scroller scroller-update">
-          <div class="product-item-box scroller-div"  id="scroller"></div>
+        <div class="scroller1 scroller-update" id="scroller1">
+          <div class="scroller-div"  id="categoryData"></div>
+        </div>
+      </div>
+      <div class="product_manage">
+        <div class="usercategory_head">
+        <h5>Featured Products</h5>
+      </div>
+        <div class="btn-container">
+          <button id="prevBtn2"><i class="bi bi-chevron-left"></i></button>
+          <button id="nextBtn2"><i class="bi bi-chevron-right"></i></button>
+        </div>
+        <div class="scroller2 scroller_product" id="scroller2">
+        <div class="scroller-div1"  id="featuredproductData">
+        </div>
         </div>
       </div>
    
@@ -262,10 +275,12 @@
       UserCategory();
       Topbannercarousel();
       categoryCarousel();
-      document.addEventListener("DOMContentLoaded", function () {
-  const prevBtn = document.getElementById("prevBtn");
-  const nextBtn = document.getElementById("nextBtn");
-  const content = document.querySelector(".scroller");
+      productCarousel();
+
+function setupScroller(prevBtnId, nextBtnId, scrollerId) {
+  const prevBtn = document.getElementById(prevBtnId);
+  const nextBtn = document.getElementById(nextBtnId);
+  const content = document.getElementById(scrollerId);
 
   if (prevBtn) {
     prevBtn.addEventListener("click", () => {
@@ -284,7 +299,16 @@
       });
     });
   }
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+  // Call the function for each instance
+  setupScroller("prevBtn1", "nextBtn1", "scroller1");
+  setupScroller("prevBtn2", "nextBtn2", "scroller2");
+  // Add more calls for other scrollers if needed
 });
+
+
     </script>
   </body>
 </html>

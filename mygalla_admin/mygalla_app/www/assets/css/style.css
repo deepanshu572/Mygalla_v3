@@ -37,6 +37,7 @@ body::-webkit-scrollbar {
 }
 
 body {
+	overflow-x: hidden;
 	-ms-overflow-style: none;
 	scrollbar-width: none
 }
@@ -4810,6 +4811,7 @@ h6 {
 	outline: none;
 	width: 31px;
 	height: 30px;
+	box-shadow: var(--shadow);
 }
 .usercategory_head h5 {
 	font-weight: 500 !important;
@@ -4822,8 +4824,148 @@ h6 {
 .user_text p {
 	font-weight: 600;
 }
+.scroller-div1{
+	overflow: auto;
+    white-space: nowrap;
+    padding: 23px 10px;
+    display: inline-flex;
+    transition: cubic-bezier(0.19, 1, 0.22, 1) 1s;
+    gap: 12px;
+}
+.scroller_product{
+    overflow-x: auto;
+    white-space: nowrap;
+}
+.product_item_box {
+    padding: 10px;
+    border: 1px solid var(--theme);
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+	justify-content: space-between;
+    position: relative;
+	width: 232px;
+	height: 278px;
+}
+.product_item_content {
+    display: flex;
+    flex-direction: column;
+	width: 100%;
+}
+.product_item_heart {
+    position: absolute;
+    right: 7px;
+    top: 5px;
+}
+.product_item_star_section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.product_item_detail_cart_section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.right_cart_box button {
+	background: var(--theme);
+    border: none;
+    color: #fff;
+    border-radius: 4px;
+    padding: 0px 7px;
+    font-size: 14px;
+}
+.product_item_img img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    padding: 10px;
+}
+.product_item_img {
+    width: 177px;
+	height: 164px;
+}
+.right_cart_box{
+	border: 1px solid #dddddd;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+}
+.right_cart_box input {
+	width: 24px;
+    height: 21px;
+    border: none;
+    text-align: center;
+    font-size: 12px;
+    color: var(--theme);
+    font-weight: 500;
+}
+.product_rating {
+    background: var(--theme);
+    color: #fff;
+    font-size: 11px;
+    border-radius: 3px;
+    padding: 3px 9px;
+	display: flex;
+}
+.product_rating i {
+	margin-left: 6px;
+    color: gold;
+}
+.left_cart_price del {
+    font-size: 10px;
+}
+.left_cart_price b {
+    font-size: 13px;
+}
+.right_cart_box input::-webkit-outer-spin-button,
+.right_cart_box input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.product_item_name p {
+    font-size: 13px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+	white-space: normal;
+}
+.product_manage .btn-container{
+	position: absolute;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    top: 44%;
+    padding: 0px 55px;
+    z-index: 9;
+}
+.product_manage{
+	position: relative;
+}
+.scroller2::-webkit-scrollbar{
+    display: none;
+}
+.user_category_filter::-webkit-scrollbar{
+	display: none;
+}
 
 @media (max-width: 800px) {
+	.product_item_box{
+		width: 44vw;
+		height: 216px;
+		overflow: hidden;	
+	}
+	.product_item_name p {
+		font-size: 11px;
+	}
+	.product_item_img {
+		width: 123px;
+		height: 111px;
+	}
 	.scroller-update{
 		width: 100%;
 	}
@@ -4937,15 +5079,36 @@ h6 {
     height: 10px;
 }
 .usercategory_head {
-padding: 10px 20px
+padding: 10px 6px
 }
 .scroller-div{
 	column-gap: 6vw;
     row-gap: 3vh;
 
 }
+.left_cart_price b {
+	font-size: 11px;
+}
+.left_cart_price del {
+	font-size: 9px;
+}
+.right_cart_box button{
+	padding: 0px 5px;
+	font-size: 13px;
+}
+.right_cart_box input{
+	height: auto;
+}
+.product_manage .btn-container{
+	display: none;
+}
 }
 @media (min-width: 600px) and (max-width: 2000px) {
+	
+	.scroller_product{
+		margin: auto;
+		width: 90%;
+		}
 	.user_text {
 		padding: 4px;
 	}
@@ -4955,7 +5118,7 @@ padding: 10px 20px
 		font-size: 14px;
 	}
 	.scroller-div {
-		column-gap: 45px;
+		column-gap: 0px;
 		row-gap: 16px;
 	}
 	
@@ -4963,7 +5126,7 @@ padding: 10px 20px
 		padding: 1rem 5rem;
 	}
 	.scroller-update{
-		width: 90%;
+		width: 87%;
 		margin: auto;
 	}
 	.scroller-update::-webkit-scrollbar{

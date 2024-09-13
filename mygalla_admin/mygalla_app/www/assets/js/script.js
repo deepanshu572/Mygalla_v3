@@ -1439,7 +1439,15 @@ function categoryCarousel() {
     UsercategoryCarouselId += categoryCarouselTemplate(item);
   });
 
-  $("#scroller").append(UsercategoryCarouselId);
+  $("#categoryData").append(UsercategoryCarouselId);
+}
+function productCarousel() {
+  var UserproductCarouselId = " ";
+  product_data.map((item) => {
+    UserproductCarouselId +=productCarouselTemplate(item);
+  });
+
+  $("#featuredproductData").append(UserproductCarouselId);
 }
 
 /* ================
