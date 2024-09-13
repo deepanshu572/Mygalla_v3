@@ -326,25 +326,25 @@ const category_data = [
     id: "1",
     slug: "beauty",
     name: "Beauty",
-    url: "https://cdn.dummyjson.com/products/images/beauty/Essence%20Mascara%20Lash%20Princess/thumbnail.png",
+    url: "https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=270/layout-engine/2022-12/paan-corner_web.png",
   },
   {
     id: "2",
     slug: "fragrances",
     name: "Fragrances",
-    url: "https://cdn.dummyjson.com/products/images/fragrances/Calvin%20Klein%20CK%20One/thumbnail.png",
+    url: "https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=270/layout-engine/2022-11/Slice-2_10.png",
   },
   {
     id: "3",
     slug: "furniture",
     name: "Furniture",
-    url: "https://cdn.dummyjson.com/products/images/furniture/Annibale%20Colombo%20Bed/thumbnail.png",
+    url: "https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=270/layout-engine/2022-11/Slice-3_9.png",
   },
   {
     id: "4",
     slug: "groceries",
     name: "Groceries",
-    url: "https://cdn.dummyjson.com/products/images/groceries/Apple/thumbnail.png",
+    url: "https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=270/layout-engine/2022-11/Slice-4_9.png",
   },
   {
     id: "5",
@@ -1081,6 +1081,131 @@ const loadCoupons_data = [
   },
 ];
 
+const usercategory_data = [
+  
+  {
+    image:
+      "https://www.jiomart.com/images/cms/section/category-url/12806/2.png?v=1725964433",
+    name: "Grocery",
+  },
+  {
+    image:
+      "https://www.jiomart.com/images/category/61/thumb/dairy-bakery-20240620.png?im=Resize=(200,200)",
+    name: "Fruits",
+  },
+  {
+    image:
+      "https://www.jiomart.com/images/category/219/thumb/fruits-vegetables-20240620.png?im=Resize=(200,200)",
+    name: "rice",
+  },
+  {
+    image:
+      "https://www.jiomart.com/images/category/28997/thumb/biscuits-drinks-packaged-foods-20240620.png?im=Resize=(200,200)",
+    name: "vegetables",
+  },
+  {
+    image:
+      "https://www.jiomart.com/images/product/original/rvpx3clm9k/btw-aloo-bhujia-namkeen-400g-200g-x-2-product-images-orvpx3clm9k-p606422175-0-202311301302.jpg?im=Resize=(360,360)",
+    name: "biscuits",
+  },
+  {
+    image:
+      "https://www.jiomart.com/images/product/original/491319789/sunfeast-dark-fantasy-original-choco-filled-cookie-275-g-product-images-o491319789-p491319789-0-202406171649.jpg?im=Resize=(360,360)",
+    name: "corn",
+  },
+  {
+    image:
+      "https://www.jiomart.com/images/product/original/491188036/sunfeast-dark-fantasy-yumfills-cake-253-g-product-images-o491188036-p491188036-0-202404101046.jpg?im=Resize=(360,360)",
+    name: "panner",
+  },
+  {
+    image:
+      "https://www.jiomart.com/images/product/original/490064685/weikfield-cocoa-powder-50-g-product-images-o490064685-p490064685-0-202403041647.jpg?im=Resize=(360,360)",
+    name: "rice",
+  },
+  {
+    image:
+      "https://www.jiomart.com/images/cms/section/category-url/12806/2.png?v=1725964433",
+    name: "Grocery",
+  },
+  {
+    image:
+      "https://www.jiomart.com/images/category/61/thumb/dairy-bakery-20240620.png?im=Resize=(200,200)",
+    name: "Fruits",
+  },
+  {
+    image:
+      "https://www.jiomart.com/images/category/219/thumb/fruits-vegetables-20240620.png?im=Resize=(200,200)",
+    name: "rice",
+  },
+  {
+    image:
+      "https://www.jiomart.com/images/category/28997/thumb/biscuits-drinks-packaged-foods-20240620.png?im=Resize=(200,200)",
+    name: "vegetables",
+  },
+  {
+    image:
+      "https://www.jiomart.com/images/product/original/rvpx3clm9k/btw-aloo-bhujia-namkeen-400g-200g-x-2-product-images-orvpx3clm9k-p606422175-0-202311301302.jpg?im=Resize=(360,360)",
+    name: "biscuits",
+  },
+  {
+    image:
+      "https://www.jiomart.com/images/product/original/491319789/sunfeast-dark-fantasy-original-choco-filled-cookie-275-g-product-images-o491319789-p491319789-0-202406171649.jpg?im=Resize=(360,360)",
+    name: "corn",
+  },
+  {
+    image:
+      "https://www.jiomart.com/images/product/original/491188036/sunfeast-dark-fantasy-yumfills-cake-253-g-product-images-o491188036-p491188036-0-202404101046.jpg?im=Resize=(360,360)",
+    name: "panner",
+  },
+  {
+    image:
+      "https://www.jiomart.com/images/product/original/490064685/weikfield-cocoa-powder-50-g-product-images-o490064685-p490064685-0-202403041647.jpg?im=Resize=(360,360)",
+    name: "rice",
+  },
+  {
+    image:
+      "https://www.jiomart.com/images/cms/section/category-url/12806/2.png?v=1725964433",
+    name: "Grocery",
+  },
+  {
+    image:
+      "https://www.jiomart.com/images/category/61/thumb/dairy-bakery-20240620.png?im=Resize=(200,200)",
+    name: "Fruits",
+  },
+  {
+    image:
+      "https://www.jiomart.com/images/category/219/thumb/fruits-vegetables-20240620.png?im=Resize=(200,200)",
+    name: "rice",
+  },
+  {
+    image:
+      "https://www.jiomart.com/images/category/28997/thumb/biscuits-drinks-packaged-foods-20240620.png?im=Resize=(200,200)",
+    name: "vegetables",
+  },
+  {
+    image:
+      "https://www.jiomart.com/images/product/original/rvpx3clm9k/btw-aloo-bhujia-namkeen-400g-200g-x-2-product-images-orvpx3clm9k-p606422175-0-202311301302.jpg?im=Resize=(360,360)",
+    name: "biscuits",
+  },
+  {
+    image:
+      "https://www.jiomart.com/images/product/original/491319789/sunfeast-dark-fantasy-original-choco-filled-cookie-275-g-product-images-o491319789-p491319789-0-202406171649.jpg?im=Resize=(360,360)",
+    name: "corn",
+  },
+  {
+    image:
+      "https://www.jiomart.com/images/product/original/491188036/sunfeast-dark-fantasy-yumfills-cake-253-g-product-images-o491188036-p491188036-0-202404101046.jpg?im=Resize=(360,360)",
+    name: "panner",
+  },
+  {
+    image:
+      "https://www.jiomart.com/images/product/original/490064685/weikfield-cocoa-powder-50-g-product-images-o490064685-p490064685-0-202403041647.jpg?im=Resize=(360,360)",
+    name: "rice",
+  }
+ 
+];
+
 // floating button
 var $floater = $(".floater");
 var $floater__list = $(".floater__list");
@@ -1309,16 +1434,12 @@ function Topbannercarousel() {
 }
 
 function categoryCarousel() {
-  x = 1;
   var UsercategoryCarouselId = " ";
-  category_data.map((item) => {
-    UsercategoryCarouselId += categoryCarouselTemplate(item, x);
-    x++;
+  usercategory_data.map((item) => {
+    UsercategoryCarouselId += categoryCarouselTemplate(item);
   });
 
-  $("#Usercategory").append(UsercategoryCarouselId);
-
-  
+  $("#scroller").append(UsercategoryCarouselId);
 }
 
 /* ================

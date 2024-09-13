@@ -4708,8 +4708,7 @@ h6 {
 }
 .usershop_item_box1 {
     position: relative;
-	box-shadow: 0px 10.55px 26.37px 0px #0066154D;
-
+	box-shadow: 0px 3.55px 11.37px 0px #0066154D;
     /* margin: 10px; */
     border-radius: 10px;
 }
@@ -4753,29 +4752,20 @@ h6 {
 	padding: 20px;
 }
 .scroller-update{
-	width: 100%;
-    overflow-x: auto;
-    white-space: nowrap;
-}
-.scroller-div{
-	white-space: nowrap;
-    padding: 23px 10px;
-    display: inline-flex;
-    width: 100%;
-    flex-wrap: wrap;
-    justify-content: space-between;
+	overflow-x: auto;
+	padding: 10px;
 }
 .user_box1 {
-    width: 300px;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 .user_img {
-    background: #11bf1124;
+	background: #e6f0e8;
     border-radius: 50%;
     width: 100px;
     height: 100px;
+	padding: 18px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -4801,7 +4791,45 @@ h6 {
 .footer div p {
     margin: 0;
 }
+.scroller-div {
+	display: grid;
+	grid-template-columns: repeat(12, minmax(150px, 1fr));
+	grid-auto-rows: 124px;
+}
+.user_img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+	mix-blend-mode: darken;
+}
+.btn-container button {
+	background: var(--theme);
+	color: #fff;
+	border-radius: 50%;
+	border: none;
+	outline: none;
+	width: 31px;
+	height: 30px;
+}
+.usercategory_head h5 {
+	font-weight: 500 !important;
+}
+.usercategory_head {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+.user_text p {
+	font-weight: 600;
+}
+
 @media (max-width: 800px) {
+	.scroller-update{
+		width: 100%;
+	}
+	.scroller-div {
+		grid-template-columns:repeat(12, minmax(100px, 1fr));
+	}
 	.user_box1 {
 		width: 115px;
 	}
@@ -4908,14 +4936,54 @@ h6 {
 	width: 10px;
     height: 10px;
 }
+.usercategory_head {
+padding: 10px 20px
+}
+.scroller-div{
+	column-gap: 6vw;
+    row-gap: 3vh;
+
+}
 }
 @media (min-width: 600px) and (max-width: 2000px) {
+	.user_text {
+		padding: 4px;
+	}
+	
+	.user_text p {
+		font-weight: 500;
+		font-size: 14px;
+	}
+	.scroller-div {
+		column-gap: 45px;
+		row-gap: 16px;
+	}
+	
+	.usercategory_head {
+		padding: 1rem 5rem;
+	}
+	.scroller-update{
+		width: 90%;
+		margin: auto;
+	}
+	.scroller-update::-webkit-scrollbar{
+		display: none;
+	}
+	.footer{
+		display: none;
+	}
+	.user_box1{
+     	width: 181px;
+	}
 	.Usercarousel .owl-dots .owl-dot{
 		width: 15px;
 		height: 15px;
 	}
-	.usershop_item_bg {
+	.usershop_item_box1{
 		width: 207px;
+	}
+	.usershop_item_bg {
+		width: 100%;
 	}
 	.usershop_text{
 		padding: 10px;

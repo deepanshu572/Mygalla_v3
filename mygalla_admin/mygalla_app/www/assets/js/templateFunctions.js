@@ -530,11 +530,16 @@ User app code start
        `
     }
     function categoryCarouselTemplate(data) {
-        // return `
-        // <div class="crousel_items crousel_items${x}">
-        //   <img src="${data.url}" alt="">
-        // </div>
-        // `
+        return `
+            <div class="user_box1">
+              <div class="user_img">
+               <img src="${data.image}" alt="">
+              </div>
+              <div class="user_text">
+               <p>${data.name}</p>
+              </div>
+              </div>
+        `
     }
 
 /* ================
