@@ -293,12 +293,15 @@
         </div>
       </div>
       <div class="more_product">
-        <div class="left_more_product">
-          <img src="../assets/images/leftbanner.png" alt="">
+        <div class="usershop_head">
+          <h5>More Products</h5>
+          <span>
+            <p>view all</p>
+          </span>
         </div>
-        <div class="right_more_product">
-       
-          </div>
+        <div class="alldata" id="moreProduct">
+
+        </div>
         </div>
         
           
@@ -396,8 +399,7 @@
   const content = document.getElementById(scrollerId);
   const scrollerContent = content.querySelector('.scroller-div2');
 
-  // Dynamically calculate the scroll amount based on the first child element's width
-  const scrollAmount = content.clientWidth; // or use scrollerContent.firstElementChild.offsetWidth;
+  const scrollAmount = content.clientWidth; 
 
   console.log(scrollAmount);
   

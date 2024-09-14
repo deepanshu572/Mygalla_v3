@@ -1464,6 +1464,7 @@ function productCarousel() {
   });
 
   $("#featuredproductData").append(UserproductCarouselId);
+  $("#moreProduct").append(UserproductCarouselId);
 }
 
 function smallbannercarousel() {
