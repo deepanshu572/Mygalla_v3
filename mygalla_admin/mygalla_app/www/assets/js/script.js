@@ -972,7 +972,7 @@ const banner_data = [
       "https://thumbs.dreamstime.com/b/online-shop-banner-building-icon-grocery-shopping-market-basket-products-isometric-concept-highly-detailed-96795715.jpg",
   },
   {
-    type: "Bottom",
+    type: "Top",
     image:
       "http://www.a-yabloko.ru/storage/news/.thumbs/7079a4c0fbf4ad184c3c2fe4ea42ee54_w880.jpg",
   },
@@ -982,7 +982,7 @@ const banner_data = [
       "https://thumbs.dreamstime.com/b/online-shop-banner-building-icon-grocery-shopping-market-basket-products-isometric-concept-highly-detailed-96795715.jpg",
   },
   {
-    type: "Bottom",
+    type: "Top",
     image:
       "http://www.a-yabloko.ru/storage/news/.thumbs/7079a4c0fbf4ad184c3c2fe4ea42ee54_w880.jpg",
   },
@@ -992,7 +992,7 @@ const banner_data = [
       "https://thumbs.dreamstime.com/b/online-shop-banner-building-icon-grocery-shopping-market-basket-products-isometric-concept-highly-detailed-96795715.jpg",
   },
   {
-    type: "Bottom",
+    type: "Top",
     image:
       "http://www.a-yabloko.ru/storage/news/.thumbs/7079a4c0fbf4ad184c3c2fe4ea42ee54_w880.jpg",
   },
@@ -1002,9 +1002,24 @@ const banner_data = [
       "https://thumbs.dreamstime.com/b/online-shop-banner-building-icon-grocery-shopping-market-basket-products-isometric-concept-highly-detailed-96795715.jpg",
   },
   {
-    type: "Bottom",
+    type: "small",
     image:
-      "http://www.a-yabloko.ru/storage/news/.thumbs/7079a4c0fbf4ad184c3c2fe4ea42ee54_w880.jpg",
+      "../assets/images/banner1.png",
+  },
+  {
+    type: "small",
+    image:
+      "../assets/images/banner2.png",
+  },
+  {
+    type: "small",
+    image:
+      "../assets/images/banner3.png",
+  },
+  {
+    type: "small",
+    image:
+      "../assets/images/banner4.png",
   },
 ];
 
@@ -1403,7 +1418,8 @@ function UserCategory() {
 function Topbannercarousel() {
   x = 1;
   var TopUsercarouselId = " ";
-  banner_data.map((item) => {
+  const bigImages =  banner_data.filter(image => image.type === 'Top' || image.type === 'Bottom' ); 
+  bigImages.map((item) => {
     TopUsercarouselId += TopbannercarouselTemplate(item, x);
     x++;
   });
@@ -1450,6 +1466,17 @@ function productCarousel() {
   $("#featuredproductData").append(UserproductCarouselId);
 }
 
+function smallbannercarousel() {
+  x = 1;
+  var smallUsercarouselId = " ";
+  const smallImages =  banner_data.filter(image => image.type === 'small');  
+  smallImages.map((item) => {
+    smallUsercarouselId += smallbannercarouselTemplate(item, x);
+    x++;
+  });
+
+  $("#smallBanners").append(smallUsercarouselId);
+}
 /* ================
 User app code end
 ================ */

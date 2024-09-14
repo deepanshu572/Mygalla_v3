@@ -525,7 +525,7 @@ User app code start
     }
     function TopbannercarouselTemplate(data ,x) {
        return `<div class="crousel_items crousel_items${x}">
-          <img src="${data.image}" alt="">
+         <a href="#"><img src="${data.image}" alt=""></a>
         </div>
        `
     }
@@ -533,7 +533,7 @@ User app code start
         return `
             <div class="user_box1">
               <div class="user_img">
-               <img src="${data.image}" alt="">
+              <a href="#" onclick="gotoProductListUseCategory(${data.id})"> <img src="${data.image}" alt=""></a>
               </div>
               <div class="user_text">
                <p>${data.name}</p>
@@ -556,7 +556,10 @@ User app code start
                     <p>${data.rating.rate}</p>
                     <i class="bi bi-star-fill"></i>
                   </div>
-                  <i class="bi bi-three-dots"></i>
+              <button class="btns" data-bs-toggle="offcanvas"
+               data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom">
+               <i class="bi bi-three-dots"></i></button>
+                   
                 </div>
                 <div class="product_item_name">
                   <p>${data.title}</p>
@@ -575,6 +578,13 @@ User app code start
               </div>
              </div>
       `
+    }
+
+    function smallbannercarouselTemplate(data) {
+      return`
+      <div class="edit1">
+            <img src="${data.image}" alt="">
+          </div>`
     }
 
 /* ================
