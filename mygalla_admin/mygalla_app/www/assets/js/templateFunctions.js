@@ -548,6 +548,7 @@ User app code start
                 <img src="${data.image}" alt="">
               </div>
               <div class="product_item_content">
+              <div class="item_disc"><p>53%</p></div>
                 <div class="product_item_heart">
                   <i class="bi bi-heart"></i>
                 </div>

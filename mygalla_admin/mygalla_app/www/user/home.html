@@ -233,31 +233,64 @@
         </div>
       </div>
       <div class="banner_static">
-        <div class="btn-container">
-          <button id="prevBtn2"><i class="bi bi-chevron-left"></i></button>
-          <button id="nextBtn2"><i class="bi bi-chevron-right"></i></button>
-        </div>
-        <div class="scroller2" id="scroller2">
-          <div class="scroller-div2">
-            <div class="banner_active_img">
-              <img src="../assets/images/staticbanner1.png" alt="">
+        <div
+          id="carousel_img_slide"
+          class="carousel slide"
+          data-bs-touch="true"
+        >
+          <div class="carousel-inner">
+            <div class="carousel-item banner_active_img active">
+              <img
+                src="../assets/images/staticbanner1.png"
+                class="d-block w-100"
+                alt="..."
+              />
             </div>
-            <div class="banner_active_img">
-              <img src="../assets/images/staticbanner1.png" alt="">
+            <div class="carousel-item banner_active_img">
+              <img
+                src="../assets/images/staticbanner1.png"
+                class="d-block w-100"
+                alt="..."
+              />
             </div>
-            <div class="banner_active_img">
-              <img src="../assets/images/staticbanner1.png" alt="">
-            </div>
-            <div class="banner_active_img">
-              <img src="../assets/images/staticbanner1.png" alt="">
-            </div>
-            <div class="banner_active_img">
-              <img src="../assets/images/staticbanner1.png" alt="">
+            <div class="carousel-item banner_active_img">
+              <img
+                src="../assets/images/staticbanner1.png"
+                class="d-block w-100"
+                alt="..."
+              />
             </div>
           </div>
+          <button
+            class="carousel-control-prev"
+            type="button"
+            data-bs-target="#carousel_img_slide"
+            data-bs-slide="prev"
+          >
+            <span
+              class="carousel-control-prev-icon btn_left"
+              aria-hidden="true"
+            >
+              <button class="btns_button btn_left">
+                <i class="bi bi-chevron-left"></i></button
+            ></span>
+          </button>
+          <button
+            class="carousel-control-next"
+            type="button"
+            data-bs-target="#carousel_img_slide"
+            data-bs-slide="next"
+          >
+            <span
+              class="carousel-control-next-icon btn_right"
+              aria-hidden="true"
+              ><button class="btns_button btn_right">
+                <i class="bi bi-chevron-right"></i></button
+            ></span>
+          </button>
         </div>
         <div class="banner_staticdata">
-          <img src="../assets/images/static banner.png" alt="">
+          <img src="../assets/images/static banner.png" alt="" />
         </div>
       </div>
       <div class="product_manage">
@@ -265,10 +298,10 @@
           <h5>Featured Products</h5>
         </div>
         <div class="btn-container">
-          <button id="prevBtn3"><i class="bi bi-chevron-left"></i></button>
-          <button id="nextBtn3"><i class="bi bi-chevron-right"></i></button>
+          <button id="prevBtn2"><i class="bi bi-chevron-left"></i></button>
+          <button id="nextBtn2"><i class="bi bi-chevron-right"></i></button>
         </div>
-        <div class="scroller2 scroller_product" id="scroller3">
+        <div class="scroller2 scroller_product" id="scroller2">
           <div class="scroller-div1" id="featuredproductData"></div>
         </div>
 
@@ -292,34 +325,138 @@
           <div class="offcanvas-body small">...</div>
         </div>
       </div>
+      <div class="product_manage_square_template">
+        <div class="left_square_banner">
+          <img src="../assets/images/leftbanner.png" alt="">
+        </div>
+        <div class="btn-container">
+          <button id="prevBtn3"><i class="bi bi-chevron-left"></i></button>
+          <button id="nextBtn3"><i class="bi bi-chevron-right"></i></button>
+        </div>
+        <div id="scroller3" class="scroller3">
+        <div class="right_square_banner" id="bannerproduct"></div>
+      </div>
+      </div>
       <div class="more_product">
         <div class="usershop_head">
           <h5>More Products</h5>
           <span>
             <p>view all</p>
             <i class="bi bi-arrow-right-short"></i>
-
           </span>
         </div>
         <div class="alldata" id="moreProduct"></div>
-        </div>
-        <div class="banner_email">
-          <div class="banner_email_left">
-            <h3>Stay home & Get your daily <br> needs from our store</h3>
-            <div class="btn_input">
-            <input type="text" placeholder="enter your email address ">
+      </div>
+      <div class="banner_email">
+        <div class="banner_email_left">
+          <h3>
+            Stay home & Get your daily <br />
+            needs from our store
+          </h3>
+          <div class="btn_input">
+            <input type="text" placeholder="enter your email address " />
             <button>Subscribe</button>
           </div>
-          </div>
-          <div class="banner_email_right">
-            <img src="../assets/images/delevery.png" alt="">
-          </div>
         </div>
-          
+        <div class="banner_email_right">
+          <img src="../assets/images/delevery.png" alt="" />
         </div>
       </div>
-      
-
+      <div class="app_details">
+        <div class="app_detail1">
+          <div class="add_detail_img">
+            <img src="../assets/images/add-user.png" alt="">
+          </div>
+          <div class="add_text">
+          <h4>User Friendly</h4>
+          <p>Shop Fresh, Conveniently</p>
+        </div>
+        </div>
+        <div class="app_detail1">
+          <div class="add_detail_img">
+            <img src="../assets/images/payment.png" alt="">
+          </div>
+          <div class="add_text">
+          <h4>Secure Platform</h4>
+          <p>Your Security, Our Priority</p>
+          </div>
+        </div>
+        <div class="app_detail1">
+          <div class="add_detail_img">
+            <img src="../assets/images/customer-care.png" alt="">
+          </div>
+          <div class="add_text">
+          <h4>Customer Support</h4>
+          <p>Here for You, 24/7</p>
+          </div>
+        </div>
+      </div>
+      <div class="desktop_footer">
+        <div class="desktop_top_foot">
+        <div class="desktop_foot desktop_foot1">
+          <h4>All Categories</h4>
+         <a href=""> <p>Furniture</p></a>
+         <a href=""> <p>Stationary</p></a>
+         <a href=""> <p>Household</p></a>
+         <a href=""> <p>Cosmetics</p></a>
+         <a href=""> <p>Furniture</p></a>
+         <a href=""> <p>Dairy</p></a>
+         <a href=""> <p>Baby Care</p></a>
+        </div>
+        <div class="desktop_foot desktop_foot2">
+          <h4>Popular Categories</h4>
+          <a href=""> <p>Furniture</p></a>
+         <a href=""> <p>Stationary</p></a>
+         <a href=""> <p>Household</p></a>
+         <a href=""> <p>Cosmetics</p></a>
+         <a href=""> <p>Furniture</p></a>
+         <a href=""> <p>Dairy</p></a>
+         <a href=""> <p>Baby Care</p></a>
+        </div>
+        <div class="desktop_foot desktop_foot3">
+          <h4>Customer Account</h4>
+          <a href=""><p>Login</p></a>
+          <a href=""><p>Order History</p></a>
+          <a href=""><p>Wishlist</p></a>
+          <a href=""><p>Wallet Balance</p></a>
+          <a href=""><p>Delivery Addresses</p></a>
+        </div>
+        <div class="desktop_foot desktop_foot4">
+          <h4>Help & Support</h4>
+          <a href=""><p>Terms  & Conditions</p></a>
+          <a href=""><p>FAQ</p></a>
+          <a href=""><p>Customer Support</p></a>
+          <a href=""><p>Shipping Policy</p></a>
+          <a href=""><p>Return Policy</p></a>
+          <a href=""><p>Pricing Policy</p></a>
+          <a href=""><p>Refund</p></a>
+        </div>
+        <div class="desktop_foot desktop_foot5">
+          <h4>Contact Info</h4>
+          <div class="desktop_foot_a">
+            <i class="bi bi-geo-alt"></i>
+            <p>Kalam Academy, 4th Floor Rospa Tower, Main Road, Ranchi, Jharkahnd</p>
+          </div>
+          <div class="desktop_foot_a">
+            <i class="bi bi-telephone"></i>
+            <span>
+            <a href="tel:+91-9525395169">+91-9525395169</a> / <a href="tel:+91-8235529340">+91-8235529340</a>
+          </span>
+          </div>
+          <div class="desktop_download">
+            <h4>Download the app</h4>
+            <div class="desktop_img_download">
+              <img src="../assets/images/google_play_store.png" alt="">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="desktop_bottom_foot">
+        <p> &#8580 2024 All rights reserved. Kalam Store Ltd.</p>
+      </div>
+      </div>
+    </div>
+                          
     <div class="footer">
       <div class="foot1">
         <i class="bi bi-house-door"></i>
@@ -339,21 +476,10 @@
       </div>
     </div>
 
-    <div class="floater">
-      <ul class="floater__list">
-        <li class="floater__list-item">
-          <a href="addProduct.html" title="Add product manually"
-            ><i class="bi bi-file-earmark-plus-fill ash-floater"></i
-          ></a>
-        </li>
-        <li class="floater__list-item">
-          <a href="productAddByName.html" title="Search in Library">
-            <i class="bi bi-upc-scan ash-floater"></i>
-          </a>
-        </li>
-      </ul>
-      <div class="floater__btn prevent-select">
-        <i class="bi bi-plus floater__btn-icon-plus floater__btn-icon"></i>
+    <div class="floater1">
+     
+      <div class="floater__btn">
+        <i class="bi bi-question-lg"></i>
       </div>
     </div>
     <script src="../assets/js/cordova.js"></script>
@@ -403,44 +529,42 @@
       //   setupScroller("prevBtn3", "nextBtn3", "scroller3");
       //   // Add more calls for other scrollers if needed
       // });
-   
+
       function setupScroller(prevBtnId, nextBtnId, scrollerId) {
-  const prevBtn = document.getElementById(prevBtnId);
-  const nextBtn = document.getElementById(nextBtnId);
-  const content = document.getElementById(scrollerId);
-  const scrollerContent = content.querySelector('.scroller-div2');
+        const prevBtn = document.getElementById(prevBtnId);
+        const nextBtn = document.getElementById(nextBtnId);
+        const content = document.getElementById(scrollerId);
+        // const scrollerContent = content.querySelector(".scroller-div2");
 
-  const scrollAmount = content.clientWidth; 
+        // const scrollAmount = content.clientWidth;
 
-  console.log(scrollAmount);
-  
-  if (prevBtn) {
-    prevBtn.addEventListener("click", () => {
-      content.scrollTo({
-        left: content.scrollLeft - scrollAmount,
-        behavior: "smooth",
+
+        if (prevBtn) {
+          prevBtn.addEventListener("click", () => {
+            content.scrollTo({
+              left: content.scrollLeft - 680,
+              behavior: "smooth",
+            });
+          });
+        }
+
+        if (nextBtn) {
+          nextBtn.addEventListener("click", () => {
+            content.scrollTo({
+              left: content.scrollLeft + 680,
+              behavior: "smooth",
+            });
+          });
+        }
+      }
+
+      document.addEventListener("DOMContentLoaded", function () {
+        // Call the function for each instance
+        setupScroller("prevBtn1", "nextBtn1", "scroller1");
+        setupScroller("prevBtn2", "nextBtn2", "scroller2");
+        setupScroller("prevBtn3", "nextBtn3", "scroller3");
+        // Add more calls for other scrollers if needed
       });
-    });
-  }
-
-  if (nextBtn) {
-    nextBtn.addEventListener("click", () => {
-      content.scrollTo({
-        left: content.scrollLeft + scrollAmount,
-        behavior: "smooth",
-      });
-    });
-  }
-}
-
-document.addEventListener("DOMContentLoaded", function () {
-  // Call the function for each instance
-  setupScroller("prevBtn1", "nextBtn1", "scroller1");
-  setupScroller("prevBtn2", "nextBtn2", "scroller2");
-  setupScroller("prevBtn3", "nextBtn3", "scroller3");
-  // Add more calls for other scrollers if needed
-});
-
-   </script>
+    </script>
   </body>
 </html>
