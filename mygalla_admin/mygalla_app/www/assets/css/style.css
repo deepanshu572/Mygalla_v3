@@ -4927,6 +4927,7 @@ h6 {
   margin: 0;
 }
 .product_item_name p {
+	font-weight: 500;
     font-size: 13px;
     display: -webkit-box;
     -webkit-line-clamp: 2;
