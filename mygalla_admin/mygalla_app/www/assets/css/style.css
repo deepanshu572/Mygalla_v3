@@ -4927,7 +4927,6 @@ h6 {
   margin: 0;
 }
 .product_item_name p {
-	font-weight: 500;
     font-size: 13px;
     display: -webkit-box;
     -webkit-line-clamp: 2;
@@ -5397,12 +5396,18 @@ padding: 10px 6px
 	font-size: 13px;
 }
 .left_cart_price b {
+	font-size: 11px;
+}
+.product_deals_item .left_cart_price b{
 	font-size: 14px;
+}
+.product_deals_item .left_cart_price del{
+	font-size: 11px;
 }
 .left_cart_price del {
 	font-size: 9px;
 }
-.right_cart_box button{
+.product_deals_item .right_cart_box button{
 	padding: 2px 12px;
 	font-size: 13px;
 }
