@@ -2,6 +2,7 @@ const product_data = [
   {
     id: 1,
     status: 1,
+    type: "3",
     title: "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
     price: 109.95,
     description:
@@ -17,6 +18,7 @@ const product_data = [
   {
     id: 2,
     status: 1,
+    type: "3",
     title: "Mens Casual Premium Slim Fit T-Shirts ",
     price: 22.3,
     description:
@@ -33,6 +35,7 @@ const product_data = [
   {
     id: 3,
     status: 1,
+    type: "3",
     title: "Mens Cotton Jacket",
     price: 55.99,
     description:
@@ -48,6 +51,7 @@ const product_data = [
   {
     id: 4,
     status: 1,
+    type: "3",
     title: "Mens Casual Slim Fit",
     price: 15.99,
     description:
@@ -63,6 +67,7 @@ const product_data = [
   {
     id: 5,
     status: 1,
+    type: "3",
     title:
       "John Hardy Women's Legends Naga Gold & Silver Dragon Station Chain Bracelet",
     price: 695,
@@ -79,6 +84,7 @@ const product_data = [
   {
     id: 6,
     status: 0,
+    type: "3",
     title: "Solid Gold Petite Micropave ",
     price: 168,
     description:
@@ -94,6 +100,7 @@ const product_data = [
   {
     id: 7,
     status: 1,
+    type: "3",
     title: "White Gold Plated Princess",
     price: 9.99,
     description:
@@ -109,6 +116,7 @@ const product_data = [
   {
     id: 8,
     status: 1,
+    type: "3",
     title: "Pierced Owl Rose Gold Plated Stainless Steel Double",
     price: 10.99,
     description:
@@ -124,6 +132,7 @@ const product_data = [
   {
     id: 9,
     status: 1,
+    type: "3",
     title: "WD 2TB Elements Portable External Hard Drive - USB 3.0 ",
     price: 64,
     description:
@@ -139,6 +148,7 @@ const product_data = [
   {
     id: 10,
     status: 0,
+    type: "3",
     title: "SanDisk SSD PLUS 1TB Internal SSD - SATA III 6 Gb/s",
     price: 109,
     description:
@@ -154,6 +164,7 @@ const product_data = [
   {
     id: 11,
     status: 1,
+    type: "3",
     title:
       "Silicon Power 256GB SSD 3D NAND A55 SLC Cache Performance Boost SATA III 2.5",
     price: 109,
@@ -170,6 +181,7 @@ const product_data = [
   {
     id: 12,
     status: 0,
+    type: "3",
     title:
       "WD 4TB Gaming Drive Works with Playstation 4 Portable External Hard Drive",
     price: 114,
@@ -186,6 +198,7 @@ const product_data = [
   {
     id: 13,
     status: 1,
+    type: "3",
     title: "Acer SB220Q bi 21.5 inches Full HD (1920 x 1080) IPS Ultra-Thin",
     price: 599,
     description:
@@ -201,6 +214,7 @@ const product_data = [
   {
     id: 14,
     status: 0,
+    type: "3",
     title:
       "Samsung 49-Inch CHG90 144Hz Curved Gaming Monitor (LC49HG90DMNXZA) – Super Ultrawide Screen QLED ",
     price: 999.99,
@@ -217,6 +231,7 @@ const product_data = [
   {
     id: 15,
     status: 1,
+    type: "3",
     title: "BIYLACLESEN Women's 3-in-1 Snowboard Jacket Winter Coats",
     price: 56.99,
     description:
@@ -232,6 +247,7 @@ const product_data = [
   {
     id: 16,
     status: 1,
+    type: "3",
     title:
       "Lock and Love Women's Removable Hooded Faux Leather Moto Biker Jacket",
     price: 29.95,
@@ -248,6 +264,7 @@ const product_data = [
   {
     id: 17,
     status: 1,
+    type: "3",
     title: "Rain Jacket Women Windbreaker Striped Climbing Raincoats",
     price: 39.99,
     description:
@@ -263,6 +280,7 @@ const product_data = [
   {
     id: 18,
     status: 0,
+    type: "3",
     title: "MBJ Women's Solid Short Sleeve Boat Neck V ",
     price: 9.85,
     description:
@@ -278,6 +296,7 @@ const product_data = [
   {
     id: 19,
     status: 0,
+    type: "3",
     title: "Opna Women's Short Sleeve Moisture",
     price: 7.95,
     description:
@@ -293,6 +312,7 @@ const product_data = [
   {
     id: 20,
     status: 1,
+    type: "3",
     title: "DANVOUY Womens T Shirt Casual Cotton Short",
     price: 12.99,
     description:
@@ -305,6 +325,70 @@ const product_data = [
       count: 145,
     },
   },
+  {
+    id: 21,
+    status: 1,
+    type: "4",
+    title: "DANVOUY Womens T Shirt Casual Cotton Short",
+    price: 12.99,
+    description:
+      "95%Cotton,5%Spandex, Features: Casual, Short Sleeve, Letter Print,V-Neck,Fashion Tees, The fabric is soft and has some stretch., Occasion: Casual/Office/Beach/School/Home/Street. Season: Spring,Summer,Autumn,Winter.",
+    category: "women's clothing",
+    fakePrice: 100,
+    image: "../assets/images/product_bg1.png",
+    rating: {
+      rate: 3.6,
+      count: 145,
+    },
+  },
+  {
+    id: 22,
+    status: 1,
+    type: "4",
+    title: "DANVOUY Womens T Shirt Casual Cotton Short",
+    price: 12.99,
+    description:
+      "95%Cotton,5%Spandex, Features: Casual, Short Sleeve, Letter Print,V-Neck,Fashion Tees, The fabric is soft and has some stretch., Occasion: Casual/Office/Beach/School/Home/Street. Season: Spring,Summer,Autumn,Winter.",
+    category: "women's clothing",
+    fakePrice: 100,
+    image: "../assets/images/product_bg2.png",
+    rating: {
+      rate: 3.6,
+      count: 145,
+    },
+  },
+  {
+    id: 23,
+    status: 1,
+    type: "4",
+    title: "DANVOUY Womens T Shirt Casual Cotton Short",
+    price: 12.99,
+    description:
+      "95%Cotton,5%Spandex, Features: Casual, Short Sleeve, Letter Print,V-Neck,Fashion Tees, The fabric is soft and has some stretch., Occasion: Casual/Office/Beach/School/Home/Street. Season: Spring,Summer,Autumn,Winter.",
+    category: "women's clothing",
+    fakePrice: 100,
+    image: "../assets/images/product_bg3.png",
+    rating: {
+      rate: 3.6,
+      count: 145,
+    },
+  },
+  {
+    id: 24,
+    status: 1,
+    type: "4",
+    title: "DANVOUY Womens T Shirt Casual Cotton Short",
+    price: 12.99,
+    description:
+      "95%Cotton,5%Spandex, Features: Casual, Short Sleeve, Letter Print,V-Neck,Fashion Tees, The fabric is soft and has some stretch., Occasion: Casual/Office/Beach/School/Home/Street. Season: Spring,Summer,Autumn,Winter.",
+    category: "women's clothing",
+    fakePrice: 100,
+    image: "../assets/images/product_bg4.png",
+    rating: {
+      rate: 3.6,
+      count: 145,
+    },
+  }
 ];
 
 const product_data_single = {
@@ -1459,13 +1543,21 @@ function categoryCarousel() {
 }
 function productCarousel() {
   var UserproductCarouselId = " ";
-  product_data.map((item) => {
+  var UserproductspecialCarouselId = " ";
+  const alldata =  product_data.filter(data => data.type === '3');  
+  const specialdealsdata =  product_data.filter(data => data.type === '4');  
+
+  alldata.map((item) => {
     UserproductCarouselId +=productCarouselTemplate(item);
+  });
+  specialdealsdata.map((item) => {
+    UserproductspecialCarouselId +=productCarouselTemplate(item);
   });
 
   $("#featuredproductData").append(UserproductCarouselId);
   $("#moreProduct").append(UserproductCarouselId);
   $("#bannerproduct").append(UserproductCarouselId);
+  $("#specialproduct").append(UserproductspecialCarouselId);
 }
 
 function smallbannercarousel() {

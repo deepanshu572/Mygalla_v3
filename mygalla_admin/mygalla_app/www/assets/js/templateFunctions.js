@@ -548,6 +548,12 @@ User app code start
                 <img src="${data.image}" alt="">
               </div>
               <div class="product_item_content">
+              <div class="timeline">
+              <div class=" timelinebox timeline1"><b>10</b><br> Days</div>
+              <div class=" timelinebox timeline2"><b>5</b><br> Hours</div>
+              <div class=" timelinebox timeline3"><b>1</b><br> Min</div>
+              <div class=" timelinebox timeline4"><b>0</b><br> Sec</div>
+              </div>
               <div class="item_disc"><p>53%</p></div>
                 <div class="product_item_heart">
                   <i class="bi bi-heart"></i>
@@ -570,10 +576,12 @@ User app code start
                     <b>₹ ${data.price}</b>
                     <del>₹ ${data.fakePrice}</del>
                   </div>
+                  <div class="right_wrap">
                   <div class="right_cart_box">
                      <button>-</button>
                      <input type="number" value="01">
                      <button>+</button>
+                  </div>
                   </div>
                 </div>
               </div>

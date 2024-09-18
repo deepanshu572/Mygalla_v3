@@ -5133,8 +5133,95 @@ bottom: 29px !important;
 .product_manage_square_template .item_disc{
 	display: block !important;
 }
+.product_deals_item .product_item_star_section,
+.product_item_heart
+{
+ display: none;
+}
+.product_deals_item .product_item_box{
+	padding: 0px;
+    border: none;
+	overflow: visible;
+}
+.product_deals_item .product_item_content{
+    position: absolute;
+    top: 69%;
+    background: #fff;
+    box-shadow: 1px 1px 6px #d8d8d8;
+    border-radius: 7px;
+    padding: 10px;
+}
+.product_deals_item{
+	display: flex;
+    align-items: center;
+    justify-content: center;
+	flex-wrap: wrap;
+}
+.product_deals_item .product_item_img{
+	width: 100%;
+	height: 100%;
+}
+.product_deals_item .product_item_img img{
+	padding: 0;
+	object-fit: cover;
+	border-radius: 10px;
+}
+.timeline {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    gap: 7px;
+    width: 100%;
+    left: 0;
+}
+.timelinebox {
+    background: #fff;
+    text-align: center;
+    border-radius: 6px;
+    font-size: 14px;
+	box-shadow:1px 1px 6px #5454549e;
+}
+.more_product{
+	padding-top: 3rem;
+}
+.product_deals_item .left_cart_price b{
+	color: var(--theme);
+}
+.product_deals_item .right_wrap{
+	position: relative;
+    width: 100%;
+    height: 20px;
+}
+.product_deals_item .right_cart_box{
+	position: absolute;
+	right: -5px;
+}
+.product_deals_item .product_item_detail_cart_section{
+	align-items: flex-start;
+	justify-content: center;
+	flex-direction: column;
+}
 @media (max-width: 800px) {
+	.timeline {
+		top: -63px;
 
+	}
+	.timelinebox{
+		padding: 5px;
+		font-size: 12px;
+	}
+	.product_deals_item .product_item_box{
+		width: 47vw;
+	}
+	.product_deals_item{
+		gap: 7px;
+		row-gap: 41px;
+
+	}
+	.product_deals_item .product_item_content{
+		width: 100%;
+	}
 	.app_details{
 		display: none;
 	}
@@ -5335,6 +5422,22 @@ padding: 10px 6px
 }
 }
 @media (min-width: 600px) and (max-width: 2000px) {
+	.timeline {
+		top: -70px;
+	}
+	.product_deals_item .product_item_box{
+		height: 236px;
+	}
+	.timelinebox {
+		padding: 6px
+	}
+	.product_deals_item{
+		gap: 20px;
+	}
+	.product_deals_item .product_item_content{
+		top : 84%;
+		width: 82%;
+	}
 	#carousel_img_slide .carousel-inner{
 		width: 586px !important;
 	}
