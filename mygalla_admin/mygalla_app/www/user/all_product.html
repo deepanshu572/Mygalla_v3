@@ -12,278 +12,197 @@
     />
     <link rel="stylesheet" href="../assets/css/owl.carousel.min.css" />
     <link rel="stylesheet" href="../assets/css/owl.theme.default.min.css" />
-    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="../assets/css/style.css" />
   </head>
 
   <body>
-    <div class="main All-Product">
-      <div class="main-header">
-        <div class="header">
-          <div class="head1">
-            <i class="bi bi-justify i1 menu"></i>
-            <a href="home.html">
-              <h2 id="my_shop_name">MyGalla</h2>
-            </a>
+    <div class="main allproduct" id="main">
+      <div class="navbar">
+        <div class="navbar_top">
+          <div class="nav1">
+            <i class="bi bi-geo-alt"></i>
+            <p>Deliver to Pune 411504</p>
+            <i class="bi bi-chevron-down"></i>
           </div>
-          <a href="cart.html">
-            <div class="head3">
-              <i class="bi bi-cart-fill"></i>
-              <span>
-                <b>
-                  <span id="cart-count-link"></span>
-                </b>
-              </span>
-            </div>
-          </a>
-          <div class="head2">
+          <div class="nav2">
+            <i class="bi bi-clock"></i>
+            <p>Delivery in 10 minutes</p>
+          </div>
+          <div class="nav3">
+            <i class="bi bi-telephone"></i>
+            <a href="tel:+91-9525395169"><p>+91-9525395169</p></a>
+          </div>
+        </div>
+        <div class="navbar_bottom">
+          <div class="nav_bottom_left">
             <button
+              class="btn btn-primary"
               type="button"
               data-bs-toggle="offcanvas"
-              data-bs-target="#offcanvasRight"
-              aria-controls="offcanvasRight"
+              data-bs-target="#offcanvasExample"
+              aria-controls="offcanvasExample"
             >
-              <i class="bi bi-cart4"></i>
-              <span>
-                <b>
-                  <!-- <span id="cart_item_d">0</span> -->
-                  <span id="cart-count"></span>
-                  items
-                </b>
-              </span>
+              <i class="bi bi-list"></i>
             </button>
-          </div>
-
-          <div
-            class="offcanvas offcanvas-end"
-            tabindex="-1"
-            id="offcanvasRight"
-            aria-labelledby="offcanvasRightLabel"
-          >
-            <div class="offcanvas-header">
-              <h5 class="offcanvas-title" id="offcanvasRightLabel">My Cart</h5>
-              <button
-                type="button"
-                class="btn-close"
-                data-bs-dismiss="offcanvas"
-                aria-label="Close"
-              ></button>
+            <div class="nav_bottom_left_img">
+              <a href="home.html"
+                ><img src="../assets/images/logo.png" alt="logo"
+              /></a>
             </div>
-
-            <div class="offcanvas-body">
-              <div class="header-changes">
-                <div class="cart-item-wrapper">
-                  <div id="right-side-cart-top-msg"></div>
-                  <div id="right-side-cart"></div>
-                </div>
-                <div class="checkout-detail">
-                  <div id="right-side-cart-total"></div>
-                  <div id="right-side-cart-address-box"></div>
-                </div>
+            <div class="nav_bottom_left_input">
+              <i class="bi bi-search"></i>
+              <input type="text" placeholder="Search anything “household”" />
+              <button><i class="bi bi-qr-code-scan"></i></button>
+            </div>
+          </div>
+          <div class="nav_bottom_right">
+            <a href="#">
+              <div class="nav_bootom_right_icons">
+                <i class="bi bi-person"></i>
               </div>
-            </div>
+            </a>
+            <a href="#">
+              <div class="nav_bootom_right_icons">
+                <i class="bi bi-heart"></i>
+              </div>
+            </a>
+            <a href="#">
+              <div class="nav_bootom_right_icons">
+                <i class="bi bi-cart3"></i>
+              </div>
+            </a>
           </div>
         </div>
-        <div class="header-search">
-          <div class="last-header">
-            <i class="bi bi-search"></i>
-            <input type="text" placeholder="Search “Grocery” "  onclick="gotoProductSrch()"/>
-            <i class="bi bi-upc-scan"  id="scanBtnQR"></i>
-          </div>
-          <!-- Button trigger modal -->
-          <button
-            type="button"
-            class="btn"
-            data-bs-toggle="modal"
-            data-bs-target="#exampleModal"
-          >
-            <i class="bi bi-sliders"></i>
-          </button>
-        </div>
-        <div class="category-filter product-select" id="catgContainer">
-          <button class="catgbuttonContainer" id="main_catg_div">
-            <img
-              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTouQOusIObvNKfJ2Y1rk5ztBb_U_P_QPBCZNq5SgvIBQ&amp;s"
-              id="main_catg_img"
-              alt="Image"
-            />
-            <span class="buttonText" id="main_catg_name">All</span>
-          </button>
-          <i class="bi bi-arrow-right"></i>
-        </div>
-      </div>
-
-      <div class="resp-nav sidebar" style="display: none">
-        <div class="sidebar-box" id="navone"></div>
-      </div>
-
-      <div class="product-section update-trending-section last-section">
-        <div class="product-item-box update-item-box update-padding" id="loadAllProduct">  
-        </div>
-      </div>
-    </div>
-
-    <div class="footer" id="navtwo"></div>
-
-    <!-- variant modal start  -->
-
-    <div
-      class="modal modal-bottom fade"
-      id="variantModal"
-      tabindex="-1"
-      aria-labelledby="exampleModalLabel"
-      aria-hidden="true"
-    >
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">More variants</h5>
+        <div
+          class="offcanvas offcanvas-start"
+          tabindex="-1"
+          id="offcanvasExample"
+          aria-labelledby="offcanvasExampleLabel"
+        >
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasExampleLabel">
+              Offcanvas
+            </h5>
             <button
               type="button"
               class="btn-close"
-              data-bs-dismiss="modal"
+              data-bs-dismiss="offcanvas"
               aria-label="Close"
             ></button>
           </div>
-          <div class="modal-body">
-            <div class="variantList">
-              <div id="prodContainer" class="product_var_container"></div>
-            </div>
-          </div>
-          <div class="modal-footer">
-            <button
-              type="button"
-              class="btn btn-secondary"
-              data-bs-dismiss="modal"
-            >
-              Close
-            </button>
-          </div>
+          <div class="offcanvas-body"></div>
         </div>
       </div>
-    </div>
+      <div class="banner_product_page">
+        <img src="../assets/images/banner_product.png" alt="">
+      </div>
+      <div class="user_category_filter" id="Topcategory"></div>
+        <div class="allproduct_wrapper" id="allproduct">
 
-    <!-- variant modal end  -->
-
-    <!-- sort Modal -->
-    <div
-      class="modal fade product"
-      id="exampleModal"
-      tabindex="-1"
-      aria-labelledby="exampleModalLabel"
-      aria-hidden="true"
-    >
-      <div class="modal-wrapper">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">Filter</h5>
-              <button
-                type="button"
-                class="btn-close"
-                data-bs-dismiss="modal"
-                aria-label="Close"
-              ></button>
-            </div>
-            <div class="modal-body">
-              <div class="gtr">
-                <div class="Wrapper-body-item">
-                  <button
-                    class="btn btn-light btn-but rounded-pill"
-                    onclick="filterProduct(this,'SortByNameA_Z')"
-                  >
-                  <label for="one">Sort by name (A-Z)</label>
-
-                  <input name="sortOption" type="radio" id="one" value="one">
-                                  </button>
-                </div>
-                <div class="Wrapper-body-item">
-                  <button
-                    class="btn btn-light btn-but rounded-pill"
-                    onclick="filterProduct(this,'SortByNameZ_A')"
-                  >
-                  <label for="two">Sort by name (Z-A)</label>
-                                    <input name="sortOption" type="radio" id="two" value="two">
-                                    
-                  </button>
-                </div>
-                <div class="Wrapper-body-item">
-                  <button
-                    class="btn btn-light btn-but rounded-pill"
-                    onclick="filterProduct(this,'SortByPriceL_H')"
-                  >
-                  <label for="three">Sort by price ( low - high )</label>
-                  <input name="sortOption" type="radio" id="three" value="three">
-                                    </button>
-                </div>
-                <div class="Wrapper-body-item">
-                  <button
-                    class="btn btn-light btn-but rounded-pill"
-                    onclick="filterProduct(this,'SortByPriceH_L')"
-                  >
-                  <label for="four">Sort by price ( high -low )
-                  </label>
-                  <input name="sortOption" type="radio" id="four" value="four">
-               
-                  </button>
-                </div>
-              </div>
-            </div>
-
-            <div class="modal-footer">
-              <button
-                type="button"
-                class="btn btn-secondary"
-                data-bs-dismiss="modal"
-              >
-                Close
-              </button>
+        </div>
+      <div class="desktop_footer">
+        <div class="desktop_top_foot">
+        <div class="desktop_foot desktop_foot1">
+          <h4>All Categories</h4>
+         <a href=""> <p>Furniture</p></a>
+         <a href=""> <p>Stationary</p></a>
+         <a href=""> <p>Household</p></a>
+         <a href=""> <p>Cosmetics</p></a>
+         <a href=""> <p>Furniture</p></a>
+         <a href=""> <p>Dairy</p></a>
+         <a href=""> <p>Baby Care</p></a>
+        </div>
+        <div class="desktop_foot desktop_foot2">
+          <h4>Popular Categories</h4>
+          <a href=""> <p>Furniture</p></a>
+         <a href=""> <p>Stationary</p></a>
+         <a href=""> <p>Household</p></a>
+         <a href=""> <p>Cosmetics</p></a>
+         <a href=""> <p>Furniture</p></a>
+         <a href=""> <p>Dairy</p></a>
+         <a href=""> <p>Baby Care</p></a>
+        </div>
+        <div class="desktop_foot desktop_foot3">
+          <h4>Customer Account</h4>
+          <a href=""><p>Login</p></a>
+          <a href=""><p>Order History</p></a>
+          <a href=""><p>Wishlist</p></a>
+          <a href=""><p>Wallet Balance</p></a>
+          <a href=""><p>Delivery Addresses</p></a>
+        </div>
+        <div class="desktop_foot desktop_foot4">
+          <h4>Help & Support</h4>
+          <a href=""><p>Terms  & Conditions</p></a>
+          <a href=""><p>FAQ</p></a>
+          <a href=""><p>Customer Support</p></a>
+          <a href=""><p>Shipping Policy</p></a>
+          <a href=""><p>Return Policy</p></a>
+          <a href=""><p>Pricing Policy</p></a>
+          <a href=""><p>Refund</p></a>
+        </div>
+        <div class="desktop_foot desktop_foot5">
+          <h4>Contact Info</h4>
+          <div class="desktop_foot_a">
+            <i class="bi bi-geo-alt"></i>
+            <p>Kalam Academy, 4th Floor Rospa Tower, Main Road, Ranchi, Jharkahnd</p>
+          </div>
+          <div class="desktop_foot_a">
+            <i class="bi bi-telephone"></i>
+            <span>
+            <a href="tel:+91-9525395169">+91-9525395169</a> / <a href="tel:+91-8235529340">+91-8235529340</a>
+          </span>
+          </div>
+          <div class="desktop_download">
+            <h4>Download the app</h4>
+            <div class="desktop_img_download">
+              <img src="../assets/images/google_play_store.png" alt="">
             </div>
           </div>
         </div>
       </div>
+      <div class="desktop_bottom_foot">
+        <p> &#8580 2024 All rights reserved. Kalam Store Ltd.</p>
+      </div>
+      </div>
+    </div>
+    <div class="footer">
+      <div class="foot1">
+        <i class="bi bi-house-door"></i>
+        <p>Home</p>
+      </div>
+      <div class="foot2">
+        <i class="bi bi-grid"></i>
+        <p>Categories</p>
+      </div>
+      <div class="foot3">
+        <i class="bi bi-cart2"></i>
+        <p>Orders</p>
+      </div>
+      <div class="foot4">
+        <i class="bi bi-person"></i>
+        <p>Profile</p>
+      </div>
     </div>
 
-    <!-- sort Modal -->
-
-    <script src="../cordova.js"></script>
+    <div class="floater1">
+     
+      <div class="floater__btn">
+        <i class="bi bi-question-lg"></i>
+      </div>
+    </div>
+    <script src="../assets/js/cordova.js"></script>
     <script src="../assets/js/jquery-3.6.1.js"></script>
     <script src="../assets/js/bootstrap.bundle.min.js"></script>
     <script src="../assets/js/popper.min.js"></script>
     <script src="../assets/js/owl.carousel.min.js"></script>
     <script src="../assets/js/dexie.js"></script>
-    <script src="../constant.js"></script>
-    <script src="assets/js/app.js"></script>
-    <script src="assets/js/script.js"></script>
-
-  <script>
-
-    printShopName();
-    rightSideCartLoad();
-    loadNav("home");
-    loadCartCount();
-
-    // old function call
-
-    loadUserDataHome();
-
-    // testing function
-
-    loadProductAllProduct();
-    loadcatgSlider();
-  </script>
-
+    <script src="../assets/js/constant.js"></script>
+    <script src="../assets/js/script.js"></script>
+    <script src="../assets/js/templateFunctions.js"></script>
     <script>
-      var prevScrollpos = window.pageYOffset;
-
-      window.onscroll = function () {
-        var currentScrollPos = window.pageYOffset;
-        if (prevScrollpos > currentScrollPos) {
-          document.querySelector(".product-select").style.display = "flex";
-        } else {
-          document.querySelector(".product-select").style.display = "none";
-        }
-        prevScrollpos = currentScrollPos;
-      };
+      UserCategory();
+      productCarousel();
     </script>
+
   </body>
 </html>

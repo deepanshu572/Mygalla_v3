@@ -1558,6 +1558,7 @@ function productCarousel() {
   $("#moreProduct").append(UserproductCarouselId);
   $("#bannerproduct").append(UserproductCarouselId);
   $("#specialproduct").append(UserproductspecialCarouselId);
+  $("#allproduct").append(UserproductCarouselId);
 }
 
 function smallbannercarousel() {
