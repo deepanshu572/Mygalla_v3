@@ -3,419 +3,588 @@
 
 <head>
   <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title id="my_shop_name"></title>
+  <title id="my_shop_name_t">mygalla</title>
+  <link rel="shortcut icon" href="assets/res/icon.png" type="image/x-icon" />
   <link rel="stylesheet" href="../assets/css/bootstrap.min.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
   <link rel="stylesheet" href="../assets/css/owl.carousel.min.css" />
   <link rel="stylesheet" href="../assets/css/owl.theme.default.min.css" />
-  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="../assets/css/style.css" />
 </head>
 
 <body>
-  <!-- ash top and body start -->
-  <div>
-    <div class="checkoutDiv">
-      <!-- top section start  -->
-
-      <div class="top-section-prdt top-section-prdt1">
-        <!-- <div class="black"></div> -->
-        <div id="user-name-welcome">
-          <a class="top-back-btn" id="goBack">
-            <i class="bi bi-chevron-left"></i>
-            <span>Checkout</span>
+  <div class="main setting reuse">
+    <div class="navbar">
+      <div class="navbar_top">
+        <div class="nav1">
+          <i class="bi bi-geo-alt"></i>
+          <p>Deliver to Pune 411504</p>
+          <i class="bi bi-chevron-down"></i>
+        </div>
+        <div class="nav2">
+          <i class="bi bi-clock"></i>
+          <p>Delivery in 10 minutes</p>
+        </div>
+        <div class="nav3">
+          <i class="bi bi-telephone"></i>
+          <a href="tel:+91-9525395169">
+            <p>+91-9525395169</p>
           </a>
         </div>
       </div>
-
-      <!-- top section end  -->
-
-      <div class="checkout-container">
-
-        <div class="cs-address-chooser">
-          <button onclick="changeTakeaway('Delivery')" id="d-btn">Delivery</button>
-          <button onclick="changeTakeaway('Takeaway')" class="cs-address-chooser-btn" id="t-btn">Takeaway</button>
-        </div>
-
-        <div class="c-address-section c-address-section1" id="address-print-div">
-          <div class="c-address-section-top">
-            <div id="cs-addr-type" class="text1">Home</div>
-           <div>
-            <button class="btn1" id="getAddressBtn" data-bs-toggle="modal" data-bs-target="#address-change"
-              onclick="getAddress()">Change</button>
-              <button class="btn1" id="getAddaddressBtn" data-bs-toggle="modal" data-bs-target="#addressModal"
-              >Add</button>
-            </div>  
+      <div class="navbar_bottom">
+        <div class="nav_bottom_left">
+          <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample"
+            aria-controls="offcanvasExample">
+            <i class="bi bi-list"></i>
+          </button>
+          <div class="nav_bottom_left_img">
+            <a href="home.html"><img src="../assets/images/logo.png" alt="logo" /></a>
           </div>
-          <hr class="hr">
-
-          <div id="cs-name">Full Name</div>
-
-          <div class="c-address-section-mid">
-            <div id="cs-full-addr">..............</div>
-          </div>
-          <div class="c-address-section-bot">
-            <!-- <div id="cs-mob-no">..............</div> -->
-            <div class="input-all">
-              <label>contact no : </label>
-              <input type="text" id="cs-mob-no" size="10" readonly> ,
-              <label>pincode : </label>
-              <input type="text" id="cs-pincode" size="7" readonly>
-            </div>
+          <div class="nav_bottom_left_input">
+            <i class="bi bi-search"></i>
+            <input type="text" placeholder="Search anything “household”" />
+            <button><i class="bi bi-qr-code-scan"></i></button>
           </div>
         </div>
-
-        <div class="c-invoice-section c-invoice-section1 ">
-          <div class="c-invoice-section-top c-invoice-section-top1">
-            <h6>Select Payment Option:</h6>
-          </div>
-          <div class="c-invoice-section-data c-invoice-section-data1">
-            <label>
-              <input type="radio" name="paymentOption" id="codCheckbox" value="COD" checked> Cash
-            </label>
-            <div id="onlinePaymentCheckbox">
-              <label>
-                <input type="radio" name="paymentOption" id="onlineCheckbox" value="ONLINE"> Online Payment
-              </label>
+        <div class="nav_bottom_right">
+          <a href="#">
+            <div class="nav_bootom_right_icons">
+              <i class="bi bi-person"></i>
             </div>
-          </div>
+          </a>
+          <a href="#">
+            <div class="nav_bootom_right_icons">
+              <i class="bi bi-heart"></i>
+            </div>
+          </a>
+          <a href="#">
+            <div class="nav_bootom_right_icons">
+              <i class="bi bi-cart3"></i>
+            </div>
+          </a>
         </div>
-
-
-        <div class="res-delivery-slot" id="deliverySlotBtn">
-          <button class="delivery-slot-btn" data-bs-toggle="modal" id="dSBtn" data-bs-target="#delviery-slot-modal"
-            onclick="getDeliverySlot()">Delivery Slot</button>
-            <span id="selectedSlotName"></span>
+      </div>
+      <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample"
+        aria-labelledby="offcanvasExampleLabel">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title" id="offcanvasExampleLabel">
+            Offcanvas
+          </h5>
+          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
-        <div class="c-invoice-section c-invoice-section-update">
-          <div class="c-invoice-section-top c-invoice-section-top1">
-            <h4>Price details</h4>
-            <button class="btn1" data-bs-toggle="modal" data-bs-target="#checkout-coupans" onclick="loadOffers()"
-              id="coupansBtn">coupans</button>
-          </div>
-          <!-- wallet pay -->
-
-          <div id="walletpanel" class="res-delivery-slot walletpay">
-            <div class="walletbar">
-              <span>Pay Using Wallet</span>
-              <small id="wallmsg"></small>
+        <div class="offcanvas-body">
+          <div class="setting_info">
+            <div class="setting_info_head">
+              <h4>Your Information</h4>
             </div>
-            <div class="form-check form-switch">
-              <input class="form-check-input" type="checkbox" id="walletSwitch" disabled="">
-
-            </div>
-          </div>
-
-
-          <!-- wallet pay -->
-
-          <div class="c-invoice-section-mid c-invoice-section-mid1">
-
-            <div class="c-invoice-section-data">
-              <!-- <span>Discount</span> -->
-              <span id="GrossPrice">Gross Price</span>
-              <span class="rs-symbol">
-                <input type="text"  id="Gross-Total" value="0" class="checkout-input" size="1" readonly>
-              </span>
-            </div>
-
-            <div class="c-invoice-section-data">
-              <!-- <span>Discount</span> -->
-              <span>Your Savings</span>
-              <span>-
-              <span class="rs-symbol">
-                <input type="text" id="savings" value="0" class="checkout-input" size="1" readonly>
-              </span>
-            </span>
-            </div>
-
-            <div class="c-invoice-section-data">
-              <span id="price-label">Price</span>
-              <span class="rs-symbol">
-                <input type="text" id="total-price" value="0" class="checkout-input" size="1" readonly>
-              </span>
-            </div>
-           
-            <div class="c-invoice-section-data">
-              <span>CoupanDiscount</span>
-              <span>-
-              <span class="rs-symbol">
-                <input type="text" id="discount" value="0" class="checkout-input" size="1" readonly>
-              </span>
-              </span>
-            </div>
-            <div class="c-invoice-section-data" id="GSTdiv">
-              <span>Gst : </span>
-              <span class="rs-symbol">
-                <input type="text" id="total-gst" value="0" class="checkout-input" size="1" readonly>
-              </span>
-            </div>
-            <div class="c-invoice-section-data" id="DSCdiv">
-              <span>Delivery Slot Charges : </span>
-              <span>+
-              <span class="rs-symbol">
-                <input type="text" id="delivery-slot" value="0" class="checkout-input" size="1" readonly>
-              </span>
-              </span>
-            </div>
-            <div class="c-invoice-section-data" id="Divwallet">
-              <span>Wallet Discount : </span>
-              <span>-
-              <span class="rs-symbol">
-                <input type="text" id="walletDiscount" value="0" class="checkout-input" size="1" readonly>
-              </span>
-              </span>
-            </div>
-            <hr>
-            <div class="c-invoice-section-data">
-              <span id="TotalItems">Total</span>
-              <span class="rs-symbol">
-                <input type="text" id="grand-total" value="0" class="checkout-input" size="1" readonly>
-              </span>
+            <div class="setting_info_data">
+              <a href="">
+                <div class="setting_info_ancor">
+                  <div class="setting_info_icon">
+                    <i class="bi bi-person-x"></i>
+                  </div>
+                  <div class="setting_info_detail">
+                    <p>Delete my account</p>
+                  </div>
+                </div>
+              </a>
+              <a href="">
+                <div class="setting_info_ancor">
+                  <div class="setting_info_icon">
+                    <i class="bi bi-question-diamond"></i>
+                  </div>
+                  <div class="setting_info_detail">
+                    <p>Terms & Conditions</p>
+                  </div>
+                </div>
+              </a>
+              <a href="">
+                <div class="setting_info_ancor">
+                  <div class="setting_info_icon">
+                    <i class="bi bi-patch-question"></i>
+                  </div>
+                  <div class="setting_info_detail">
+                    <p>Frequently Asked Questions</p>
+                  </div>
+                </div>
+              </a>
+              <a href="">
+                <div class="setting_info_ancor">
+                  <div class="setting_info_icon">
+                    <i class="bi bi-person-vcard"></i>
+                  </div>
+                  <div class="setting_info_detail">
+                    <p>Contact Customer Support</p>
+                  </div>
+                </div>
+              </a>
+              <a href="">
+                <div class="setting_info_ancor">
+                  <div class="setting_info_icon">
+                    <i class="bi bi-person-vcard"></i>
+                  </div>
+                  <div class="setting_info_detail">
+                    <p>Shipping Policy</p>
+                  </div>
+                </div>
+              </a>
+              <a href="">
+                <div class="setting_info_ancor">
+                  <div class="setting_info_icon">
+                    <i class="bi bi-handbag"></i>
+                  </div>
+                  <div class="setting_info_detail">
+                    <p>Return Policy</p>
+                  </div>
+                </div>
+              </a>
+              <a href="">
+                <div class="setting_info_ancor">
+                  <div class="setting_info_icon">
+                    <i class="bi bi-question-diamond"></i>
+                  </div>
+                  <div class="setting_info_detail">
+                    <p>Pricing Policy</p>
+                  </div>
+                </div>
+              </a>
+              <a href="">
+                <div class="setting_info_ancor">
+                  <div class="setting_info_icon">
+                    <i class="bi bi-wallet2"></i>
+                  </div>
+                  <div class="setting_info_detail">
+                    <p>Refund</p>
+                  </div>
+                </div>
+              </a>
+              <a href="">
+                <div class="setting_info_ancor">
+                  <div class="setting_info_icon">
+                    <i class="bi bi-person-vcard"></i>
+                  </div>
+                  <div class="setting_info_detail">
+                    <p>Abcd</p>
+                  </div>
+                </div>
+              </a>
+              <a href="">
+                <div class="setting_info_ancor">
+                  <div class="setting_info_icon">
+                    <i class="bi bi-coin"></i>
+                  </div>
+                  <div class="setting_info_detail">
+                    <p>Sell On MyGalla</p>
+                  </div>
+                </div>
+              </a>
+              <a href="">
+                <div class="setting_info_ancor">
+                  <div class="setting_info_icon">
+                    <i class="bi bi-box-arrow-right"></i>
+                  </div>
+                  <div class="setting_info_detail">
+                    <p>Log Out</p>
+                  </div>
+                </div>
+              </a>
             </div>
           </div>
         </div>
       </div>
+    </div>
+    <div class="checkout_wrapper reuse_box">
+      <div class="header_top">
+        <a href=""> <i class="bi bi-chevron-left"></i></a>
+        <h3>Checkout</h3>
+        <div class="empty"></div>
+      </div>
+      <div class="checkout_top_tabs">
+        <div class="checkout_tab"><button class="checkout_tab1 checkout_active">Delivery</button></div>
+        <div class="checkout_tab"><button class="checkout_tab2">Takeaway</button></div>
+      </div>
+      <div class="checkout_wrap_details">
+      <div class="checkout_detail_address_section">
+        <div class="checkout_detail_address_data">
+          <h4>Office</h4>
+        </div>
+        <div class="checkout_detail_address_buttons">
+          <button class="check_btns checkbtn1" data-bs-toggle="offcanvas" data-bs-target="#changeaddress" aria-controls="changeaddress">Change</button>
+          <button class="check_btns checkbtn2" data-bs-toggle="modal" data-bs-target="#addAddress">Add</button>
+        </div>
+      </div>
+      <div class="checkout_all_checkout_info">
+       <span> <p>Amit Kumar</p></span>
+       <span> <p>Harmu Ranchi</p></span>
+      <span><label for="">Contact No :</label>  <input type="text" value="7903737980" disabled> </span>
+      <span><label for="">Pin code :</label>  <input type="text" value="834009" disabled> </span>
+      </div>
+      
 
-      <div class="c-invoice-section c-invoice-section2">
-        <div class="c-invoice-section-last">
-          <div>
-            <i class="bi bi-shield-fill-check"></i>
-          </div>
-          <div>
-            <p>Safe and secure payments.</p>
-            <p>100% Authentic products.</p>
+    </div>
+    <div class="checkout_payment_options">
+      <b>Select Payment Option</b>
+
+      <div class="checkout_payments">
+          <div class="checkout_pay checkout_pay1">
+        <input id="pay1" name="payment" type="radio">
+        <label for="pay1">Cash On Delivery</label>
+      </div>
+      <div class="checkout_payments">
+          <div class="checkout_pay checkout_pay2">
+        <input id="pay2" name="payment" type="radio">
+        <label for="pay2">Online Payment</label>
+      </div>
+      </div>
+    </div>
+  </div>
+  <div class="checkout_delivery_slot">
+
+    <button data-bs-toggle="offcanvas" data-bs-target="#delivery" aria-controls="delivery">Delevery slot <i class="bi bi-chevron-down"></i></button>
+  </div>
+  <div class="checkout_price_detail_wrapper">
+    <div class="checkout_price_head">
+      <h3>Price Details</h3>
+      <button data-bs-toggle="offcanvas" data-bs-target="#coupons" aria-controls="coupons">Coupons</button>
+    </div>
+    <div class="checkout_price_body">
+      <span>
+        <div>Grand Total (Items : <p>4</p> )</div>
+        <b>₹ 900</b>
+      </span>
+      <span>
+        <p>Your Savings</p>
+        <b>₹ 900</b>
+      </span>
+      <span>
+        <div>Total (Items :<p>4 </p>)</div>
+        <b>₹ 900</b>
+      </span>
+      <span>
+        <p>Coupan Discount</p>
+        <b>₹ 900</b>
+      </span>
+      <span>
+        <p>GST : </p>
+        <b>₹ 900</b>
+      </span>
+      <span>
+        <p>Delivery Slot Charges :  </p>
+        <b>₹ 900</b>
+      </span>
+      <span>
+        <p>Wallet Discount : </p>
+        <b>₹ 900</b>
+      </span>
+    </div>
+    <hr>
+    <div class="checkout_price_foot">
+      <span>Grand Total (Items :<p>9</p>)</span>
+      <b>₹ 1000.00</b>
+    </div>
+  </div>
+   <div class="checkout_informtion">
+    <i class="bi bi-shield-check"></i>
+    <p>Safe and Secure payments. <br>
+      100% Authentic Products.</p>
+   </div>
+   <div class="checkout_buttons">
+    <button>Place Order <i class="bi bi-arrow-right-short"></i></button>
+   </div>
+  </div>
+  <div class="desktop_footer">
+    <div class="desktop_top_foot">
+      <div class="desktop_foot desktop_foot1">
+        <h4>All Categories</h4>
+        <a href="">
+          <p>Furniture</p>
+        </a>
+        <a href="">
+          <p>Stationary</p>
+        </a>
+        <a href="">
+          <p>Household</p>
+        </a>
+        <a href="">
+          <p>Cosmetics</p>
+        </a>
+        <a href="">
+          <p>Furniture</p>
+        </a>
+        <a href="">
+          <p>Dairy</p>
+        </a>
+        <a href="">
+          <p>Baby Care</p>
+        </a>
+      </div>
+      <div class="desktop_foot desktop_foot2">
+        <h4>Popular Categories</h4>
+        <a href="">
+          <p>Furniture</p>
+        </a>
+        <a href="">
+          <p>Stationary</p>
+        </a>
+        <a href="">
+          <p>Household</p>
+        </a>
+        <a href="">
+          <p>Cosmetics</p>
+        </a>
+        <a href="">
+          <p>Furniture</p>
+        </a>
+        <a href="">
+          <p>Dairy</p>
+        </a>
+        <a href="">
+          <p>Baby Care</p>
+        </a>
+      </div>
+      <div class="desktop_foot desktop_foot3">
+        <h4>Customer Account</h4>
+        <a href="">
+          <p>Login</p>
+        </a>
+        <a href="">
+          <p>Order History</p>
+        </a>
+        <a href="">
+          <p>Wishlist</p>
+        </a>
+        <a href="">
+          <p>Wallet Balance</p>
+        </a>
+        <a href="">
+          <p>Delivery Addresses</p>
+        </a>
+      </div>
+      <div class="desktop_foot desktop_foot4">
+        <h4>Help & Support</h4>
+        <a href="">
+          <p>Terms & Conditions</p>
+        </a>
+        <a href="">
+          <p>FAQ</p>
+        </a>
+        <a href="">
+          <p>Customer Support</p>
+        </a>
+        <a href="">
+          <p>Shipping Policy</p>
+        </a>
+        <a href="">
+          <p>Return Policy</p>
+        </a>
+        <a href="">
+          <p>Pricing Policy</p>
+        </a>
+        <a href="">
+          <p>Refund</p>
+        </a>
+      </div>
+      <div class="desktop_foot desktop_foot5">
+        <h4>Contact Info</h4>
+        <div class="desktop_foot_a">
+          <i class="bi bi-geo-alt"></i>
+          <p>Kalam Academy, 4th Floor Rospa Tower, Main Road, Ranchi, Jharkahnd</p>
+        </div>
+        <div class="desktop_foot_a">
+          <i class="bi bi-telephone"></i>
+          <span>
+            <a href="tel:+91-9525395169">+91-9525395169</a> / <a href="tel:+91-8235529340">+91-8235529340</a>
+          </span>
+        </div>
+        <div class="desktop_download">
+          <h4>Download the app</h4>
+          <div class="desktop_img_download">
+            <img src="../assets/images/google_play_store.png" alt="">
           </div>
         </div>
       </div>
-
-      <div class="c-invoice-section"></div>
-
+    </div>
+    <div class="desktop_bottom_foot">
+      <p> &#8580 2024 All rights reserved. Kalam Store Ltd.</p>
     </div>
   </div>
   </div>
+  <div class="footer">
+    <div class="foot1">
+      <i class="bi bi-house-door"></i>
+      <p>Home</p>
+    </div>
+    <div class="foot2">
+      <i class="bi bi-grid"></i>
+      <p>Categories</p>
+    </div>
+    <div class="foot3">
+      <i class="bi bi-cart2"></i>
+      <p>Orders</p>
+    </div>
+    <div class="foot4">
+      <i class="bi bi-person"></i>
+      <p>Profile</p>
+    </div>
+  </div>
+
+  <div class="floater1">
+
+    <div class="floater__btn">
+      <i class="bi bi-question-lg"></i>
+    </div>
+  </div>
 
 
-  <!-- ash top and body end -->
 
-  <!-- ash bottom navigation start -->
-  <div class="bottomCart">
-    <button class="checkuot-btn checkuot-btn1" id="plcOrder" onclick="finalCheckout()">
-      Place Order
-      <i class="bi bi-arrow-right"></i>
+  <!-- add address -->
+<div class="modal fade" id="addAddress" tabindex="-1" aria-labelledby="addAddressLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+     
+      <div class="modal-content address_content checkout_data">
+        <div class="modal-header">
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+            <i class="bi bi-x"></i>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="address_modal_head">
+          <div class="radio">
+          <input type="radio" id="Cash On Delivery" name="address" value="Cash On Delivery">
+        <label for="Cash On Delivery">Home</label>
+          </div>
+          <div class="radio">
+            <input type="radio" id="Online Payment" name="address" value="Online Payment">
+            <label for="Online Payment">Office</label>
+          </div>
+        </div>
+        <div class="address_modal_input">
+          <div class="address_inp">
+            <input type="text" placeholder="Full Name">
+          </div>
+          <div class="address_inp">
+            <input type="text" placeholder="Address">
+          </div>
+          <div class="address_inp">
+            <input type="text" placeholder="Landmark">
+          </div>
+          <div class="address_inp">
+            <div class="address_inner_inp">
+            <input type="text" placeholder="Pin-Code">
+          </div>
+          <div class="address_inner_inp">
+            <b>+91</b>
+            <input type="text" placeholder="Mobile">
+          </div>
+        
+          </div>
+          <div class="address_button">
+            <button>save</button>
+          </div>
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- change address -->
+<div class="offcanvas offcanvas-bottom changeaddress_modal reuse_canvas" tabindex="-1" id="changeaddress" aria-labelledby="changeaddressLabel">
+  <div class="offcanvas-header">
+    <b>More address</b>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body small">
+    <div class="change_address_buttons_wrapper">
+      <button class="addressbuttonContainer">
+        <span>
+          <b>Name :-</b>
+          Amit kumar
+        </span>
+        <span>
+          <b>Mob :-</b>
+          8787878778
+        </span>
+        <span>
+          <b>Address :-</b>
+          Harmu Ranchi
+        </span>
+        <span>
+          <b>Pincode :-</b>
+          834002
+        </span>
+      </button>
+    </div>
+  </div>
+  <div class="change_btn">
+  <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close">
+    Close
+  </button>
+</div>
+</div>
+
+<!-- delivery slot-->
+<div class="offcanvas offcanvas-bottom delivery_modal reuse_canvas" tabindex="-1" id="delivery" aria-labelledby="deliveryLabel">
+  <div class="offcanvas-header">
+    <b>Select Delivery Slot</b>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body small">
+    <div class="delivery_slot_data">
+      <button class="delivery_btns">
+        <div class="delivery_left">
+          <b>Urgent</b>
+          <p>12 PM to 2 PM</p>
+        </div>
+        <div class="delivery_right">
+          <p>₹ 150.00</p>
+        </div>
+      </button>
+    </div>
+    <div class="delivery_slot_data">
+      <button class="delivery_btns">
+        <div class="delivery_left">
+          <b>Urgent</b>
+          <p>12 PM to 2 PM</p>
+        </div>
+        <div class="delivery_right">
+          <p class="active_free">FREE</p>
+        </div>
+      </button>
+    </div>
+  </div>
+  <div class="change_btn">
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close">
+      Close
     </button>
   </div>
-  <!-- ash bottom navigation end -->
+</div>
 
-
-
-  <!-- modal start  -->
-
-  <!-- address modal  -->
-
-  <div class="modal modal-bottom fade" id="address-change" tabindex="-1" aria-labelledby="exampleModalLabel"
-    aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">More address</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <div class=""></div>
-          <div class="addressList">
-            <div id="addressContainer"></div>
-          </div>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        </div>
-      </div>
-    </div>
+<!-- coupons -->
+<div class="offcanvas offcanvas-bottom coupons_modal reuse_canvas" tabindex="-1" id="coupons" aria-labelledby="couponsLabel">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title" id="couponsLabel">Offcanvas bottom</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
   </div>
-
-  <!-- coupans modal  -->
-
-  <div class="modal modal-bottom fade" id="checkout-coupans" tabindex="-1" aria-labelledby="exampleModalLabel"
-    aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Coupans</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <div class="offerList">
-            <div id="offerContainer"></div>
-          </div>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        </div>
-      </div>
-    </div>
+  <div class="offcanvas-body small">
+    Pending
   </div>
+</div>
 
 
-  <!-- delviery slot modal  -->
-
-  <div class="modal modal-bottom fade" id="delviery-slot-modal" tabindex="-1" aria-labelledby="exampleModalLabel"
-    aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Select delivery slot</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <div class="dlSlotList">
-            <div id="dlSlotContainer"></div>
-          </div>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        </div>
-      </div>
-    </div>
-  </div>
-
-
-  <!-- modal end  -->
-
-
-    <!-- Modal -->
-    <div class="modal fade" id="addressModal" tabindex="-1" aria-labelledby="addressModalLabel" aria-hidden="true">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-body">
-            <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">×</span>
-            </button>
-            <div class="form-main">
-              <div class="form">
-                <!-- <i class="bi bi-x"></i> -->
-                <form class="inp" id="address_submit_modal">
-  
-                  <div class="form-s">
-                    <span>
-                      <input type="radio" name="add_type" value="Home" id="add_type_home" />
-                      <label for="add_type_home">Home</label>
-                    </span>
-                    <span>
-                      <input type="radio" name="add_type" value="Office" id="add_type_office" />
-                      <label for="add_type_office">Office</label>
-                    </span>
-                  </div>
-                  
-                  <input type="text" name="addpanelType" value="checkoutPanel" hidden />
-                  <input type="text" name="address_id" hidden />
-                  <input type="text" placeholder="Full Name" name="name" />
-                  <input type="text" placeholder="Address" name="full_address" />
-                  <input type="text" placeholder="Landmark" name="landmark" />
-                  <span class="form-s1">
-                    <input type="number" class="inp1" placeholder="Pin code" name="pincode" required />
-                    <span class="inp-span">
-                      <p>+91</p>
-                      <input type="number" class="inp2" placeholder="Mobile" name="mobile"  required/>
-                    </span>
-                  </span>
-  
-  
-                  <button type="submit" class="checkuot-btn2">Save</button>
-  
-                </form>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
+  <script src="../assets/js/cordova.js"></script>
   <script src="../assets/js/jquery-3.6.1.js"></script>
   <script src="../assets/js/bootstrap.bundle.min.js"></script>
   <script src="../assets/js/popper.min.js"></script>
   <script src="../assets/js/owl.carousel.min.js"></script>
-  <script src="https://unpkg.com/dexie/dist/dexie.js"></script>
-  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
-  <script src="../constant.js"></script>
-  <script src="assets/js/app.js"></script>
-  <script>
-    check_login();
-    resetwallettoggle();
-    getAddressonLoad();
-    getInvoiceDetails();
-    placeButtonStatus();
-    chkwallet();
-    // showSavings();
-
-    function resetwallettoggle() {
-      localStorage.setItem('wallToggle', 0);
-    }
-
-    async function chkwallet() {
-      id = localStorage.getItem("K_id");
-      formdata = new FormData;
-      formdata.append('type', '123');
-      formdata.append('id', id);
-      req = await fetch(appAPI, { method: 'POST', body: formdata });
-      res = await req.json();
-      console.log(JSON.parse(res.wallet));
-      localStorage.setItem('dynamicWallet',res.wallet);
-      walletdetails = JSON.parse(res.wallet);
-      if (walletdetails.walletstatus != "credit") {
-        $("#walletpanel").css("display","none");
-        $("#walletSwitch").prop("disabled", true);
-        $("#wallmsg").text("Wallet will be activated after first purchase").css("color", "red");
-
-      } else if (walletdetails.walletBalance == 0) {
-        $("#walletpanel").css("display","none");
-        $("#walletSwitch").prop("disabled", true);
-        $("#wallmsg").text("Insuffient Balance").css("color", "red");
-      } else {
-
-        $("#walletSwitch").prop("disabled", false);
-        btnstatechk = localStorage.getItem("wallToggle");
-        if (btnstatechk == '1') {
-          $("#walletSwitch").prop("checked", true);
-        }
-        $("#wallmsg").text("Your wallet balance is Rs-" + walletdetails.walletBalance).css("color", "green");
-        localStorage.setItem("currentBal", walletdetails.walletBalance);
-      }
-
-    }
-
-    $("#walletSwitch").change(function () {
-
-      if ($("#walletSwitch").prop("checked")) {
-        setbtnState = localStorage.setItem('wallToggle', '1')
-        tempWBal = localStorage.getItem("currentBal");
-        localStorage.setItem("walletCalbal", tempWBal)
-        getInvoiceDetails();
-      } else {
-        setbtnState = localStorage.setItem('wallToggle', '0')
-        localStorage.removeItem("walletCalbal");
-        getInvoiceDetails();
-      }
-
-    })
-
-
-    // async function showSavings(){
-    //    const productArry = await db.cart.toArray();
-    //     fakeTotal=0; 
-    //    productArry.map((item) => {
-    //       fakeprice = item.fprice;
-    //       proQty = item.purchase_qty;
-
-    //       fakeTotal +=  parseInt(fakeprice) * parseInt(proQty)
-    //     })
-    //     console.log(fakeTotal);
-    //     $("#savings").val(fakeTotal);
-
-    // }
-
-  </script>
+  <script src="../assets/js/dexie.js"></script>
+  <script src="../assets/js/constant.js"></script>
+  <script src="../assets/js/script.js"></script>
+  <script src="../assets/js/templateFunctions.js"></script>
 
 </body>
 

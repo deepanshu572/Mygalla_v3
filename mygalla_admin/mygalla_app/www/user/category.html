@@ -1,134 +1,224 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title id="my_shop_name_t">mygalla</title>
+    <link rel="shortcut icon" href="assets/res/icon.png" type="image/x-icon" />
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+    />
+    <link rel="stylesheet" href="../assets/css/owl.carousel.min.css" />
+    <link rel="stylesheet" href="../assets/css/owl.theme.default.min.css" />
+    <link rel="stylesheet" href="../assets/css/style.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title id="my_shop_name_t">mygalla</title>
-  <link rel="shortcut icon" href="assets/res/icon.png" type="image/x-icon">
-  <link rel="stylesheet" href="../assets/css/bootstrap.min.css" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
-  <link rel="stylesheet" href="../assets/css/owl.carousel.min.css" />
-  <link rel="stylesheet" href="../assets/css/owl.theme.default.min.css" />
-  <link rel="stylesheet" href="assets/css/style.css" />
-
-</head>
-
-<body>
-  <div class="main category">
-    <div class="main-header mobile">
-      <div class="header">
-        <div class="head1">
-          <a href="home.html">
-            <i class="bi bi-chevron-left"></i>
-          </a>
-          <h3>Category</h3>
+  <body>
+    <div class="main category">
+      <div class="navbar">
+        <div class="navbar_top">
+          <div class="nav1">
+            <i class="bi bi-geo-alt"></i>
+            <p>Deliver to Pune 411504</p>
+            <i class="bi bi-chevron-down"></i>
+          </div>
+          <div class="nav2">
+            <i class="bi bi-clock"></i>
+            <p>Delivery in 10 minutes</p>
+          </div>
+          <div class="nav3">
+            <i class="bi bi-telephone"></i>
+            <a href="tel:+91-9525395169"><p>+91-9525395169</p></a>
+          </div>
+        </div>
+        <div class="navbar_bottom">
+          <div class="nav_bottom_left">
+            <button
+              class="btn btn-primary"
+              type="button"
+              data-bs-toggle="offcanvas"
+              data-bs-target="#offcanvasExample"
+              aria-controls="offcanvasExample"
+            >
+              <i class="bi bi-list"></i>
+            </button>
+            <div class="nav_bottom_left_img">
+              <a href="home.html"
+                ><img src="../assets/images/logo.png" alt="logo"
+              /></a>
+            </div>
+            <div class="nav_bottom_left_input">
+              <i class="bi bi-search"></i>
+              <input type="text" placeholder="Search anything “household”" />
+              <button><i class="bi bi-qr-code-scan"></i></button>
+            </div>
+          </div>
+          <div class="nav_bottom_right">
+            <a href="#">
+              <div class="nav_bootom_right_icons">
+                <i class="bi bi-person"></i>
+              </div>
+            </a>
+            <a href="#">
+              <div class="nav_bootom_right_icons">
+                <i class="bi bi-heart"></i>
+              </div>
+            </a>
+            <a href="#">
+              <div class="nav_bootom_right_icons">
+                <i class="bi bi-cart3"></i>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div
+          class="offcanvas offcanvas-start"
+          tabindex="-1"
+          id="offcanvasExample"
+          aria-labelledby="offcanvasExampleLabel"
+        >
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasExampleLabel">
+              Offcanvas
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="offcanvas"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="offcanvas-body"></div>
         </div>
       </div>
-    </div>
-    <div class="main-header home-header">
-      <div class="header home-head">
-        <div class="head1">
-          <i class="bi bi-justify i1 menu"></i>
-          <a href="home.html">
-            <h2 id="my_shop_name">My galla</h2>
-          </a>
-        </div>
-        <div class="head2">
-          <button type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
-            aria-controls="offcanvasRight">
-            <i class="bi bi-cart4"></i>
-            <span>
-              <b>
-                <!-- <span id="cart_item_d">0</span> -->
-                <span id="cart-count"></span>
-                items
-              </b>
-            </span>
-          </button>
-        </div>
-        <a href="cart.html">
-          <div class="head3">
-            <i class="bi bi-cart-fill"></i>
-            <span>
-              <b>
-                <span id="cart-count-link"></span>
-              </b>
-            </span>
+      <div class="banner_product_page">
+        <img src="../assets/images/banner_category.png" alt="">
+      </div>
+      <div class="category_item_box">
+        <div class="category_item_box1">
+          <div class="category_item_top_box">
+            <div class="category_top_img">
+              <img src="https://png.pngtree.com/thumb_back/fh260/background/20230721/pngtree-assorted-grocery-items-arranged-in-a-white-3d-rendering-of-a-image_3722980.jpg" alt="">
+            </div>
+            <p>Grocery</p>
+            <i class="bi bi-chevron-right"></i>
           </div>
-        </a>
-
-        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
-          <div class="offcanvas-header">
-            <h5 class="offcanvas-title" id="offcanvasRightLabel">My Cart</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-          </div>
-          <div class="offcanvas-body">
-            <div class="header-changes">
-              <div class="cart-item-wrapper">
-                <div id="right-side-cart-top-msg"></div>
-                <div id="right-side-cart"></div>
+          <div class="category_item_bottom_box">
+            <div class="category_bottom_box">
+              <div class="category_bottom_img">
+                <img src="https://png.pngtree.com/thumb_back/fh260/background/20230721/pngtree-assorted-grocery-items-arranged-in-a-white-3d-rendering-of-a-image_3722980.jpg" alt="">
               </div>
-              <div class="checkout-detail">
-                <div id="right-side-cart-total"></div>
-                <div id="right-side-cart-address-box"></div>
+              <div class="category_bottom_content">
+                <p>Ghee & Vanaspati</p>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <div class="last-header product-select">
-        <i class="fa-solid fa-magnifying-glass"></i>
-        <input type="text" placeholder="Search “Grocery” " onclick="gotoProductSrch()">
-        <i class="bi bi-upc-scan" id="scanBtnQR1"></i>
-      </div>
-      <div class="header-search">
-        <div class="last-header">
-          <i class="bi bi-search"></i>
-          <input type="text" placeholder="Search “Grocery” " onclick="gotoProductSrch()">
-          <i class="bi bi-upc-scan" id="scanBtnQR2"></i>
+      <div class="desktop_footer">
+        <div class="desktop_top_foot">
+        <div class="desktop_foot desktop_foot1">
+          <h4>All Categories</h4>
+         <a href=""> <p>Furniture</p></a>
+         <a href=""> <p>Stationary</p></a>
+         <a href=""> <p>Household</p></a>
+         <a href=""> <p>Cosmetics</p></a>
+         <a href=""> <p>Furniture</p></a>
+         <a href=""> <p>Dairy</p></a>
+         <a href=""> <p>Baby Care</p></a>
         </div>
-
+        <div class="desktop_foot desktop_foot2">
+          <h4>Popular Categories</h4>
+          <a href=""> <p>Furniture</p></a>
+         <a href=""> <p>Stationary</p></a>
+         <a href=""> <p>Household</p></a>
+         <a href=""> <p>Cosmetics</p></a>
+         <a href=""> <p>Furniture</p></a>
+         <a href=""> <p>Dairy</p></a>
+         <a href=""> <p>Baby Care</p></a>
+        </div>
+        <div class="desktop_foot desktop_foot3">
+          <h4>Customer Account</h4>
+          <a href=""><p>Login</p></a>
+          <a href=""><p>Order History</p></a>
+          <a href=""><p>Wishlist</p></a>
+          <a href=""><p>Wallet Balance</p></a>
+          <a href=""><p>Delivery Addresses</p></a>
+        </div>
+        <div class="desktop_foot desktop_foot4">
+          <h4>Help & Support</h4>
+          <a href=""><p>Terms  & Conditions</p></a>
+          <a href=""><p>FAQ</p></a>
+          <a href=""><p>Customer Support</p></a>
+          <a href=""><p>Shipping Policy</p></a>
+          <a href=""><p>Return Policy</p></a>
+          <a href=""><p>Pricing Policy</p></a>
+          <a href=""><p>Refund</p></a>
+        </div>
+        <div class="desktop_foot desktop_foot5">
+          <h4>Contact Info</h4>
+          <div class="desktop_foot_a">
+            <i class="bi bi-geo-alt"></i>
+            <p>Kalam Academy, 4th Floor Rospa Tower, Main Road, Ranchi, Jharkahnd</p>
+          </div>
+          <div class="desktop_foot_a">
+            <i class="bi bi-telephone"></i>
+            <span>
+            <a href="tel:+91-9525395169">+91-9525395169</a> / <a href="tel:+91-8235529340">+91-8235529340</a>
+          </span>
+          </div>
+          <div class="desktop_download">
+            <h4>Download the app</h4>
+            <div class="desktop_img_download">
+              <img src="../assets/images/google_play_store.png" alt="">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="desktop_bottom_foot">
+        <p> &#8580 2024 All rights reserved. Kalam Store Ltd.</p>
+      </div>
       </div>
     </div>
-    <div class="resp-nav sidebar" style="display: none;">
-      <div class="sidebar-box" id="navone"></div>
+    <div class="footer">
+      <div class="foot1">
+        <i class="bi bi-house-door"></i>
+        <p>Home</p>
+      </div>
+      <div class="foot2">
+        <i class="bi bi-grid"></i>
+        <p>Categories</p>
+      </div>
+      <div class="foot3">
+        <i class="bi bi-cart2"></i>
+        <p>Orders</p>
+      </div>
+      <div class="foot4">
+        <i class="bi bi-person"></i>
+        <p>Profile</p>
+      </div>
     </div>
-  </div>
-  <div class="second-category-section ">
-    <h2>Category</h2>
 
-    <div class="category-box-wrap mt-5" id="category_list_one"></div>
+    <div class="floater1">
+     
+      <div class="floater__btn">
+        <i class="bi bi-question-lg"></i>
+      </div>
+    </div>
+    <script src="../assets/js/cordova.js"></script>
+    <script src="../assets/js/jquery-3.6.1.js"></script>
+    <script src="../assets/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/js/popper.min.js"></script>
+    <script src="../assets/js/owl.carousel.min.js"></script>
+    <script src="../assets/js/dexie.js"></script>
+    <script src="../assets/js/constant.js"></script>
+    <script src="../assets/js/script.js"></script>
+    <script src="../assets/js/templateFunctions.js"></script>
+    <script>
 
-  </div>
+    </script>
 
-
-  <div class="footer" id="navtwo"></div>
-  </div>
-
-  <script src="../cordova.js"></script>
-  <script src="../assets/js/jquery-3.6.1.js"></script>
-  <script src="../assets/js/bootstrap.bundle.min.js"></script>
-  <script src="../assets/js/popper.min.js"></script>
-  <script src="../assets/js/owl.carousel.min.js"></script>
-  <script src="../assets/js/dexie.js"></script>
-  <script src="../constant.js"></script>
-  <script src="assets/js/app.js"></script>
-  <script src="assets/js/script.js"></script>
-  <script>
-
-    printShopName();
-    rightSideCartLoad();
-    loadNav("home");
-
-    loadCartCount();
-
-    loadCategoryHomeOne();
-
-    // old function call
-
-    loadUserDataHome();
-  </script>
-</body>
-
+  </body>
 </html>

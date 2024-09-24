@@ -596,6 +596,51 @@ User app code start
           </div>`
     }
 
+    function shopUserTemplate(data) {
+      return`
+      <a href="shopDetail.html">
+         <div class="usershop_item_box1">
+            <div class="usershop_image_wrap">
+              <div class="usershop_item_bg">
+                <img src="${data.bg}" alt="" />
+              </div>
+              <div class="usershop_item_logo">
+                <img src="${data.logo}" alt="" />
+              </div>
+            </div>
+            <div class="usershop_text">
+              <b>${data.shopname}</b>
+            </div>
+          </div>
+          </a>
+      `
+    }
+    function viewShopTemplate(data) {
+      return `
+        <div class="view_shop_data1">
+            <div class="view_shop_data_img">
+                <img src="${data.bg}" alt="">
+            </div>
+            <div class="view_shop_data_content">
+                 <div class="view_content1">
+                    <h3>${data.shopname}</h3>
+                    <i class="bi bi-share"></i>
+                 </div>
+                 <div class="view_content1">
+                    <p>${data.address}</p>
+                     <div class="view_rating">
+                        <b>${data.count} <i class="bi bi-star-fill"></i></b>
+                     </div>
+                 </div>
+                 <div class="view_content1">
+                    <p>${data.category}</p>
+                    <b>${data.distance}</b>
+
+                 </div>
+            </div>
+          </div>`
+    }
+
 /* ================
 User app code end
 ================ */

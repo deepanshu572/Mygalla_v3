@@ -1304,6 +1304,99 @@ const usercategory_data = [
   }
  
 ];
+const usershop_data = [
+ 
+  {
+    bg : "../assets/images/bg1.png",
+    logo: "../assets/images/logo2.png",
+    shopname : "riya store",
+    address : "Ranchi, Zarkhand",
+    distance : "3.0 km",
+    category: "Grocery",
+    count : "4.5"
+  },
+  {
+    bg : "../assets/images/bg1.png",
+    logo: "../assets/images/logo2.png",
+    shopname : "jiya store",
+    address : "Ranchi, Zarkhand",
+    distance : "7.0 km",
+    category: "Grocery",
+    count : "3.5"
+  },
+  {
+    bg : "../assets/images/bg1.png",
+    logo: "../assets/images/logo2.png",
+    shopname : "preeti store",
+    address : "Ranchi, Zarkhand",
+    distance : "1.0 km",
+    category: "Grocery",
+    count : "3.5"
+  },
+  {
+    bg : "../assets/images/bg1.png",
+    logo: "../assets/images/logo2.png",
+    shopname : "prakash store",
+    address : "Ranchi, Zarkhand",
+    distance : "3.0 km",
+    category: "Grocery",
+    count : "4.5"
+  },
+  {
+    bg : "../assets/images/bg1.png",
+    logo: "../assets/images/logo2.png",
+    shopname : "priya store",
+    address : "Ranchi, Zarkhand",
+    distance : "1.0 km",
+    category: "Grocery",
+    count : "4.5"
+  },
+  {
+    bg : "../assets/images/bg1.png",
+    logo: "../assets/images/logo2.png",
+    shopname : "vishal store",
+    address : "Ranchi, Zarkhand",
+    distance : "1.0 km",
+    category: "Grocery",
+    count : "2.5"
+  },
+  {
+    bg : "../assets/images/bg1.png",
+    logo: "../assets/images/logo2.png",
+    shopname : "golu store",
+    address : "Ranchi, Zarkhand",
+    distance : "1.0 km",
+    category: "Grocery",
+    count : "4.5"
+  },
+  {
+    bg : "../assets/images/bg1.png",
+    logo: "../assets/images/logo2.png",
+    shopname : "big store",
+    address : "Ranchi, Zarkhand",
+    distance : "1.0 km",
+    category: "Grocery",
+    count : "3.5"
+  },
+  {
+    bg : "../assets/images/bg1.png",
+    logo: "../assets/images/logo2.png",
+    shopname : "sharma store",
+    address : "Ranchi, Zarkhand",
+    distance : "1.0 km",
+    category: "Grocery",
+    count : "4.5"
+  },
+  {
+    bg : "../assets/images/bg1.png",
+    logo: "../assets/images/logo2.png",
+    shopname : "varma store",
+    address : "Ranchi, Zarkhand",
+    distance : "1.0 km",
+    category: "Grocery",
+    count : "3.5"
+  }
+];
 
 // floating button
 var $floater = $(".floater");
@@ -1571,6 +1664,20 @@ function smallbannercarousel() {
   });
 
   $("#smallBanners").append(smallUsercarouselId);
+}
+function usershop() {
+  var shopUserId = " ";
+  usershop_data.map((item) => {
+    shopUserId += shopUserTemplate(item);
+  });
+  $("#userData").append(shopUserId);
+}
+function viewshop() {
+  var viewshopUserId = " ";
+  usershop_data.map((item) => {
+    viewshopUserId += viewShopTemplate(item);
+  });
+  $("#viewshop").append(viewshopUserId);
 }
 /* ================
 User app code end
